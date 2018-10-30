@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Henry Test</title>
+</head>
+<body style="width: 1500px; margin: auto;">
+    <h1>How much do you know about me? (Easy)</h1>
+ <p>
+     1. Which of the following is my Chinese Name?<br/>
+<input type ="radio" name = "hi" value = 0 >Ding Yu<br/>
+<input type ="radio" name = "hi" value = 0>XiaoLi Yu<br/>
+<input type="radio" name = "hi" value = 1 >HeiLok Yu<br/>
+<input type ="radio" name ="hi" value = 0 >Pan Yu<br />
+ </p>
+ <p>
+     2. What is my favorite color?<br/>
+     <input type = "radio" name = "color" value = 0>Pink<br/>
+     <input type="radio" name="color" value= 1>White<br />
+     <input type="radio" name="color" value= 0>Black<br />
+     <input type="radio" name= "color" value= 0 />Purple<br/>
+ </p>
+ <p>
+     3. What is my favorite drink?<br />
+     <input type="radio" name="drink" value=0>Water<br />
+     <input type="radio" name="drink" value=0>Cold Brew Coffee<br />
+     <input type="radio" name="drink" value=1 />Unsweetened Green Tea<br />
+     <input type ="radio" name = "drink" value = 0>Beer<br/>
+ </p>
+ <p>
+   4. What is my favorite fast food place?<br/>
+   <input type = 'radio' name = 'food' value = 1>IN-N-OUT<br/>
+   <input type = 'radio' name = 'food' value = 0>KFC<br/>
+   <input type = 'radio' name = 'food' value = 0>Chipotle<br/>
+   <input type = 'radio' name = 'food' value = 0>Panda Express<br/>
+ </p>
+ <p>
+    <button onclick ="haha()">Click</button>
+ </p>
+
+ <p id ="demo"></p>
+ <p id="xd"></p>
+<p><a href ="http://127.0.0.1:5000/Pick">Back</a></p>
+</body>
+<script>
+    function haha() {
+        var x = document.querySelector('input[name="hi"]:checked').value;
+        var xx = parseInt(x, 10);
+        var y = document.querySelector('input[name="color"]:checked').value;
+        var yy = parseInt(y, 10);
+        var a = document.querySelector('input[name="drink"]:checked').value;
+        var aa = parseInt(a, 10);
+        var b = document.querySelector('input[name="food"]:checked').value;
+        var bb = parseInt(b, 10);
+        var z = xx + yy + aa + bb;
+        var zz = "You got";
+        var zzz = "Out of 4 Correct";
+        document.getElementById('xd').innerHTML = z
+        if (z == 0) {
+            var s = "bad";
+            document.getElementById('demo').innerHTML = s;
+        } else if (1 <= z || z <= 3) {
+            var s = "OK";
+            document.getElementById('demo').innerHTML = s;
+        } else {
+            var s = "Good";
+            document.getElementById('demo').innerHTML = s;
+        }
+        document.getElementById('xd').innerHTML = zz + " " + z + " " + zzz;
+
+    }
+</script>
+
+</html>
