@@ -33,6 +33,20 @@
    <input type = 'radio' name = 'food' value = 0>Chipotle<br/>
    <input type = 'radio' name = 'food' value = 0>Panda Express<br/>
  </p>
+<p>
+  5. What college did Henry attended? <br/>
+  <input type = 'radio' name = 'school' value = 0>Henry did not go to college<br/>
+  <input type = 'radio' name = 'school' value = 0>Cal Tech<br/>
+  <input type = 'radio' name = 'school' value = 1>UCSD <br/>
+  <input type = 'radio' name = 'school' value = 0>SDSU <br/>
+</p>
+<p>
+  6. Which of the following item always in Henry's backpack?
+  <input type = 'radio' name = 'item' value = 1>TI-83+<br/>
+  <input type = 'radio' name = 'item' value = 0>water bottle<br/>
+  <input type = 'radio' name = 'item' value = 0>Laptop<br/>
+  <input type = 'radio' name = 'item' value = 0>Math book<br/>
+</p>
  <p>
     <button onclick ="haha()">Click</button>
  </p>
@@ -51,14 +65,18 @@
         var aa = parseInt(a, 10);
         var b = document.querySelector('input[name="food"]:checked').value;
         var bb = parseInt(b, 10);
-        var z = xx + yy + aa + bb;
+        var schol = document.querySelector('input[name='school']:checked').value;
+        var sschol = parseInt(s, 10);
+        var ite = document.querySelector('input[name='item']:checked').value;
+        var itee = parseInt(ite,10);
+        var z = xx + yy + aa + bb + sschol+itee;
         var zz = "You got";
-        var zzz = "Out of 4 Correct";
+        var zzz = "Out of 6 Correct";
         document.getElementById('xd').innerHTML = z
         if (z == 0) {
             var s = "bad";
             document.getElementById('demo').innerHTML = s;
-        } else if (1 <= z || z <= 3) {
+        } else if (1 <= z || z <= 5) {
             var s = "OK";
             document.getElementById('demo').innerHTML = s;
         } else {
