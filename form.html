@@ -47,6 +47,11 @@
   <input type = 'radio' name = 'item' value = 0>Laptop<br/>
   <input type = 'radio' name = 'item' value = 0>Math book<br/>
 </p>
+<p> 7. Which of the following activities Henry have zero experience with?<br/>
+  <input type = 'radio' name = 'activ' value = 0>Skateboarding<br/>
+  <input type = 'radio' name = 'activ' value = 0>Ice Skating <br/>
+  <input type = 'radio' name = 'activ' value = 0>Snorkeling <br/>
+  <input type = 'radio' name = 'activ' value = 0>Snowboarding<br/>
  <p>
     <button onclick ="haha()">Click</button>
  </p>
@@ -69,14 +74,16 @@
         var sschol = parseInt(schol, 10);
         var ite = document.querySelector('input[name="item"]:checked').value;
         var itee = parseInt(ite,10);
-        var z = xx + yy + aa + bb + sschol + itee;
+        var act = document.querySelector('input[name="activ"]:checked').value;
+        var actt = parseInt(act,10);
+        var z = xx + yy + aa + bb + sschol + itee + actt;
         var zz = "You got";
         var zzz = "Out of 6 Correct";
         document.getElementById('xd').innerHTML = z
         if (z == 0) {
             var s = "bad";
             document.getElementById('demo').innerHTML = s;
-        } else if (1 <= z && z <= 5) {
+        } else if (1 <= z && z <= 6) {
             var s = "OK";
             document.getElementById('demo').innerHTML = s;
         } else {
