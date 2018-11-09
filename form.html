@@ -50,8 +50,21 @@
 <p> 7. Which of the following activities Henry have zero experience with?<br/>
   <input type = 'radio' name = 'activ' value = 0>Skateboarding<br/>
   <input type = 'radio' name = 'activ' value = 0>Ice Skating <br/>
-  <input type = 'radio' name = 'activ' value = 0>Snorkeling <br/>
+  <input type = 'radio' name = 'activ' value = 0>Breakdancing <br/>
   <input type = 'radio' name = 'activ' value = 1>Snowboarding<br/>
+</p>
+<p> 8. How tall is Henry?<br/>
+  <input type = 'radio' name = 'tall' value = 1>Around 5 ft 5<br/>
+  <input type = 'radio' name = 'tall' value = 0>Around 5 ft 7<br/>
+  <input type = 'radio' name = 'tall' value = 0>Around 5 ft 9<br/>
+  <input type = 'radio' name = 'tall' value = 0>Around 6 ft 1<br/>
+</p>
+<p> 9. What is Henry favorite Movie?</p>
+<input type = 'radio' name = 'movie' value = 1>Good Will Hunting<br/>
+<input type = 'radio' name = 'movie' value = 0>A Simple Favor<br/>
+<input type = 'radio' name = 'movie' value = 0>Silver Linings Playbook<br/>
+<input type = 'radio' name = 'movie' value = 0>Red Sparrow<br/>
+
  <p>
     <button onclick ="haha()">Click</button>
  </p>
@@ -76,14 +89,18 @@
         var itee = parseInt(ite,10);
         var act = document.querySelector('input[name="activ"]:checked').value;
         var actt = parseInt(act,10);
-        var z = xx + yy + aa + bb + sschol + itee + actt;
+        var tal = document.querySelector('input[name="tall"]:checked').value;
+        var tal1 = parseInt(tal,10);
+        var mov = document.querySelector('input[name="movie"]:checked').value;
+        var movv = parseInt(mov,10);
+        var z = xx + yy + aa + bb + sschol + itee + actt + tal1 + movv;
         var zz = "You got";
-        var zzz = "Out of 6 Correct";
+        var zzz = "Out of 9 Correct";
         document.getElementById('xd').innerHTML = z
         if (z == 0) {
             var s = "bad";
             document.getElementById('demo').innerHTML = s;
-        } else if (1 <= z && z <= 6) {
+        } else if (1 <= z && z <= 8) {
             var s = "OK";
             document.getElementById('demo').innerHTML = s;
         } else {
