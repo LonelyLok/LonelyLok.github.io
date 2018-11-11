@@ -71,11 +71,14 @@
     <button onclick ="haha()">Submit</button>
  </p>
 
- <p id ="demo"></p>
- <p id="xd"></p>
+ <p id="dav">0%</p>
+ <div class="w3-light-grey">
+     <div id = "bar" class = "w3-grey" style = "height:24px;width:0%"></div>
+   </div>
 <p><a href ="/pick">Back</a></p>
 </body>
 <script>
+    var percent;
     function haha() {
         var x = document.querySelector('input[name="hi"]:checked').value;
         var xx = parseInt(x, 10);
@@ -96,20 +99,30 @@
         var mov = document.querySelector('input[name="movie"]:checked').value;
         var movv = parseInt(mov,10);
         var z = xx + yy + aa + bb + sschol + itee + actt + tal1 + movv;
-        var zz = "You got";
-        var zzz = "Out of 9 Correct";
-        document.getElementById('xd').innerHTML = z
-        if (z == 0) {
-            var s = "bad";
-            document.getElementById('demo').innerHTML = s;
-        } else if (1 <= z && z <= 8) {
-            var s = "OK";
-            document.getElementById('demo').innerHTML = s;
-        } else {
-            var s = "Good";
-            document.getElementById('demo').innerHTML = s;
-        }
-        document.getElementById('xd').innerHTML = zz + " " + z + " " + zzz;
+
+
+        percent = z*100/9;
+
+
+ 			    var elem = document.getElementById("bar");
+   			  var width = 0;
+ 			    var id = setInterval(frame,10);
+
+
+ 		function frame(){
+ 				if (percent == 0){
+ 					elem.style.width = width + '%';
+ 					document.getElementById("dav").innerHTML = 'You got ' + width*1 + '% Correct' ;
+ 				}
+ 				else if (width >= percent){
+ 					clearInterval(id);
+ 				}else{
+ 					width++;
+ 					elem.style.width = width + '%';
+ 					document.getElementById("dav").innerHTML = 'You got ' + width*1 + '% Correct' ;
+ 				}
+ 		}
+
 
     }
 </script>
