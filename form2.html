@@ -10,13 +10,14 @@
 
 		<p>1. Which of the following math topic is Henry most confidence on?<br/>
 		</p>
-		<p id="demo"></p>
+		<p id="demo1"></p>
 		<p>2. Which of the following math topic is Henry worst at?<br/></p>
-			<p id="demo2"></p>
+		<p id = "demo2"></p>
 		<p>3. What time do Henry usually wake up? (PST)</p>
 		<p id="demo3"></p>
 		<p>4. Which of the following video game Henry never played?</p>
 		<p id="demo4"></p>
+
 		<p><button onclick = "calculate()">Submit</button></p>
 
 
@@ -26,53 +27,34 @@
 			</div>
 			<p><a href ="/pick">Back</a></p>
 		<script>
+
 		function displaydata(){
 
-			var test = {"Complex Analysis":1, "Differential Geometry":0, "Graph Theory":0, "Real Analysis":0, "Linear Algebra":0};
+			var test1 = {"Complex Analysis":1, "Differential Geometry":0, "Graph Theory":0, "Real Analysis":0, "Linear Algebra":0};
 			var test2 = {"Differential Equation":0, "Number Theory":0, "Numerical Analysis":0, "Statistics":1, "Henry is good at every math topic":0 };
 			var test3 = {"00:00":0, "13:00":0, "6:00":1,"17:00":0, "8:00":0};
-			var test4 = {"Dark Soul 3":0, "Diablo 3":0, "League of Legend":0, "World of Warcraft":1, "Age of Empire 2":0}
-
-			var data = Object.keys(test);
-			var data2 = Object.keys(test2);
-			var data3 = Object.keys(test3);
-			var data4 = Object.keys(test4);
-			var output = "";
-			var output2 ="";
-			var output3 = "";
-			var output4 = "";
-			var datalist;
-			var datalist2;
-			var datalist3;
-			var datalist4;
-			for (var i = 0 ; i < data.length; i++){
-				datalist = data[i];
-				datalist2 = data2[i];
-				datalist3 = data3[i];
-				datalist4 = data4[i];
-				result = test[datalist];
-				result2 = test2[datalist2];
-				result3 = test3[datalist3];
-				result4 = test4[datalist4];
-				output += '<input type = "radio" value = '+ result +' name = "topic">'+datalist+'<br>';
-				output2 +='<input type = "radio" value = '+ result2 +' name = "topic2">'+datalist2+'<br>';
-				output3 +='<input type = "radio" value = '+ result3 +' name = "topic3">'+datalist3+'<br>';
-				output4 +='<input type = "radio" value = '+ result4 +' name = "topic4">'+datalist4+'<br>';
+			var test4 = {"Dark Soul 3":0, "Diablo 3":0, "League of Legend":0, "World of Warcraft":1, "Age of Empire 2":0};
+			var list = [test1,test2,test3,test4];
+			for (var j = 0; j < list.length; j++){
+				var data = Object.keys(list[j]);
+				var output = "";
+				var datalist;
+				for (var i = 0 ; i < data.length; i++){
+						var z = (j+1);
+						datalist = data[i];
+						result = list[j][datalist];
+						output += '<input type = "radio" value = '+ result +' name = "topic'+z+'">'+datalist+'<br>';
 			}
-			document.getElementById("demo").innerHTML = output;
+			var a = (j+1);
+			document.getElementById("demo"+a).innerHTML = output;
 
-			document.getElementById("demo2").innerHTML = output2;
+			}
 
-			document.getElementById("demo3").innerHTML = output3;
-
-			document.getElementById("demo4").innerHTML = output4;
 
 		}
-		var percent
-
 		function calculate(){
 
-			var qname = ["topic","topic2","topic3","topic4"];
+			var qname = ["topic1","topic2","topic3","topic4"];
 			var a;
 			var b = 0;
 			for (var j = 0; j < qname.length; j++){
@@ -105,7 +87,6 @@
 				}
 		}
 }
+
 		</script>
-
-
 </body>
