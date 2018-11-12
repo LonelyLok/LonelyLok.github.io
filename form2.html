@@ -26,6 +26,11 @@
 			II. Get a PhD in Math <br/>
 			III. Go to Gym <br/>
 		<p id = "demo7"></p>
+		<p>8. Henry have done which of the following?</p>
+			I. Purposely fail a Math Exam <br/>
+			II. Living by himself <br/>
+			III. Skip school because of video game <br/>
+		<p id ="demo8"></p>
 
 		<p><button onclick = "calculate()">Submit</button></p>
 
@@ -46,7 +51,8 @@
 			var test5 = {"Assassin":1, "Mage":0, "Tank":0, "Archer":0, "Healer":0};
 			var test6 = {"High Risk High Reward":0, "Calculated and Safe":0, "Follow the Meta":0, "Negative IQ":1, "200 IQ":0}
 			var test7 = {"I only":0, "II only":0, "I&II":0, "II&III":0, "All":1};
-			var list = [test1,test2,test3,test4,test5,test6,test7];
+			var test8 = {"I only":0, "I&III only":1, "II&III":0, "All":0, "None of the option is correct":0};
+			var list = [test1,test2,test3,test4,test5,test6,test7,test8];
 			for (var j = 0; j < list.length; j++){
 				var data = Object.keys(list[j]);
 				var output = "";
@@ -66,7 +72,7 @@
 		}
 		function calculate(){
 
-			var qname = ["topic1","topic2","topic3","topic4","topic5","topic6","topic7"];
+			var qname = ["topic1","topic2","topic3","topic4","topic5","topic6","topic7","topic8"];
 			var a;
 			var b = 0;
 			for (var j = 0; j < qname.length; j++){
@@ -78,7 +84,7 @@
 
 		}
 
-			 percent = b*100/7;
+			 percent = b*100/8;
 
 			var elem = document.getElementById("bar");
 			var width = 0;
