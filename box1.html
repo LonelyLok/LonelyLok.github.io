@@ -1,4 +1,4 @@
-<!<!DOCTYPE html>
+<DOCTYPE html>
 <html>
 <style>
   #container{
@@ -38,6 +38,7 @@
 
       </div>
     <p id = 'demo'></p><br/>
+    <p id = 'ddd'></p><br/>
     <a href = "/tool">Back</a>
     <script>
       var char = document.getElementById('char');
@@ -81,8 +82,14 @@
           }
         }
         document.getElementById('demo').innerHTML = "x position: " +charleft+ " y position: "+chary;
+          if (charleft == 400 && chary == 160){
+            document.getElementById('ddd').innerHTML = "Hit";
+          }else{
+            document.getElementById('ddd').innerHTML = "";
+          }
 
       }
+
       document.onkeydown = move;
 
 
