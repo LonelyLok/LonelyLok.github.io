@@ -39,7 +39,7 @@
 
 		<p id="dav">0%</p>
 		<div class="w3-light-grey">
-				<div id = "bar" class = "w3-grey" style = "height:24px;width:0%"></div>
+				<div id = "bar" class = "w3-blue" style = "height:24px;width:0%"></div>
 			</div>
 			<p><a href ="/pick">Back</a></p>
 		<script>
@@ -96,6 +96,7 @@
 		function frame(){
 				if (percent == 0){
 					elem.style.width = width + '%';
+
 					document.getElementById("dav").innerHTML = 'You got ' + width*1 + '% Correct' ;
 				}
 				else if (width >= percent){
@@ -103,6 +104,7 @@
 				}else{
 					width++;
 					elem.style.width = width + '%';
+
 					document.getElementById("dav").innerHTML = 'You got ' + width*1 + '% Correct' ;
 				}
 		}
