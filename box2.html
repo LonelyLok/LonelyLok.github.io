@@ -36,7 +36,8 @@
       <div id = "block"></div>
 
       </div>
-    <p><button onclick = "run()">Change red block location</button></p>
+    <p><button onclick = "repeat()">Start</button></p>
+    <p><button onclick = "stop123()">Stop</button></p>
     <p id = 'demo'></p><br/>
     <p id = 'ddd'></p><br/>
     <a href = "/tool">Back</a>
@@ -48,64 +49,23 @@
       var chary = 200;
       var blockleft = 400;
       var blocky = 160;
+      var moving;
       function getRandomInt(max) {
           return Math.floor(Math.random() * Math.floor(max));
         }
       function run(){
+
         blockleft = getRandomInt(590);
         blocky = getRandomInt(390);
         block.style.left = blockleft+'px';
         block.style.top = blocky+'px';
-
       }
-
-      function move(e){
-        if (e.keyCode == 39 && charleft<590){
-          charleft +=5;
-          char.style.left = charleft + 'px';
-          if (charleft > 590){
-            charleft -=5;
-
-
-          }
-
-        }
-
-        if (e.keyCode == 37 && charleft >0){
-          charleft -=5;
-          char.style.left = charleft + 'px';
-          if (charleft < 0){
-
-              charleft +=5;
-
-          }
-        }
-        if (e.keyCode == 40 && chary < 390){
-          chary += 5;
-          char.style.top = chary + 'px';
-          if (chary > 390){
-            chary -= 5;
-          }
-        }
-        if (e.keyCode == 38 && chary >0){
-          chary -= 5;
-          char.style.top = chary + 'px';
-          if (chary < 0){
-            chary += 5;
-          }
-        }
-        document.getElementById('demo').innerHTML = "x position: " +charleft+ " y position: "+chary;
-          if ((charleft>(blockleft-10) && charleft<(blockleft+10)) && (chary>(blocky-10)) && chary<(blocky+10)){
-            document.getElementById('ddd').innerHTML = "Hit";
-          }else{
-            document.getElementById('ddd').innerHTML = "";
-          }
-
+      function repeat(){
+        moving = setInterval(run,100);
       }
-
-      document.onkeydown = move;
-
-
+      function stop123(){
+        clearInterval(moving);
+      }
       </script>
     </body>
 </html>
