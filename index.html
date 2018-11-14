@@ -7,24 +7,65 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: Black;
+    overflow-x: hidden;
+    padding-top: 100px;
+}
+
+.sidenav a {
+    padding: 10px 6px 6px 40px;
+    text-decoration: none;
+    font-size: 15px;
+    color: White;
+    display: block;
+    border-style: solid;
+    border-color: White;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.main {
+    margin-left: 200px; /* Same as the width of the sidenav */
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
 </head>
-<body style="width: 1500px; margin: auto;">
-  <div class = "container">
+<body style="width: 1800px; margin: auto;">
+
+
+
+  <div class = "sidenav">
+        <a href="/about" >About Me</a><br />
+
+        <a href="/sc" >Schedule</a><br />
+
+        <a href="/tool" >Something I made when I was bored</a><br/>
+
+        <a href="/pick" >Test your knowledge about Henry</a><br>
+
+      <a href = "/resume" >Real Resume</a>
+    </div>
+
+  <div class = "main">
     <h1>Hello! My name is Henry.</h1>
-    <p>
-        <a href="/about" class = "btn btn-info" role = "button">About Me</a><br />
-    </p>
-    <p>
-        <a href="/sc" class = "btn btn-info" role = "button">Schedule</a><br />
-      </p>
-      <p>
-        <a href="/tool" class = "btn btn-info" role = "button">Something I made when I was bored</a><br/>
-      </p>
-      <p>
-        <a href="/pick" class = "btn btn-info" role = "button">Test your knowledge about Henry</a>
-    </p>
-    <p>
-      <a href = "/resume" class = "btn btn-info" role = "button">Real Resume</a>
   </div>
 </body>
 </html>
