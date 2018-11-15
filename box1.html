@@ -37,9 +37,11 @@
       <div id = "block"></div>
 
       </div>
-    <p id = 'demo'></p><br/>
-    <p id = 'ddd'></p>
-    <p><button onclick = "reset123()">Reset</button></p>
+    <p style = "position: static;" id = 'demo'>
+    <div style = "position: relative;" id = 'ddd'></div>
+    <br>
+    <button onclick = "reset123()">Reset</button></p>
+
     <a href = "/tool">Back</a>
     <script>
       var char = document.getElementById('char');
@@ -57,6 +59,7 @@
         stop = 0;
       }
       function move(e){
+
         if (stop == 0){
           if (e.keyCode == 39 && charleft<590){
             charleft +=5;
@@ -101,6 +104,7 @@
       }
 
       document.onkeydown = move;
+
 
 
       </script>
