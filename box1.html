@@ -38,56 +38,66 @@
 
       </div>
     <p id = 'demo'></p><br/>
-    <p id = 'ddd'></p><br/>
+    <p id = 'ddd'></p>
+    <p><button onclick = "reset123()">Reset</button></p>
     <a href = "/tool">Back</a>
     <script>
       var char = document.getElementById('char');
       var container = document.getElementById('container');
       var charleft = 300;
       var chary = 200;
-
+      var redx = 400;
+      var redy = 160;
+      var stop = 0;
+      function reset123(){
+        char.style.top = 200;
+        char.style.left = 300;
+        charleft = 300;
+        chary = 200;
+        stop = 0;
+      }
       function move(e){
-        if (e.keyCode == 39 && charleft<590){
-          charleft +=5;
-          char.style.left = charleft + 'px';
-          if (charleft > 590){
+        if (stop == 0){
+          if (e.keyCode == 39 && charleft<590){
+            charleft +=5;
+            char.style.left = charleft + 'px';
+            if (charleft > 590){
+              charleft -=5;
+            }
+          }
+
+          if (e.keyCode == 37 && charleft >0){
             charleft -=5;
-
-
+            char.style.left = charleft + 'px';
+            if (charleft < 0){
+                charleft +=5;
+            }
           }
-
-        }
-
-        if (e.keyCode == 37 && charleft >0){
-          charleft -=5;
-          char.style.left = charleft + 'px';
-          if (charleft < 0){
-
-              charleft +=5;
-
-          }
-        }
-        if (e.keyCode == 40 && chary < 390){
-          chary += 5;
-          char.style.top = chary + 'px';
-          if (chary > 390){
-            chary -= 5;
-          }
-        }
-        if (e.keyCode == 38 && chary >0){
-          chary -= 5;
-          char.style.top = chary + 'px';
-          if (chary < 0){
+          if (e.keyCode == 40 && chary < 390){
             chary += 5;
+            char.style.top = chary + 'px';
+            if (chary > 390){
+              chary -= 5;
+            }
           }
+          if (e.keyCode == 38 && chary >0){
+            chary -= 5;
+            char.style.top = chary + 'px';
+            if (chary < 0){
+              chary += 5;
+            }
+          }
+        }else{
+          windows.stop();
         }
-        document.getElementById('demo').innerHTML = "x position: " +charleft+ " y position: "+chary;
-          if ((charleft>390 && charleft<410) && (chary>150 && chary<170)){
+
+          if ((charleft>(redx-10) && charleft<(redx+10)) && (chary>(redy-10) && chary<(redy+10))){
             document.getElementById('ddd').innerHTML = "Hit";
-          }else{
+              stop = 1;
+            }else{
             document.getElementById('ddd').innerHTML = "";
           }
-
+          document.getElementById('demo').innerHTML = "x position: " +charleft+ " y position: "+chary;
       }
 
       document.onkeydown = move;
