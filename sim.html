@@ -1,0 +1,208 @@
+<!DOCTYPE>
+<html>
+<title>sim</title>
+<style>
+  .contain{
+    width: 400px;
+    height: 300px;
+    position: absolute;
+    border: 1px solid black;
+
+  }
+  .cube{
+    width: 20px;
+    height: 20px;
+    position: relative;
+    background-color: red;
+    left:0;
+    top:10
+  }
+  .bed{
+    width: 40px;
+    height:80px;
+    position: absolute;
+    background-color: blue;
+  }
+  .table{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    background-color: brown;
+    left: 110;
+    top: 120;
+  }
+  .wall{
+    width:100;
+    height:100;
+    position: absolute;
+    background-color: black;
+    left: 0;
+    top: 200;
+  }
+  .wall2{
+    width:240;
+    height:300;
+    position: absolute;
+    background-color: black;
+    left: 160;
+    top: 0;
+  }
+    .contain2{
+      width: 400;
+      height: 100;
+      left: 0;
+      top: 320;
+      position: relative;
+      border: 1px solid white;
+    }
+    .contain3{
+      width: 200;
+      height: 50;
+      left: 450;
+      top: 10;
+      position: absolute;
+      border: 1px solid white;
+    }
+    .contain4{
+      width: 100;
+      height: 100;
+      left:0;
+      top:400;
+      position: absolute;
+      border: 1px solid white;
+    }
+</style>
+
+<Body>
+  <div class = "contain">
+    <div id = "table" class = "table"></div>
+    <div id = "wall" class = "wall"></div>
+    <div id = "wall2" class = "wall2"></div>
+    <div id = "bed" class = "bed"><div id = "cube" class = "cube">
+    </div>
+</div>
+
+  </div>
+  <div class = "contain2"><p id = "Msg"></p>
+
+  <p id = "txt"></p>
+  </div>
+  <div class = "contain4">
+    <p><a href="https://lonelylok.github.io/">Home</a></p>
+  </div>
+
+  <div class = "contain3"><p id = "location"></p>
+  <p id = "demo"></p></div>
+</Body>
+<script>
+  var second = 0;
+  var e1 = document.getElementById("demo");
+  var cube = document.getElementById("cube");
+  var bed = document.getElementById("bed");
+  var table = document.getElementById("table");
+  var wall = document.getElementById("wall");
+  var wall2 = document.getElementById("wall2");
+  var cubex = 0;
+  var cubey = 10;
+  var tablex = 110;
+  var tabley = 120;
+  var switch1 = 0;
+  function insec(){
+    if (second < 10){
+    second += 1;
+    e1.innerText = "stamina:" +second + "/10";
+  }
+    else{
+      e1.innerText = "stamina:"+ second + "/10";
+    }
+}
+  var count = setInterval(insec,50);
+
+
+  function move(e){
+    if (e.keyCode == '37' && cubex > 0 && second>0 ){
+
+      cubex -= 10;
+      second -= 1;
+      cube.style.left = cubex;
+      if (cubex < 100 && cubey>=190 && cubey<=300 && switch1 == 0) {
+        cubex += 10;
+        cube.style.left = cubex;
+
+      }
+    }
+    if (e.keyCode == '39' && cubex <380 && second>0 ){
+      cubex +=10;
+      second -= 1;
+      cube.style.left = cubex;
+      if (cubex > 140 && switch1 == 0){
+        cubex -= 10;
+        cube.style.left = cubex;
+      }
+    }
+    if (e.keyCode == '38' && cubey >0 && second>0){
+      cubey  -= 10;
+      second -= 1;
+      cube.style.top = cubey;
+
+    }
+    if (e.keyCode == '40' && cubey <280 && second>0){
+      cubey += 10;
+      second -= 1;
+      cube.style.top = cubey;
+      if (cubey >= 190 && cubex >= 0 && cubex <=90 && switch1 == 0){
+        cubey -=10;
+        cube.style.top = cubey;
+      }
+
+    }
+    document.getElementById("Msg").innerHTML = "x : "+ cubex + "   "+"y : "+ cubey;
+    if (switch1 == 0){
+      document.getElementById("location").innerHTML = "Current place: Henry's Room";
+      if (cubex == (tablex - 20) && cubey >= (tabley - 10) && cubey <= (tabley+30)){
+        document.getElementById("txt").innerHTML = "It is a table";
+      }else if (cubex>=0 && cubex < 40 && cubey>=0 && cubey<80){
+        document.getElementById("txt").innerHTML = "You are on a bed";
+      }else if (cubex == 100 && cubey == 280){
+        document.getElementById("txt").innerHTML = "You are at a door (Press Enter to Open)";
+        if (e.keyCode == '13'){
+          document.getElementById("location").innerHTML = "Current place: Living Room";
+          cubex = 100;
+          cubey = 0;
+          cube.style.left = cubex;
+          cube.style.top = cubey;
+          table.style.backgroundColor = "white";
+          bed.style.backgroundColor = "white";
+          wall.style.backgroundColor = "white";
+          wall2.style.backgroundColor = "white";
+
+          switch1 = 1;
+        }
+      }else{
+        document.getElementById("txt").innerHTML = "          ";
+      }
+    }else if (switch1 == 1){
+      document.getElementById("location").innerHTML = "Current place: Living Room";
+      if (cubex == 100 && cubey == 0){
+        document.getElementById("txt").innerHTML = "You are at a door (Press Enter to Open)";
+          if (e.keyCode == '13'){
+            document.getElementById("location").innerHTML = "Current place: Henry's Room";
+            cubex = 100;
+            cubey = 280;
+            cube.style.left = cubex;
+            cube.style.top = cubey;
+            table.style.backgroundColor = "brown";
+            bed.style.backgroundColor = "blue";
+            wall.style.backgroundColor = "black";
+            wall2.style.backgroundColor = "black";
+            switch1 = 0;
+          }
+      }else{
+        document.getElementById("txt").innerHTML = "         ";
+      }
+    }
+  }
+  document.onkeydown = move;
+
+</script>
+</html>
