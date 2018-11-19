@@ -31,6 +31,15 @@
     left: 110;
     top: 120;
   }
+  .oval {
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    background-color: transparent;
+    border-radius: 50px / 25px;
+    left: 180;
+    top: 190;
+  }
   .wall{
     width:100;
     height:100;
@@ -46,6 +55,22 @@
     background-color: black;
     left: 160;
     top: 0;
+  }
+  .wall3{
+    width:100;
+    height:200;
+    position: absolute;
+    background-color: transparent;
+    left: 0;
+    top:0;
+  }
+  .wall4{
+    width:240;
+    height:100;
+    position: absolute;
+    background-color: transparent;
+    left: 160;
+    top:0;
   }
     .contain2{
       width: 400;
@@ -78,6 +103,9 @@
     <div id = "table" class = "table"></div>
     <div id = "wall" class = "wall"></div>
     <div id = "wall2" class = "wall2"></div>
+    <div id = "wall3" class = "wall3"></div>
+    <div id = "wall4" class = "wall4"></div>
+    <div id = "table2" class = "oval"></div>
     <div id = "bed" class = "bed"><div id = "cube" class = "cube">
     </div>
 </div>
@@ -102,6 +130,9 @@
   var table = document.getElementById("table");
   var wall = document.getElementById("wall");
   var wall2 = document.getElementById("wall2");
+  var wall3 = document.getElementById("wall3");
+  var wall4 = document.getElementById("wall4");
+  var table2 = document.getElementById("table2");
   var cubex = 0;
   var cubey = 10;
   var tablex = 110;
@@ -130,6 +161,10 @@
         cube.style.left = cubex;
 
       }
+      else if (cubex < 100 && cubey>=0 && cubey <200 && switch1 == 1){
+        cubex += 10;
+        cube.style.left = cubex;
+      }
     }
     if (e.keyCode == '39' && cubex <380 && second>0 ){
       cubex +=10;
@@ -138,12 +173,23 @@
       if (cubex > 140 && switch1 == 0){
         cubex -= 10;
         cube.style.left = cubex;
+      }else if(cubex > 140 && cubey>=0 &&cubey<100 && switch1 == 1){
+        cubex -=10;
+        cube.style.left = cubex;
       }
     }
     if (e.keyCode == '38' && cubey >0 && second>0){
       cubey  -= 10;
       second -= 1;
       cube.style.top = cubey;
+      if (cubey <200 && cubex>=0 && cubex<=90 && switch1 == 1) {
+        cubey += 10;
+        cube.style.top = cubey;
+      }else if (cubey < 90 && cubex >=160 && cubex <= 400 && switch1 == 1){
+        cubey += 10;
+        cube.style.top = cubey;
+      }
+
 
     }
     if (e.keyCode == '40' && cubey <280 && second>0){
@@ -154,6 +200,7 @@
         cubey -=10;
         cube.style.top = cubey;
       }
+
 
     }
     document.getElementById("Msg").innerHTML = "x : "+ cubex + "   "+"y : "+ cubey;
@@ -172,9 +219,12 @@
           cube.style.left = cubex;
           cube.style.top = cubey;
           table.style.backgroundColor = "white";
-          bed.style.backgroundColor = "white";
+          bed.style.backgroundColor = "transparent";
           wall.style.backgroundColor = "white";
           wall2.style.backgroundColor = "white";
+          wall3.style.backgroundColor = "black";
+          wall4.style.backgroundColor = "black";
+          table2.style.backgroundColor = "green";
 
           switch1 = 1;
         }
@@ -195,6 +245,9 @@
             bed.style.backgroundColor = "blue";
             wall.style.backgroundColor = "black";
             wall2.style.backgroundColor = "black";
+            wall3.style.backgroundColor = "transparent";
+            wall4.style.backgroundColor = "transparent";
+            table2.style.backgroundColor = "transparent";
             switch1 = 0;
           }
       }else{
