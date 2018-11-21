@@ -156,6 +156,7 @@
   var tablex = 110;
   var tabley = 120;
   var switch1 = 0;
+  var stopswitch = 0;
   function insec(){
     if (second < 10){
     second += 1;
@@ -169,7 +170,7 @@
 
 
   function move(e){
-    if (e.keyCode == '37' && cubex > 0 && second>0 ){
+    if (e.keyCode == '37' && cubex > 0 && second>0 && stopswitch==0){
 
       cubex -= 10;
       second -= 1;
@@ -184,7 +185,7 @@
         cube.style.left = cubex;
       }
     }
-    if (e.keyCode == '39' && cubex <380 && second>0 ){
+    if (e.keyCode == '39' && cubex <380 && second>0 && stopswitch==0){
       cubex +=10;
       second -= 1;
       cube.style.left = cubex;
@@ -199,7 +200,7 @@
         cube.style.left = cubex;
       }
     }
-    if (e.keyCode == '38' && cubey >0 && second>0){
+    if (e.keyCode == '38' && cubey >0 && second>0&& stopswitch==0){
       cubey  -= 10;
       second -= 1;
       cube.style.top = cubey;
@@ -213,7 +214,7 @@
 
 
     }
-    if (e.keyCode == '40' && cubey <280 && second>0){
+    if (e.keyCode == '40' && cubey <280 && second>0&& stopswitch==0){
       cubey += 10;
       second -= 1;
       cube.style.top = cubey;
@@ -278,6 +279,14 @@
 
             switch1 = 0;
           }
+      }else if (cubex == 0 && cubey == 200){
+        document.getElementById("txt").innerHTML = "You are at a door (Press Enter to Open)";
+          if(e.keyCode == '13'){
+            stopswitch = 1;
+            document.getElementById("txt").innerHTML = "You have completed the alpha version of the game, please wait on the next DLC xd"
+          }
+      }else if (cubex>180 && cubex<240 && cubey>140 && cubey<180){
+          document.getElementById("txt").innerHTML = "Why I don't have a Furniture?"
       }else{
         document.getElementById("txt").innerHTML = "         ";
       }
