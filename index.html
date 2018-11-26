@@ -38,9 +38,12 @@ body {
     color: #f1f1f1;
 }
 
+
 .main {
     margin-left: 200px; /* Same as the width of the sidenav */
 }
+
+
 
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
@@ -70,6 +73,15 @@ body {
   <div class = "main">
     <h1>Hello! My name is Henry.</h1>
     <p> Current Project: <a href = "/sim">Henry Simulation</a></p>
+    <br><br>
+    <div><p id = "date"></div>
   </div>
 </body>
+<script>
+  n = new Date();
+  y = n.getFullYear();
+  m = n.getMonth() + 1;
+  d = n.getDate();
+  document.getElementById("date").innerHTML = "Today date is:" + m + "/" + d + "/" + y;
+</script>
 </html>
