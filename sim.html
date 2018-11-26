@@ -282,11 +282,12 @@
       }else if (cubex == 0 && cubey == 200){
         document.getElementById("txt").innerHTML = "You are at a door (Press Enter to Open)";
           if(e.keyCode == '13'){
+            switch1 = 100;
             stopswitch = 1;
-            document.getElementById("txt").innerHTML = "You have completed the alpha version of the game, please wait on the next DLC xd"
+            document.getElementById("txt").innerHTML = "You have completed the alpha version of the game, please wait on the next DLC xd";
           }
       }else if (cubex>180 && cubex<240 && cubey>140 && cubey<180){
-          document.getElementById("txt").innerHTML = "Why I don't have a Furniture?"
+          document.getElementById("txt").innerHTML = "Why I don't have a Furniture?";
       }else{
         document.getElementById("txt").innerHTML = "         ";
       }
