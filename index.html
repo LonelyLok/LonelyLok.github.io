@@ -11,70 +11,38 @@
 body {
     font-family: "Lato", sans-serif;
 }
-
-.sidenav {
-    height: 100%;
-    width: 200px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: Black;
-    overflow-x: hidden;
-    padding-top: 100px;
+.box{
+  border: 1px solid black;
+  width: 350px;
+  height: 150px;
+  position: relative;
+  left: 500px;
+  top: -100px;
 }
 
-.sidenav a {
-    padding: 10px 6px 6px 40px;
-    text-decoration: none;
-    font-size: 15px;
-    color: White;
-    display: block;
-    border-style: solid;
-    border-color: White;
-}
-
-.sidenav a:hover {
-    color: #f1f1f1;
-}
-
-
-.main {
-    margin-left: 200px; /* Same as the width of the sidenav */
-}
-
-
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
 </style>
 </head>
 <body style="width: 1800px; margin: auto;">
 
-
-
-  <div class = "sidenav">
-        <a href="/about" >About Me</a><br />
-
-        <a href="/sc" >Schedule</a><br />
-
-        <a href="/tool" >Something I made when I was bored</a><br/>
-
-        <a href="/pick" >Test your knowledge about Henry</a><br>
-
-      <a href = "/resume" >Real Resume</a><br>
-
-      <a href ="/monsterhunter">Monster Hunter World Gameplay Video </a>
-
-    </div>
-
-  <div class = "main">
+  <div>
     <h1>Hello! My name is Henry.</h1>
+    <br><br>
     <p> Current Project: <a href = "/sim">Henry Simulation</a></p>
     <br><br>
     <div><p id = "date"></div>
+  <div class = "box">
+          <a href="/about" >About Me</a><br />
+
+          <a href="/sc" >Schedule</a><br />
+
+          <a href="/tool" >Something I made when I was bored</a><br/>
+
+          <a href="/pick" >Test your knowledge about Henry</a><br>
+
+        <a href = "/resume" >Real Resume</a><br>
+
+        <a href ="/monsterhunter">Monster Hunter World Gameplay Video </a>
+  </div>
   </div>
 </body>
 <script>
