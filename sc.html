@@ -1,63 +1,39 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
-    <title>Schedule</title>
-</head>
-<body onchange = "back()" style="width: 800px; margin: auto;">
-  <h2>Schedule</h2>
-  <div>
-  <select id = "selectA">
-    <option value="0">Select Time</option>
-    <option value="1">6:00 to 6:45</option>
-    <option value="2">6:45 to 7:30</option>
-    <option value="3">7:30 to 16:00</option>
-    <option value="4">16:00 to 17:00</option>
-    <option value="5">17:00 to 17:30</option>
-    <option value="6">17:30 to 20:30</option>
-    <option value="7">20:30 to 22:00</option>
-    <option value="8">22:00 to next day</option>
-  </select>
-  <select id = "selectB">
-    <option value="0">Select Day</option>
-    <option value="1">Weekday</option>
-    <option value="2">Weekend</option>
-
-  </select>
-</div>
-
-<p id = "demo"></p>
-<a href ="https://lonelylok.github.io/">Back</a>
-
-  <script>
-  function back(){
-    var e = document.getElementById("selectA");
-    var d = document.getElementById("selectB");
-    var s = e.options[e.selectedIndex].value;
-    var t = d.options[d.selectedIndex].value;
-    if (s == 1 && t == 1) {
-      var word = "Wake up, eat, change clothes";
-    }else if (s == 2 && t == 1){
-      var word = "Driving to work";
-    }else if (s == 3 && t == 1){
-      var word = "Day Dreaming at Work for 8.5 hours";
-    }else if (s == 4 && t == 1){
-      var word = "Driving back to home, stuck in traffic";
-    }else if (s == 5 && t == 1){
-      var word = "eat";
-    }else if (s == 6 && t == 1){
-      var word = "Study for actuarial exam. Do practice problems as many as I can";
-    }else if (s == 7 && t == 1){
-      var word = "Shower. Then, study little bit more or play some monster hunter world";
-    }else if (s == 8 && t == 1){
-      var word = "Go to bed";
-    }else if (s>0 && s<9 && t==2){
-      var word = "Play Video Games and be a potato";
-    }else{
-      var word = "";
-    }
-    document.getElementById("demo").innerHTML = word;
-  }
-  </script>
-
+<script type="text/javascript">
+window.onload = function () {
+	var chart = new CanvasJS.Chart("chartContainer",
+	{
+		theme: "light2",
+		title:{
+			text: "What I do on my normal day"
+		},
+		data: [
+		{
+			type: "pie",
+			showInLegend: true,
+			toolTipContent: "{y} - #percent %",
+			yValueFormatString: "##.## Hours",
+			legendText: "{indexLabel}",
+			dataPoints: [
+				{  y: 8, indexLabel: "Sleep" },
+				{  y: 1, indexLabel: "Eat" },
+				{  y: 0.25, indexLabel: "Shower" },
+				{  y: 9.75, indexLabel: "Game"},
+				{  y: 1, indexLabel: "Code" },
+				{  y: 2, indexLabel: "Job Search"},
+				{  y: 2, indexLabel: "Do Math"}
+			]
+		}
+		]
+	});
+	chart.render();
+}
+</script>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script></head>
+<body>
+<div id="chartContainer" style="height: 300px; width: 50%;"></div>
+<p style = "width: 1000px; margin: auto;"><a href ="https://lonelylok.github.io/">Back</a></p>
 </body>
-</html>
+ </html>
