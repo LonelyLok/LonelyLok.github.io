@@ -1,42 +1,49 @@
-<!DOCTYPE>
-<html>
-  <title>monsterhunterpicture</title>
-  <style>
-    .txt{
-      top: 100;
-      left: 620;
-      position: Absolute;
-    }
+<!DOCTYPE HTML>
+<head></head>
+<title>mhw</title>
+<style>
+  .box{
+    border: 1px solid black;
+    width: 720px;
+    height: 480px;
+    position: relative;
+    left: 0px;
+    top: 100px;
+  }
+  .box2{
+    border: 1px solid white;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    left: 0px;
+    top: 150px;
+  }
   </style>
-  <body style="width: 1800px; margin: auto;">
-    <h1>Some random Gameplay from Monster hunter world (Recommend watch in 2x Speed)</h1>
-    <br>
-    <!--<p><img src="https://lonelylok.github.io/pic/gs.png" width = "100%" height = "100%"></p>-->
-    <h4>Nergigante (A very bad run)<div class = "txt">A Better Nergigante Run</div></h4>
-
-    <p>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/GbwUo8eweoE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/VJ8Wyrc9o6o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </p>
-    <br>
-
-    <h4>Teostra (Not a good run)</h4>
-    <p><iframe width="560" height="315" src="https://www.youtube.com/embed/xmKhCcf7wYs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
-
-    </p>
-    <br>
-    <h4>Vaal Hazak </h4>
-    <p><iframe width="560" height="315" src="https://www.youtube.com/embed/nFo9q_WnKBg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </p>
-    <br>
-    <h4>Kushala Daora</h4>
-    <p><iframe width="560" height="315" src="https://www.youtube.com/embed/p98Tlr1acwk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </p>
-    <br>
-    <h4>Arch Tempered Kirin (20 minutes)
-    <p><iframe width="560" height="315" src="https://www.youtube.com/embed/5_ETbXpgkxA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
-    <br>
-    <p><a href="https://lonelylok.github.io/">back</a></p>
-    </body>
-</html>
+  <script>
+    function fun1(){
+      document.getElementById("hello").innerHTML = '<iframe width="720" height="480" src="https://www.youtube.com/embed/VJ8Wyrc9o6o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+    }
+    function fun2(){
+      document.getElementById("hello").innerHTML = '<iframe width="720" height="480" src="https://www.youtube.com/embed/xmKhCcf7wYs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+    }
+    function fun3(){
+      document.getElementById("hello").innerHTML = '<iframe width="720" height="480" src="https://www.youtube.com/embed/p98Tlr1acwk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+    }
+    function fun4(){
+      document.getElementById("hello").innerHTML = '<iframe width="720" height="480" src="https://www.youtube.com/embed/nFo9q_WnKBg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+    }
+    </script>
+<body style="width: 1000px; margin: auto;">
+  <h1>Monster Hunter World Gameplay</h1>
+  <p>Click the monster to see the video</p>
+  <input type = "image" onclick = "fun1()" src="https://pm1.narvii.com/6743/4518f0a8e08afc17159132fa3a911968f2e3aa02v2_hq.jpg" height="42" width="42"></input>
+  <input type = "image" onclick = "fun2()" src="https://pm1.narvii.com/6743/0fc0367367c71db02daf4ef17f12f305044f48b2v2_hq.jpg"  height="42" width="42"></input>
+  <input type = "image" onclick = "fun3()" src="https://pm1.narvii.com/6743/fcef4efc249a8d15f8089fd269366f4378695d18v2_hq.jpg"  height="42" width="42"></input>
+  <input type = "image" onclick = "fun4()" src="https://vignette.wikia.nocookie.net/mhw-hunters-notes/images/f/fb/MHW-Vaal_Hazak_Icon.png/revision/latest?cb=20180410040550"  height="42" width="42"></input>
+  <div class = 'box'>
+    <p id = 'hello'></p>
+    </div>
+    <div class ='box2'>
+    <p><a href="https://lonelylok.github.io/">Back</a></p>
+    </div>
+  </body>
