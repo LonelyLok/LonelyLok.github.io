@@ -18,20 +18,18 @@
 		<p id="demo3"></p>
 		<p>4. Which of the following programming language Henry interact the most?</p>
 		<p id="demo4"></p>
-		<p>5. When Henry go to a restaurant that he never been to before, what will Henry order?</p>
+		<p>5. Which medication Henry take everyday?</p>
 		<p id = "demo5"></p>
-		<p>6. Rank the following from easiest to hardest for Henry to complete?</p>
-			I. decode human conversation<br>
-			II. Undergraduate Math Exam<br>
-			III. Organize event and decide a time that fit everyone<br>
-			IV. Go Outside<br>
+		<p>6. Which of the following video game type Henry like the most?</p>
 		<p id = "demo6"></p>
-		<p>7. Which of the following Henry thinks he is good at?</p>
+		<p>7. How many people attend Henry graduation?</p>
 		<p id = "demo7"></p>
-		<p>8. Which of the following is how Henry decide his real life decision most of the time?</p>
+		<p>8. How many times Henry shower per week?</p>
 		<p id ="demo8"></p>
-		<p>9. Which of the following is Henry's current waifu?</p>
+		<p>9. What is Henry salary (USD) when he was a monkey coder?</p>
 		<p id = "demo9"></p>
+		<p>10. Which cloth brand Henry wear the most?</p>
+		<p id = "demo10"></p>
 
 		<p><button onclick = "calculate()">Submit</button></p>
 
@@ -49,22 +47,29 @@
 			var test2 = {"nightcore":0, "edm":0, "piano music":1, "k-pop":0, "chinese-pop":0 };
 			var test3 = {"cigarette":0, "alcohol":0, "weed":0,"all of the above":1, "none":0};
 			var test4 = {"java":0, "javascript":1, "typescript":0, "python":0, "C++":0};
-			var test5 = {"Things he never try before":0, "Things he tried before in a different place":0, "Ask the waiter/waitress what is good":0, "Things he can pronoun":1, "Water":0};
-			var test6 = {"I, II, III, IV":0, "III, I, IV, II":0, "II, IV, III, I":1, "II, III, IV, I":0, "IV, I, III, II":0}
-			var test7 = {"Math":0, "Trolling":0, "Lying":1, "Drinking":0, "Working":0};
-			var test8 = {"YOLO":0, "Pick the most logical":1, "Pick the most attractive":0, "Pick the most irrational":1, "Ask Google":0};
-			var test9 = {"Tifa from FF VII":1, "Yuuki Asuna from SAO":0, "Saber from Fate/stay night":0, "Akali from League of Legend":0, "Kiyoko Shimizu from Hailyuuu":0}
-			var list = [test1,test2,test3,test4,test5,test6,test7,test8,test9];
+			var test5 = {"Carbamazepine":1, "Doxepin":0, "Clomipramine":0, "Bupropion":0, "Amoxapine":0};
+			var test6 = {"MMORPG":0, "FPS":0, "RTS":0, "Roguelike":0, "Soullike":1}
+			var test7 = {};
+			var test8 = {};
+			var test9 = {};
+			var test10 = {};
+			var list = [test1,test2,test3,test4,test5,test6,test7,test8,test9,test10];
 			for (var j = 0; j < list.length; j++){
 				var data = Object.keys(list[j]);
 				var output = "";
 				var datalist;
-				for (var i = 0 ; i < data.length; i++){
-						var z = (j+1);
-						datalist = data[i];
-						result = list[j][datalist];
-						output += '<input type = "radio" value = '+ result +' name = "topic'+z+'">'+datalist+'<br>';
+				if(j<6){
+					for (var i = 0 ; i < data.length; i++){
+							var z = (j+1);
+							datalist = data[i];
+							result = list[j][datalist];
+							output += '<input type = "radio" value = '+ result +' name = "topic'+z+'">'+datalist+'<br>';
+				}
+			}else{
+				var z = j + 1;
+				output += '<input type="text" id="topic'+z+'" name="topic'+z+'"><br>';
 			}
+
 			var a = (j+1);
 			document.getElementById("demo"+a).innerHTML = output;
 
@@ -74,19 +79,26 @@
 		}
 		function calculate(){
 
-			var qname = ["topic1","topic2","topic3","topic4","topic5","topic6","topic7","topic8","topic9"];
+			var qname = ["topic1","topic2","topic3","topic4","topic5","topic6","topic7","topic8","topic9","topic10"];
 			var a;
 			var b = 0;
 			for (var j = 0; j < qname.length; j++){
+				if(j<6){
 					a = qname[j];
 					var point = document.querySelector('input[name='+a+']:checked').value;
 					var pointt = parseInt(point,10);
 					b += pointt;
-
-
+				}else{
+					a = qname[j];
+					var map = {"topic7": 0, "topic8":7, "topic9":70000, "topic10": "H&M"}
+					var ans = document.getElementById(a).value
+					if(String(map[a])===String(ans)){
+						b += 1;
+					}
+				}
 		}
 
-			 percent = b*100/9;
+			 percent = b*100/10;
 
 			var elem = document.getElementById("bar");
 			var width = 0;
