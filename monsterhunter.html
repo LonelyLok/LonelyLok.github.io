@@ -1,66 +1,103 @@
 <!DOCTYPE HTML>
-<head></head>
+<html>
+<script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
 <title>mhw</title>
-<style>
-  .box{
-    border: 1px solid black;
-    width: 720px;
-    height: 480px;
-    position: relative;
-    left: 0px;
-    top: 100px;
-  }
-  .box2{
-    border: 1px solid white;
-    width: 100px;
-    height: 100px;
-    position: relative;
-    left: 0px;
-    top: 150px;
-  }
-  </style>
-  <script>
-    function fun1(){
-      document.getElementById("hello").innerHTML = '<iframe width="720" height="480" src="https://www.youtube.com/embed/VJ8Wyrc9o6o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-    }
-    function fun2(){
-      document.getElementById("hello").innerHTML = '<iframe width="720" height="480" src="https://www.youtube.com/embed/xmKhCcf7wYs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-    }
-    function fun3(){
-      document.getElementById("hello").innerHTML = '<iframe width="720" height="480" src="https://www.youtube.com/embed/p98Tlr1acwk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-    }
-    function fun4(){
-      document.getElementById("hello").innerHTML = '<iframe width="720" height="480" src="https://www.youtube.com/embed/nFo9q_WnKBg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-    }
-    function videoMap(word){
-      if(word === 'stygian_zinogre'){
-        document.getElementById("hello").innerHTML = '<iframe width="720" height="480" src="https://www.youtube.com/embed/hgW3YyXm-go" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-      }else if(word === 'ruiner_nergigante'){
-        document.getElementById("hello").innerHTML = '<iframe width="720" height="480" src="https://www.youtube.com/embed/3MzQ_hZUBas" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-      }else if(word === 'namielle'){
-        document.getElementById("hello").innerHTML = '<iframe width="720" height="480" src="https://www.youtube.com/embed/_yM-rsh0m24" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-      }else if(word === 'velkhana'){
-        document.getElementById("hello").innerHTML = '<iframe width="720" height="480" src="https://www.youtube.com/embed/nNI0kEU1PpA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-      }
-    }
-    </script>
 <body style="width: 1000px; margin: auto;">
-  <h1>Monster Hunter World Gameplay</h1>
-  <p>Click the monster to see the video</p>
-  <h3>High/Low Rank</h3>
-  <input type = "image" onclick = "fun1()" src="https://pm1.narvii.com/6743/4518f0a8e08afc17159132fa3a911968f2e3aa02v2_hq.jpg" height="42" width="42"></input>
-  <input type = "image" onclick = "fun2()" src="https://pm1.narvii.com/6743/0fc0367367c71db02daf4ef17f12f305044f48b2v2_hq.jpg"  height="42" width="42"></input>
-  <input type = "image" onclick = "fun3()" src="https://pm1.narvii.com/6743/fcef4efc249a8d15f8089fd269366f4378695d18v2_hq.jpg"  height="42" width="42"></input>
-  <input type = "image" onclick = "fun4()" src="https://vignette.wikia.nocookie.net/mhw-hunters-notes/images/f/fb/MHW-Vaal_Hazak_Icon.png/revision/latest?cb=20180410040550"  height="42" width="42"></input>
-  <h3>Master Rank</h3>
-  <input type = "image" onclick = "videoMap('stygian_zinogre')" src="https://vignette.wikia.nocookie.net/monsterhunter/images/f/f3/MHWI-Stygian_Zinogre_Icon.png/revision/latest?cb=20191209205320"  height="42" width="42"></input>
-  <input type = "image" onclick = "videoMap('ruiner_nergigante')" src="https://vignette.wikia.nocookie.net/monsterhunter/images/3/35/MHWI-Ruiner_Nergigante_Icon.png/revision/latest?cb=20190730193505"  height="42" width="42"></input>
-  <input type = "image" onclick = "videoMap('namielle')" src="https://vignette.wikia.nocookie.net/monsterhunter/images/2/2f/MHWI-Namielle_Icon.png/revision/latest?cb=20190903192511"  height="42" width="42"></input>
-  <input type = "image" onclick = "videoMap('velkhana')" src="https://vignette.wikia.nocookie.net/monsterhunter/images/8/85/MHWI-Velkhana_Icon.png/revision/latest?cb=20190802234311"  height="42" width="42"></input>
-  <div class = 'box'>
-    <p id = 'hello'></p>
-    </div>
-    <div class ='box2'>
-    <p><a href="https://lonelylok.github.io/">Back</a></p>
-    </div>
-  </body>
+  <style>
+    .box{
+      border: 1px solid black;
+      width: 720px;
+      height: 480px;
+      position: relative;
+      left: 0px;
+      top: 100px;
+    }
+    .box2{
+      border: 1px solid white;
+      width: 100px;
+      height: 100px;
+      position: relative;
+      left: 0px;
+      top: 150px;
+    }
+    </style>
+    <div id="mydiv"></div>
+
+    <div id="hello"></div>
+    <script type="text/babel">
+  
+  function fun1(){
+        document.getElementById("hello").innerHTML = '<iframe width="720" height="480" src="https://www.youtube.com/embed/VJ8Wyrc9o6o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+      }
+      function fun2(){
+        document.getElementById("hello").innerHTML = '<iframe width="720" height="480" src="https://www.youtube.com/embed/xmKhCcf7wYs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+      }
+      function fun3(){
+        document.getElementById("hello").innerHTML = '<iframe width="720" height="480" src="https://www.youtube.com/embed/p98Tlr1acwk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+      }
+      function fun4(){
+        document.getElementById("hello").innerHTML = '<iframe width="720" height="480" src="https://www.youtube.com/embed/nFo9q_WnKBg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+      }
+  
+    const monsterToVideoLinkMap = {
+      'stygian_zinogre': 'https://www.youtube.com/embed/hgW3YyXm-go',
+      'ruiner_nergigante': 'https://www.youtube.com/embed/3MzQ_hZUBas',
+      'namielle': 'https://www.youtube.com/embed/_yM-rsh0m24',
+      'velkhana': 'https://www.youtube.com/embed/nNI0kEU1PpA',
+    };
+  
+    const monsterToIconLinkMap = {
+      'stygian_zinogre': 'https://vignette.wikia.nocookie.net/monsterhunter/images/f/f3/MHWI-Stygian_Zinogre_Icon.png/revision/latest?cb=20191209205320',
+      'ruiner_nergigante': 'https://vignette.wikia.nocookie.net/monsterhunter/images/3/35/MHWI-Ruiner_Nergigante_Icon.png/revision/latest?cb=20190730193505',
+      'namielle': 'https://vignette.wikia.nocookie.net/monsterhunter/images/2/2f/MHWI-Namielle_Icon.png/revision/latest?cb=20190903192511',
+      'velkhana': 'https://vignette.wikia.nocookie.net/monsterhunter/images/8/85/MHWI-Velkhana_Icon.png/revision/latest?cb=20190802234311',
+    }
+  
+    const inputTypes = Object.keys(monsterToVideoLinkMap).map(name=>(
+        <input type = "image" onclick = "" src={monsterToIconLinkMap[name]}  height="42" width="42"></input>
+      ));
+  
+    class Body extends React.Component {
+      constructor(props) {
+    super(props);
+    this.state = {monster: null};
+
+    // This binding is necessary to make `this` work in the callback
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e) {
+    const id = e.target && e.target.id
+    this.setState(state => ({
+      monster: id
+    }));
+  }
+      render(){
+        return (
+          <div>
+    <h1>Monster Hunter World Gameplay</h1>
+    <p>Click the monster to see the video</p>
+    <h3>High/Low Rank</h3>
+    <input type = "image" onclick = "fun1()" src="https://pm1.narvii.com/6743/4518f0a8e08afc17159132fa3a911968f2e3aa02v2_hq.jpg" height="42" width="42"></input>
+    <input type = "image" onclick = "fun2()" src="https://pm1.narvii.com/6743/0fc0367367c71db02daf4ef17f12f305044f48b2v2_hq.jpg"  height="42" width="42"></input>
+    <input type = "image" onclick = "fun3()" src="https://pm1.narvii.com/6743/fcef4efc249a8d15f8089fd269366f4378695d18v2_hq.jpg"  height="42" width="42"></input>
+    <input type = "image" onclick = "fun4()" src="https://vignette.wikia.nocookie.net/mhw-hunters-notes/images/f/fb/MHW-Vaal_Hazak_Icon.png/revision/latest?cb=20180410040550"  height="42" width="42"></input>
+    <h3>Master Rank</h3>
+    {Object.keys(monsterToVideoLinkMap).map(name=>(
+        <input type = "image" id={name} onClick={this.handleClick} src={monsterToIconLinkMap[name]}  height="42" width="42"></input>
+      ))}
+    <div class = 'box'>
+      <iframe width="720" height="480" src={monsterToVideoLinkMap[this.state.monster]} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class ='box2'>
+      <p><a href="https://lonelylok.github.io/">Back</a></p>
+      </div>
+      </div>
+        )
+      }
+    } 
+    ReactDOM.render(<Body />, document.getElementById('mydiv'))
+    </script></body>
+</html>
