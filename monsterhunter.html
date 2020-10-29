@@ -2,7 +2,9 @@
 <html>
 <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
 <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/react-tabs@3/dist/react-tabs.production.min.js"></script>
 <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+<link href="https://unpkg.com/react-tabs@3/style/react-tabs.css" rel="stylesheet">
 <title>mhw</title>
 <body style="width: 1000px; margin: auto;">
   <style>
@@ -27,19 +29,25 @@
 
     <div id="hello"></div>
     <script type="text/babel">
+
+    const { Tabs, TabList, Tab, TabPanel } = ReactTabs;
   
     const lowOrHighRankMonsterToVideoLinkMap = {
-      'nergigante': 'https://www.youtube.com/embed/VJ8Wyrc9o6o',
+      LS: {
+        'nergigante': 'https://www.youtube.com/embed/VJ8Wyrc9o6o',
       'teostra': 'https://www.youtube.com/embed/xmKhCcf7wYs',
       'kushala_daora': 'https://www.youtube.com/embed/p98Tlr1acwk',
       'vaal_hazak': 'https://www.youtube.com/embed/nFo9q_WnKBg',
+      }
     };
   
     const masterRankMonsterToVideoLinkMap = {
-      'stygian_zinogre': 'https://www.youtube.com/embed/hgW3YyXm-go',
+      LS: {
+        'stygian_zinogre': 'https://www.youtube.com/embed/hgW3YyXm-go',
       'ruiner_nergigante': 'https://www.youtube.com/embed/3MzQ_hZUBas',
       'namielle': 'https://www.youtube.com/embed/_yM-rsh0m24',
       'velkhana': 'https://www.youtube.com/embed/nNI0kEU1PpA',
+      }
     };
   
     const monsterToIconLinkMap = {
@@ -53,14 +61,38 @@
       'velkhana': 'https://vignette.wikia.nocookie.net/monsterhunter/images/8/85/MHWI-Velkhana_Icon.png/revision/latest?cb=20190802234311',
     }
 
-    const getOptions = (e, rank) => (Object.keys(rank === 'MR' ? masterRankMonsterToVideoLinkMap : lowOrHighRankMonsterToVideoLinkMap).map(name=>(
-        <input type = "image" id={name} onClick={e} src={monsterToIconLinkMap[name]}  height="42" width="42"></input>
+    const getOptions = (e, rank, w) => (Object.keys((rank === 'MR' ? masterRankMonsterToVideoLinkMap[w] : lowOrHighRankMonsterToVideoLinkMap[w])|| {}).map(name=>(
+        <input type = "image" id={JSON.stringify({name, w})} onClick={e} src={monsterToIconLinkMap[name]}  height="42" width="42"></input>
       )))
+
+    const weaponList = ['Long Sword','Great Sword'].map(weapon=>(<Tab>{weapon}</Tab>));
+
+    const monsterList = (hhr, hmr) => (['LS','GS'].map(w=>(
+      <TabPanel>
+              <p>Click the monster to see the video</p>
+              <h3>High/Low Rank</h3>
+              {getOptions(hhr, 'HR',w)}
+              <h3>Master Rank</h3>
+              {getOptions(hmr, 'MR',w)}
+            </TabPanel>
+    )))
+    
+
+    const tabbb = (handlehr, handlemr) => {
+      return (
+        <Tabs>
+            <TabList>
+            {weaponList}
+            </TabList>
+            {monsterList(handlehr,handlemr)}
+          </Tabs>
+      )
+    }
   
     class Body extends React.Component {
       constructor(props) {
     super(props);
-    this.state = {monster: null, rank: null};
+    this.state = {monster: null, rank: null, weapon: null};
 
     // This binding is necessary to make `this` work in the callback
     this.handleClickHR = this.handleClickHR.bind(this);
@@ -68,31 +100,31 @@
   }
 
   handleClickHR(e) {
-    const id = e.target && e.target.id
+    const id = e.target && e.target.id;
+    const {name, w} = JSON.parse(id);
     this.setState(state => ({
-      monster: id,
+      monster: name,
       rank: 'HR',
+      weapon: w,
     }));
   }
 
   handleClickMR(e) {
-    const id = e.target && e.target.id
+    const id = e.target && e.target.id;
+    const {name, w} = JSON.parse(id);
     this.setState(state => ({
-      monster: id,
+      monster: name,
       rank: 'MR',
+      weapon: w,
     }));
   }
       render(){
         return (
           <div>
     <h1>Monster Hunter World Gameplay</h1>
-    <p>Click the monster to see the video</p>
-    <h3>High/Low Rank</h3>
-    {getOptions(this.handleClickHR, 'HR')}
-    <h3>Master Rank</h3>
-    {getOptions(this.handleClickMR, 'MR')}
+    {tabbb(this.handleClickHR, this.handleClickMR)}
     <div class = 'box'>
-      <iframe width="720" height="480" src={(this.state.rank === 'MR' ? masterRankMonsterToVideoLinkMap : lowOrHighRankMonsterToVideoLinkMap)[this.state.monster]} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe width="720" height="480" src={((this.state.rank === 'MR' ? masterRankMonsterToVideoLinkMap[this.state.weapon] : lowOrHighRankMonsterToVideoLinkMap[this.state.weapon])||{})[this.state.monster]} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <div class ='box2'>
       <p><a href="https://lonelylok.github.io/">Back</a></p>
