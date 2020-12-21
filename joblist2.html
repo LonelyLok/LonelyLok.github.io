@@ -68,6 +68,8 @@ class Header extends React.Component {
     {tableTitles}
     {listOfJobs}
     </table>
+    <p># of job applied: {jobs.length}</p>
+    <p># of job did not response: {jobs.filter(({RespondDate})=>RespondDate === null).length}</p>
     <p><a href="https://lonelylok.github.io/">Back</a></p>
     </div>)
   }
