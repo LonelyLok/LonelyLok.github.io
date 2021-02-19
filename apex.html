@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/react-tabs@3/dist/react-tabs.production.min.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+<link href="https://unpkg.com/react-tabs@3/style/react-tabs.css" rel="stylesheet">
+<head>
+    <title>apex</title>
+</head>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body style="width: 1500px; margin: auto;">
+
+    <div id="mydiv"></div>
+
+    <script type="text/babel">
+    const dd = ['2020-02-18'].map((d,i)=>(<li><a href={`https://lonelylok.github.io/apex_${i}`}>{d}</a></li>))
+    const list = (<ul>{dd}</ul>)
+    class Body extends React.Component {
+  render() {
+    return (<div>
+    <h1>My apex game record</h1>
+    {list}
+    <p><a href="https://lonelylok.github.io/">Back</a></p>
+    </div>)
+  }
+}
+ReactDOM.render(<Body />, document.getElementById('mydiv'))
+</script>
+</body>
+</html>
