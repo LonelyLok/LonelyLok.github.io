@@ -3,8 +3,33 @@
 <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
 <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
 <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <body>
     <style>
+        .material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 12px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
         table, th, td {
           border: 1px solid black;
           border-collapse: collapse;
@@ -65,15 +90,16 @@ const jobs = [
         {Company:'Adobe', Position: 'Software Engineer I',ApplyDate:'23-Feb-2021',RespondDate: null ,PhoneInterviewDate: null, RejectDate: null },
         {Company:'Zapier', Position: 'App Integrations Engineer',ApplyDate:'24-Feb-2021',RespondDate: null ,PhoneInterviewDate: null, RejectDate: null },
     ];
-    const tableTitles = (<tr>
+
+    const tableTitles= (e,s) => (<tr>
     <td>Company</td>
     <td>Position</td>
-    <td>ApplyDate</td>
+    <td>ApplyDate <input type='button' onClick={e} value={s.sort === 'DESC' ? 'ASC': 'DESC'}></input></td>
     <td>RespondDate</td>
     <td>PhoneInterviewDate</td>
     <td>RejectDate</td>
     </tr>)
-    const listOfJobs = jobs.map(({Company, Position, ApplyDate,RespondDate,RejectDate,PhoneInterviewDate}) => (
+    const listOfJobs = (j) => j.map(({Company, Position, ApplyDate,RespondDate,RejectDate,PhoneInterviewDate}) => (
         <tr>
     <td>{Company}</td>
     <td>{Position}</td>
@@ -84,15 +110,33 @@ const jobs = [
     </tr>)
     );
 class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {jobs, sort: 'ASC'};
+
+    this.handleSort = this.handleSort.bind(this);
+
+    // This binding is necessary to make `this` work in the callback
+  }
+
+  handleSort(e){
+    const value = e.target && e.target.value;
+    this.setState(state => ({
+      sort: value,
+      jobs: jobs.sort((a,b)=>(value === 'DESC' ? new Date(b.ApplyDate).getTime() - new Date(a.ApplyDate).getTime() : new Date(a.ApplyDate).getTime() - new Date(b.ApplyDate).getTime() ))
+    }))
+  }
+
   render() {
     return (<div>
     <h1>Jobs that I applied in 2020</h1>
-    <table>
-    {tableTitles}
-    {listOfJobs}
-    </table>
     <p># of job applied: {jobs.length}</p>
     <p># of job did not response: {jobs.filter(({RespondDate})=>RespondDate === null).length}</p>
+    <p># of phone interview: {jobs.filter(({PhoneInterviewDate})=>PhoneInterviewDate !== null).length}</p>
+    <table>
+    {tableTitles(this.handleSort, this.state)}
+    {listOfJobs(this.state.jobs)}
+    </table>
     <p><a href="https://lonelylok.github.io/">Back</a></p>
     </div>)
   }
