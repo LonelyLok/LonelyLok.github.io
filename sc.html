@@ -1,39 +1,52 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
+<script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/react-tabs@3/dist/react-tabs.production.min.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+ <script src="https://unpkg.com/@material-ui/core@latest/umd/material-ui.production.min.js"></script>
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"/>
+ <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
 <head>
-<script type="text/javascript">
-window.onload = function () {
-	var chart = new CanvasJS.Chart("chartContainer",
-	{
-		theme: "light2",
-		title:{
-			text: "What I do on my normal day"
-		},
-		data: [
-		{
-			type: "pie",
-			showInLegend: true,
-			toolTipContent: "{y} - #percent %",
-			yValueFormatString: "##.## Hours",
-			legendText: "{indexLabel}",
-			dataPoints: [
-				{  y: 8, indexLabel: "Sleep" },
-				{  y: 1, indexLabel: "Eat" },
-				{  y: 0.25, indexLabel: "Shower" },
-				{  y: 9.75, indexLabel: "Daydreaming aka wasting time"},
-				{  y: 1, indexLabel: "Code" },
-				{  y: 2, indexLabel: "Job Search"},
-				{  y: 2, indexLabel: "Do Math"}
-			]
-		}
-		]
-	});
-	chart.render();
+</head>
+<style>
+</style>
+<body style="width: 1500px; margin: auto;">
+	<div id="mydiv"></div>
+    <script type="text/babel">
+
+	const {List , ListItem, ListItemText, Divider} = window['MaterialUI'];
+
+	const things = [
+		{time: '07:30', action: 'wake up'},
+		{time: '07:31', action: 'start working'},
+		{time: '16:30', action: 'finish working'},
+		{time: '17:00', action: 'eat food'},
+		{time: '17:10', action: 'start playing video game'},
+		{time: '23:59', action: 'finish playing video game'},
+		{time: '00:00', action: 'sleep'},
+	].map(({time,action})=>{
+		return(
+		<ListItem button>
+    	<ListItemText primary={action} secondary={time} />
+  		</ListItem>
+		)
+
+	})
+
+    class Body extends React.Component {
+  render() {
+    return (<div>
+    <h1>What I do on normal day</h1>
+	<List>
+		{things}
+	</List>
+	<p><a href="https://lonelylok.github.io/">Back</a></p>
+    </div>)
+  }
 }
+ReactDOM.render(<Body />, document.getElementById('mydiv'))
 </script>
-<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script></head>
-<body>
-<div id="chartContainer" style="height: 300px; width: 50%;"></div>
-<p style = "width: 1000px; margin: auto;"><a href ="https://lonelylok.github.io/">Back</a></p>
 </body>
- </html>
+</html>
