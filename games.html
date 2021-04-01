@@ -6,7 +6,7 @@
 <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
 <link href="https://unpkg.com/react-tabs@3/style/react-tabs.css" rel="stylesheet">
 <head>
-    <title>apex</title>
+    <title>Games Related</title>
 </head>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <body style="width: 1500px; margin: auto;">
@@ -14,14 +14,19 @@
     <div id="mydiv"></div>
 
     <script type="text/babel">
-    const dd = ['2020-02-18'].map((d,i)=>(<li><a href={`https://lonelylok.github.io/apex_${i}`}>{d}</a></li>))
-    const list = (<ul>{dd}</ul>)
+
+    const menuMap = {
+        'Monster_Hunter_World_Gameplay': 'https://lonelylok.github.io/monsterhunter',
+        'Apex_Game_Data': 'https://lonelylok.github.io/apex',
+    };
+
+    const menu = Object.keys(menuMap).map(k=><li><a href={`${menuMap[k]}`}>{k}</a></li>)
     class Body extends React.Component {
   render() {
     return (<div>
-    <h1>My apex game record</h1>
-    {list}
-    <p><a href="https://lonelylok.github.io/games">Back</a></p>
+    <h1>Games Related</h1>
+    <ul>{menu}</ul>
+    <p><a href="https://lonelylok.github.io/">Back</a></p>
     </div>)
   }
 }
