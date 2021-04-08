@@ -9,43 +9,89 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
-body {
-    font-family: "Lato", sans-serif;
+
+  body {
+  --text-color: #222;
+  --bkg-color: #fff;
+}
+body.dark-theme {
+  --text-color: #eee;
+  --bkg-color: #121212;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    --text-color: #eee;
+    --bkg-color: #121212;
+  }
+  body.light-theme {
+    --text-color: #222;
+    --bkg-color: #fff;
+  }
 }
 .box{
-  border: 1px solid black;
+  border: 1px solid var(--text-color);
   width: 350px;
   height: 160px;
   position: relative;
   left: 500px;
   top: -100px;
 }
-
+.btn-toggle{
+  position: relative;
+  top: -38px;
+  left: 500px;
+}
+body {
+  background: var(--bkg-color);
+}
+h1,
+h3,
+h4,
+p {
+  color: var(--text-color);
+}
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 14px;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
 </style>
 </head>
 <body style="width: 1200px; margin: auto;">
-
   <div>
     <h1>Hello! My name is Henry.</h1>
+    <button class="btn-toggle">Toggle backgroud color</button>
     <br><br>
     <p> A small game of my life: <a href = "/sim">Henry Simulation</a></p>
     <br><br>
     <div><p id = "date"></div>
-  <div class = "box">
-        <a href="/about" >About Me</a><br />
-
-        <a href="/sc" >What I do on my normal day</a><br />
-
-        <a href="/pick" >Test your knowledge about Henry</a><br>
-
-        <a href = "/resume" >Real Resume</a><br>
-
-        <a href ="/games">Video Games Related</a><br>
-
-        <a href ="/joblist">Jobs that I have applied since Nov2018</a><br>
-
+      <div class="sidenav">
+        <a href="/about" >About Me</a>
+        <a href = "/resume" >Real Resume</a>
+        <a href ="/games">Video Games Related</a>
+        <a href="/sc" >What I do on my normal day</a>
+        <a href="/pick" >Test your knowledge about Henry</a>
+        <a href ="/joblist">Jobs that I have applied since Nov2018</a>
         <a href ="/joblist2">Jobs that I have applied since Oct2020</a>
-  </div>
+      </div>
   </div>
   <br><br>
   <h3>I am currently a monkey coder at a start up.</h3>
@@ -62,13 +108,16 @@ body {
       </li>
     </ul>
   </h3>
+  <h3>Navigation bar is on the right side</h3>
   <br><br>
-  <h4>Last update: 2021/03/31</h4>
+  <h4>Last update: 2021/04/07</h4>
   <br><br>
   <br><br>
   <br><br>
   <h4>Credit to the anime widget to: https://github.com/stevenjoezhang/live2d-widget </h4>
 </body>
+<script src="js/mode-switch.js">
+</script>
 <script src="js/current-time.js">
 </script>
 <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
