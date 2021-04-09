@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/react-tabs@3/dist/react-tabs.production.min.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+<link href="https://unpkg.com/react-tabs@3/style/react-tabs.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+<head>
+    <title>Quiz</title>
+</head>
+<style>
+    html, body {
+    min-height: 100%;
+    }
+    body, div, form, input, p { 
+    padding: 0;
+    margin: 0;
+    outline: none;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 16px;
+    color: #666;
+    line-height: 28px;
+    }
+    h1 {
+    font-weight: 400;
+    }
+    h4 {
+    margin: 25px 0 5px;
+    }
+    .testbox {
+      display: flex;
+      justify-content: left;
+      align-items: left;
+      height: inherit;
+      padding: 50px;
+      }
+    form {
+    width: 100%;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 2px 5px #ccc; 
+    }
+    input {
+    width: auto;
+    margin-right: 15px;
+    vertical-align: middle;
+    }
+  </style>
+<body>
+    <div  class="testbox">
+        <div id="mydiv"></div>
+    </div>
+    <p><a href="https://lonelylok.github.io/">Back</a></p>
+
+    <script type="text/babel">
+
+    const qAndA = [
+        {
+            id: 'Q0',
+            question: 'Where do Henry born?',
+            options: ['USA','UK','HK','JP','KR'],
+            answer: 'HK'
+        },
+        {   
+            id: 'Q1',
+            question: 'What subject Henry perform the best in school?',
+            options: ['Math','Computer Science','Biology','Physics','English'],
+            answer: 'Math'
+        },
+        {
+            id: 'Q2',
+            question: 'Which beverage Henry consume the most per day',
+            options: ['Water','Green Tea','Coke','Coffee','Milk'],
+            answer: 'Water'
+        },
+        {
+            id: 'Q3',
+            question: 'Which of the following food Henry like the most?',
+            options: ['Japanese Pork Katsu Curry','Bibimbap','Pad Thai','Macau-Style Portuguese Chicken Rice','Singaporean Fried Rice Noodles'],
+            answer: 'Macau-Style Portuguese Chicken Rice'
+        }
+    ]
+
+    const idToAnswerMap = qAndA.reduce((acc,curr)=>{
+        acc[curr.id] = curr.answer
+        return acc;
+    }, {})
+
+    const formm = (s,e) => qAndA.map((obj,index)=>(
+    <div>
+        <h4>{`Q${index + 1} ${obj.question}`}</h4>
+            {obj.options.map(w=>(
+        <div>
+            <label style={{color: s.showAnswer && (w === idToAnswerMap[`Q${index}`]) ? 'red': ''}}><input type="radio" value={w} name={`Q${index}`} onChange={e} checked={s[`Q${index}`] === w}/>{w}</label>
+            </div>
+    ))}
+        </div>    
+        
+    ))
+
+
+
+class Body extends React.Component {
+    constructor(props) {
+    super(props);
+    this.state = {
+        showAnswer: false,
+    };
+    this.onChangeValue = this.onChangeValue.bind(this);
+    this.calculateScore = this.calculateScore.bind(this);
+  }
+
+  onChangeValue(event) {
+    const value = event.target && event.target.value;
+    const name = event.target && event.target.name;
+    this.setState(state=>({
+        ...state,
+        [name]: value
+    }))
+  }
+
+  calculateScore(event){
+      let score = 0;
+      Object.keys(idToAnswerMap).map(k=>{
+          if(this.state[k] && (this.state[k] === idToAnswerMap[k])){
+            score += 1
+          }
+      })
+      this.setState(state=>({
+        ...state,
+       score,
+       showAnswer: true,
+    }))
+  }
+
+  render() {
+    return (<div>
+    <h1>Test your knowledge about Henry</h1>
+    <h4>{this.state.showAnswer && `You got ${this.state.score} correct`}</h4>
+    {formm(this.state, this.onChangeValue)}
+    <input type="button" value="Submit" onClick={this.calculateScore}/>
+    </div>)
+  }
+}
+ReactDOM.render(<Body />, document.getElementById('mydiv'))
+</script>
+</body>
+</html>
