@@ -5,32 +5,31 @@
   <script src="https://unpkg.com/react-tabs@3/dist/react-tabs.production.min.js"></script>
   <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
    <script src="https://unpkg.com/@material-ui/core@latest/umd/material-ui.production.min.js"></script>
-   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"/>
-   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 <title>mhw</title>
-<body style="width: 1200px; margin: auto;">
-  <style>
-    .MuiDrawer-paper{
-      width: 300px
-    }
+<style>
+  .MuiDrawer-paper{
+    width: 300px;
+  }
 
-    .box{
-      border: 1px solid black;
-      width: 1280px;
-      height: 720px;
-      position: relative;
-      left: 0px;
-      top: 0px;
-    }
-
-  </style>
-    <div id="mydiv"></div>
+  .box{
+    border: 1px solid black;
+    width: 1280px;
+    height: 720px;
+    position: relative;
+    left: 0px;
+    top: 0px;
+  }
+</style>
+    <body id="mybody"></body>
 
     <script type="text/babel">
-    const {Drawer, List, ListItemText, ListItem, ListItemIcon, Icon} = window['MaterialUI'];
+    const {Drawer, List, ListItemText, ListItem, ListItemIcon, Icon, makeStyles} = window['MaterialUI'];
 
     const monsterNameToVideoMap = {
+      'Ruiner Nergigante':'https://www.youtube.com/embed/OBNxqgdpxvk',
       'Teostra': 'https://www.youtube.com/embed/qi0ZTAlbyis',
+      'Lunastra': 'https://www.youtube.com/embed/HEXJdlOB5hI',
       'Alatreon (Ice start)': 'https://www.youtube.com/embed/oJs1ewOT7SQ'
     }
     
@@ -39,11 +38,11 @@
     super(props);
     this.state = {
       videoLink: null,
+      fontColor: '#fff',
+      backgroundColor: '#121212',
     };
 
     this.handlePickVideo = this.handlePickVideo.bind(this);
-
-    // This binding is necessary to make `this` work in the callback
   }
 
   handlePickVideo(e){
@@ -55,13 +54,24 @@
   }
 
   render() {
-    return (<div>
-      <Drawer acchor='left' open='true' variant='permanent'>
+    const c = document.querySelector('body');
+    c.style.backgroundColor = this.state.backgroundColor;
+    return (<div>                 
+      <div>
+        <Drawer acchor='left' open='true' variant='permanent'>
         <List>
           <ListItemText>Monster List</ListItemText>
+          <ListItem button='true' key='Ruiner Nergigante' value='Ruiner Nergigante' onClick={this.handlePickVideo}>
+            <ListItemIcon><img src='https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/mhwi-ruiner_nergigante_icon.png' height='42' width='42'></img></ListItemIcon>
+            <ListItemText>Ruiner Nergigante</ListItemText>
+            </ListItem>
           <ListItem button='true' key='Teostra' value='Teostra' onClick={this.handlePickVideo}>
             <ListItemIcon><img src='https://pm1.narvii.com/6743/0fc0367367c71db02daf4ef17f12f305044f48b2v2_hq.jpg' height='42' width='42'></img></ListItemIcon>
             <ListItemText>Teostra</ListItemText>
+            </ListItem>
+            <ListItem button='true' key='Lunastra' value='Lunastra' onClick={this.handlePickVideo}>
+            <ListItemIcon><img src='https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/mhw-lunastra_icon2.png' height='42' width='42'></img></ListItemIcon>
+            <ListItemText>Lunastra</ListItemText>
             </ListItem>
             <ListItem button='true' key='Alatreon (Ice start)' value='Alatreon (Ice start)' onClick={this.handlePickVideo}>
             <ListItemIcon><img src='https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/mhwi-alatreon_icon.png' height='42' width='42'></img></ListItemIcon>
@@ -69,16 +79,22 @@
             </ListItem>
           </List>
         </Drawer>
-        <h1>Monster Hunter World Gameplay</h1>
-        <h3>Click the nav bar on the left side and video should show in the box below</h3>
+        </div>
+        <div style={{
+          width: 1200,
+          margin: 'auto',
+        }}>
+          <h1 style={{ color: this.state.fontColor, 'font-family': 'Sans-serif' }}>Monster Hunter World Gameplay</h1>
+        <h3 style={{ color: this.state.fontColor, 'font-family': 'Sans-serif' }}>Click the nav bar on the left side and video should show in the box below</h3>
         <div class = 'box'>
           <iframe width="1280" height="720" src={this.state.videoLink} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
 	<p><a href="https://lonelylok.github.io/games">Back</a></p>
+          </div>
     </div>)
   }
 }
     
-    ReactDOM.render(<Body />, document.getElementById('mydiv'))
-    </script></body>
+    ReactDOM.render(<Body />, document.getElementById('mybody'))
+    </script>
 </html>
