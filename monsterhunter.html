@@ -26,11 +26,58 @@
     <script type="text/babel">
     const {Drawer, List, ListItemText, ListItem, ListItemIcon, Icon, makeStyles} = window['MaterialUI'];
 
-    const monsterNameToVideoMap = {
-      'Ruiner Nergigante':'https://www.youtube.com/embed/OBNxqgdpxvk',
-      'Teostra': 'https://www.youtube.com/embed/qi0ZTAlbyis',
-      'Lunastra': 'https://www.youtube.com/embed/HEXJdlOB5hI',
-      'Alatreon (Ice start)': 'https://www.youtube.com/embed/oJs1ewOT7SQ'
+    const db = [
+      {
+        name: 'Ruiner Nergigante',
+        videoURL: 'https://www.youtube.com/embed/OBNxqgdpxvk',
+        iconURL: 'https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/mhwi-ruiner_nergigante_icon.png',
+      },
+      {
+        name: 'Teostra',
+        videoURL: 'https://www.youtube.com/embed/qi0ZTAlbyis',
+        iconURL: 'https://pm1.narvii.com/6743/0fc0367367c71db02daf4ef17f12f305044f48b2v2_hq.jpg',
+      },
+      {
+        name: 'Lunastra',
+        videoURL: 'https://www.youtube.com/embed/HEXJdlOB5hI',
+        iconURL: 'https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/mhw-lunastra_icon2.png',
+      },
+      {
+        name: 'Kirin',
+        videoURL: 'https://www.youtube.com/embed/TMTJ1AbnAAI',
+        iconURL: 'https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/mhw-kirin_icon.png',
+      },
+      {
+        name: 'Alatreon (Ice start)',
+        videoURL: 'https://www.youtube.com/embed/oJs1ewOT7SQ',
+        iconURL: 'https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/mhwi-alatreon_icon.png',
+      },
+      {
+        name: 'Kushala',
+        videoURL: 'https://www.youtube.com/embed/lNbQX_Q0b00',
+        iconURL: 'https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/mhw-kushala_daora_icon.png',
+      }
+    ];
+
+    const monsterNameToVideoMap = db.reduce((acc,curr)=>{
+      acc[curr.name] = curr.videoURL;
+      return acc;
+    },{})
+
+    const customDrawer = (event) => {
+      return(
+        <Drawer acchor='left' open='true' variant='permanent'>
+        <List>
+          <ListItemText>Monster List</ListItemText>
+          {db.map(({name, iconURL})=>(
+          <ListItem button='true' key={name} value={name} onClick={event}>
+            <ListItemIcon><img src={iconURL} height='42' width='42'></img></ListItemIcon>
+            <ListItemText>{name}</ListItemText>
+            </ListItem>
+        ))}
+        </List>
+        </Drawer>
+      )
     }
     
     class Body extends React.Component {
@@ -58,27 +105,7 @@
     c.style.backgroundColor = this.state.backgroundColor;
     return (<div>                 
       <div>
-        <Drawer acchor='left' open='true' variant='permanent'>
-        <List>
-          <ListItemText>Monster List</ListItemText>
-          <ListItem button='true' key='Ruiner Nergigante' value='Ruiner Nergigante' onClick={this.handlePickVideo}>
-            <ListItemIcon><img src='https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/mhwi-ruiner_nergigante_icon.png' height='42' width='42'></img></ListItemIcon>
-            <ListItemText>Ruiner Nergigante</ListItemText>
-            </ListItem>
-          <ListItem button='true' key='Teostra' value='Teostra' onClick={this.handlePickVideo}>
-            <ListItemIcon><img src='https://pm1.narvii.com/6743/0fc0367367c71db02daf4ef17f12f305044f48b2v2_hq.jpg' height='42' width='42'></img></ListItemIcon>
-            <ListItemText>Teostra</ListItemText>
-            </ListItem>
-            <ListItem button='true' key='Lunastra' value='Lunastra' onClick={this.handlePickVideo}>
-            <ListItemIcon><img src='https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/mhw-lunastra_icon2.png' height='42' width='42'></img></ListItemIcon>
-            <ListItemText>Lunastra</ListItemText>
-            </ListItem>
-            <ListItem button='true' key='Alatreon (Ice start)' value='Alatreon (Ice start)' onClick={this.handlePickVideo}>
-            <ListItemIcon><img src='https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/mhwi-alatreon_icon.png' height='42' width='42'></img></ListItemIcon>
-            <ListItemText>Alatreon (Ice start)</ListItemText>
-            </ListItem>
-          </List>
-        </Drawer>
+        {customDrawer(this.handlePickVideo)}
         </div>
         <div style={{
           width: 1200,
