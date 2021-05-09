@@ -5,6 +5,7 @@
 <script src="https://unpkg.com/react-tabs@3/dist/react-tabs.production.min.js"></script>
 <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
 <link href="https://unpkg.com/react-tabs@3/style/react-tabs.css" rel="stylesheet">
+<script src="https://unpkg.com/@material-ui/core@latest/umd/material-ui.production.min.js"></script>
 <head>
     <title>Games Related</title>
 </head>
@@ -16,15 +17,66 @@
     <script type="text/babel">
 
     const menuMap = {
-        'Monster_Hunter_World_Gameplay': 'https://lonelylok.github.io/monsterhunter',
+        'Monster Hunter World': 'https://lonelylok.github.io/monsterhunter',
     };
+
+    const deviceList = [
+      {
+        pre: 'CPU',
+        sub: 'AMD Ryzen 5 3600'
+      },
+      {
+        pre: 'GPU',
+        sub: 'AMD RX 5700XT'
+      },
+      {
+        pre: 'Motherboard',
+        sub: 'ASRock X570 Phantom Gaming 4'
+      },
+      {
+        pre: 'RAM',
+        sub: '32GB'
+      },
+      {
+        pre: 'SSD',
+        sub: '500GB'
+      },
+      {
+        pre: 'HDD',
+        sub: '1TB',
+      },
+      {
+        pre: 'Case',
+        sub: 'NZXT H510'
+      },
+      {
+        pre: 'PSU',
+        sub: 'CORSAIR TX-M Series TX550M 550W'
+      }
+    ].map(obj=>(
+      <li>{obj.pre}: {obj.sub}</li>
+    ))
+    
 
     const menu = Object.keys(menuMap).map(k=><li><a href={`${menuMap[k]}`}>{k}</a></li>)
     class Body extends React.Component {
   render() {
     return (<div>
-    <h1>Games Related</h1>
-    <ul>{menu}</ul>
+    <h1>Video Games Related</h1>
+    <h5>I think beside sleeping and working, I spent most of my time play video games.</h5>
+    <h5>I game on PC</h5>
+    <h5>Genres that enjoy to play: Action RPG, hack and slash, roguelike deck building</h5>
+    <div>
+      <p>Gameplay videos:</p>
+      <ul>{menu}</ul>
+      </div>
+    <div>
+      <p>PC spec:
+      </p>
+      <ul>
+        {deviceList}
+        </ul>
+      </div>
     <p><a href="https://lonelylok.github.io/">Back</a></p>
     </div>)
   }
