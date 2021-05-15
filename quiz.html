@@ -47,6 +47,16 @@
     margin-right: 15px;
     vertical-align: middle;
     }
+    .container{
+  margin: 20px auto;
+  background-color:#fff;
+  display:grid;
+  grid-template-columns: 200px 200px;
+  grid-row: auto auto;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  }
+
   </style>
 <body>
     <div  class="testbox">
@@ -80,7 +90,24 @@
             question: 'Which of the following food Henry like the most?',
             options: ['Japanese Pork Katsu Curry','Bibimbap','Pad Thai','Macau-Style Portuguese Chicken Rice','Singaporean Fried Rice Noodles'],
             answer: 'Macau-Style Portuguese Chicken Rice'
-        }
+        },
+        {
+            id: 'Q4',
+            question: 'Which of the following anime character Henry admire the most?',
+            options: ['Kirito from Sword Art Online', 'Kiyotaka from Classroom of the Elite', 'Saitama from One-Punch Man', 'Nishinoya from Haikyu'],
+            answer: 'Kiyotaka from Classroom of the Elite',
+            imageList: ['https://avatarfiles.alphacoders.com/950/95095.png',
+            'https://avatarfiles.alphacoders.com/279/thumb-279560.jpg',
+            'https://www.nicepng.com/png/detail/162-1626559_photo-one-punch-man-steam-avatar.png',
+            'https://i.pinimg.com/originals/fd/36/3b/fd363b175daa5056176a218ac35361b2.png'],
+            'isGrid': true
+        },
+        {
+            id: 'Q5',
+            question: 'Which of the following activities Henry enjoy the most?',
+            options: ['Go to the gym','Play Video Game with people','Play Video Game with no people','Sleep','Watch movie'],
+            answer: 'Play Video Game with no people'
+        },
     ]
 
     const idToAnswerMap = qAndA.reduce((acc,curr)=>{
@@ -91,11 +118,16 @@
     const formm = (s,e) => qAndA.map((obj,index)=>(
     <div>
         <h4>{`Q${index + 1} ${obj.question}`}</h4>
-            {obj.options.map(w=>(
-        <div>
-            <label style={{color: s.showAnswer && (w === idToAnswerMap[`Q${index}`]) ? 'red': ''}}><input type="radio" value={w} name={`Q${index}`} onChange={e} checked={s[`Q${index}`] === w}/>{w}</label>
+        <div class={obj.isGrid ? 'container': ''}>
+            {obj.options.map((w,i)=>(
+        <div >
+            <label style={{color: s.showAnswer && (w === idToAnswerMap[`Q${index}`]) ? 'red': ''}}>
+                <input type="radio" value={w} name={`Q${index}`} onChange={e} checked={s[`Q${index}`] === w}/>{w}
+                {(obj.imageList && obj.imageList.length) ? <img src={obj.imageList[i]} height='200' width='200'></img> : ''}
+                </label>
             </div>
     ))}
+            </div>
         </div>    
         
     ))
