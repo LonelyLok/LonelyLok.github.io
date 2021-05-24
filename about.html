@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<head>
-    <title>About Me</title>
-</head>
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<html>
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/react-tabs@3/dist/react-tabs.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+   <script src="https://unpkg.com/@material-ui/core@latest/umd/material-ui.production.min.js"></script>
 <style>
-  div.box{
+  .box{
     position: sticky;
     top: 290px;
     left: 1310px;
@@ -13,31 +15,52 @@
     border: 0px solid black;
   }
 </style>
-<body style="width: 1000px; margin: auto;">
-    <h1>About Me</h1>
-    <div class ="box">&#8679 Me in 2015</div>
+<head>
+    <title>About Me</title>
+</head>
+<body style="width: 1000px; margin: auto;" id="about"></body>
 
-    <p>
-        Name: Henry Yu <img src="https://lonelylok.github.io/pic/my.png" width = "15%" height = "15%" align ="right"><br />
-        Age: 24 <br />
-        From: Hong Kong <br />
-        Current location: USA, California<br/>
-        Occupation: Monkey coder at a start up<br/>
-    </p>
-    <p>
-      Facts about Henry:
-        <ul>
-          <li>
-            Henry like to watch video in 2x speed
-          </li>
-          <li>
-            Beside working and sleeping, Henry spend most of his time play video games 
-          </li>
-          <li>
-            Henry don't like having small talk because he think it is pointless and the small talk is scripted
-          </li>
-        </ul>
-    </p>
+<script type="text/babel">
 
-    <a href="https://lonelylok.github.io/">Home</a>
-</body>
+  const age = new Date().getUTCFullYear() - 1996
+
+  class Body extends React.Component{
+
+    render(){
+      return (
+        <div>
+          <h1>About Me</h1>
+          <div style={{
+            position:'sticky',
+            textAlign: 'right'
+          }}> Me in 2015</div>
+          <p style={{'line-height':20}}>
+            Name: Henry Yu <img src="https://lonelylok.github.io/pic/my.png" width = "15%" height = "15%" align ="right"></img><br/>
+            Age: {age} <br />
+            From: Hong Kong <br />
+            Current location: USA, California<br/>
+            Occupation: Monkey coder at a start up<br/>
+            </p>
+            <p>
+  Facts about Henry:
+    <ul>
+      <li>
+        Henry like to watch video in 2x speed
+      </li>
+      <li>
+        Beside working and sleeping, Henry spend most of his time play video games 
+      </li>
+      <li>
+        Henry don't like having small talk because he think it is pointless and the small talk is scripted
+      </li>
+    </ul>
+</p>
+<p><a href="https://lonelylok.github.io/">Home</a></p>
+        </div>
+      )
+    }
+  }
+
+  ReactDOM.render(<Body />, document.getElementById('about'))
+</script>
+</html>
