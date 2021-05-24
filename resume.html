@@ -1,145 +1,38 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-<title>Real Resume</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/react-tabs@3/dist/react-tabs.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+   <script src="https://unpkg.com/@material-ui/core@latest/umd/material-ui.production.min.js"></script>
+<title>Resume</title>
 <style>
-html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 </style>
-<body class="w3-light-grey">
+    <body id="resume"></body>
 
-<!-- Page Container -->
-<div class="w3-content w3-margin-top" style="max-width:1400px;">
+    <script type="text/babel">
 
-  <!-- The Grid -->
-  <div class="w3-row-padding">
+    const yearOfExperience = (new Date(Date.now() - new Date('2019-06-01').getTime())).getUTCFullYear() - 1970
+    
+    class Body extends React.Component {
+      constructor(props) {
+    super(props);
+    this.state = {
+    };
+  }
 
-    <!-- Left Column -->
-    <div class="w3-third">
-
-      <div class="w3-white w3-text-grey w3-card-4">
-        <div class="w3-display-container">
-          <center><img src="https://lonelylok.github.io/pic/lonelyNpotato.png" width = "50%" height = "50%" alt="Avatar"></center>
-          <div class="w3-display-bottomleft w3-container w3-text-black">
-
-          </div>
+  render() {
+    return (
+      <div>
+        <h1>Resume</h1>
+        <p>Education: bachelor of science degree</p>
+        <p>Experince: {yearOfExperience} year of typing console.log('hello world')</p>
+        <p><a href="https://lonelylok.github.io/">Back</a></p>
         </div>
-        <div class="w3-container">
-          <p><i class="fa fa-male fa-fw w3-margin-right w3-large w3-text-purple"></i>Hei Lok Yu</p>
-          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-purple"></i>Monkey Coder</p>
-          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-purple"></i>San Diego, USA</p>
-          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-purple"></i>heilokyu145@gmail.com</p>
-          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-purple"></i>760-XXX-XXXX</p>
-          <hr>
-          <p class="w3-large w3-text-theme"><b><i class="fa fa-trash fa-fw w3-margin-right w3-text-purple"></i>Education</b></p>
-          <h5 class="w3-text-grey"><b>University of California, San Diego</b></h5>
-          <h6 class="w3-text-purple"><i class="fas fa-calendar-alt fa-fw w3-margin-right"></i>2016-2018</h6>
-          <p class = "w3-text-black">
-            <ul>
-              <li>Bachelor Degree in Mathematics</li>
-              <li>GPA: 3.2 &nbsp; Major GPA: 3.6</li>
-            </ul>
-          </p>
-
-          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-purple"></i>Programming Skills</b></p>
-          <p>What I actually know: 
-            <ul>
-            <li>NodeJS</li>
-            <li>mySQL</li>
-            <li>Python</li>
-            <li>AWS</li>
-          </ul>
-          </p>
-          <p>
-            What I pretend to know so I have higher chances to get interview:
-            <ul>
-              <li>React</li>
-              <li>OOP</li>
-              <li>Java</li>
-              <li>C++</li>
-              <li>Elixir</li>
-              <li>ML</li>
-            </ul>
-          </p>
-
-        </div>
-      </div><br>
-
-    <!-- End Left Column -->
-    </div>
-
-    <!-- Right Column -->
-    <div class="w3-twothird">
-
-      <div class="w3-container w3-card w3-white w3-margin-bottom">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-purple"></i>Work Experience</h2>
-        
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Software Engineer</b></h5>
-          <h6 class="w3-text-purple">
-            <i class="fas fa-calendar-alt fa-fw w3-margin-right"></i>June 2019 - Now  &nbsp; &nbsp;
-            <i class="fas fa-city fa-fw w3-margin-right"></i>San Diego, California</h6>
-          <ul>
-            <li>Write code in JSFuck so no one can code review my code</li>
-            <li>Deploy bugs to production to take down the system</li>
-            <li>Experience with coding in Notepad IDE</li>
-          </ul>
-        </div>
-
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Apex Legend</b></h5>
-          <h6 class="w3-text-purple">
-            <i class="fas fa-calendar-alt fa-fw w3-margin-right"></i>January 2021 - Now  &nbsp; &nbsp;
-            <i class="fas fa-city fa-fw w3-margin-right"></i>Kings Canyon</h6>
-          <ul>
-            <li>Experience with handle toxic chemicals</li>
-            <li>Throw smoke grenade to confuse teammates</li>
-            <li>Average 0 damage per game and still have the audacity to flame teammates</li>
-          </ul>
-        </div>
-        
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Newbie Monster Hunter</b></h5>
-          <h6 class="w3-text-purple">
-            <i class="fas fa-calendar-alt fa-fw w3-margin-right"></i>January 2019 - January 2021 &nbsp; &nbsp;
-            <i class="fas fa-city fa-fw w3-margin-right"></i>Seliana</h6>
-          <ul>
-            <li>Learning how to wield the weeb sword to save the world.</li>
-            <li>Lower than 1% foresight slash accuracy.</li>
-            <li>Two freestyle run on <a href="https://mhwleaderboards.com/runners/lonelylok">mhwleaderboards.com</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="w3-container w3-card w3-white">
-        <h2 class="w3-text-purple w3-padding-16"><i class="fa fa-file-text fa-fw w3-margin-right w3-xxlarge w3-text-Purple"></i>Project</h2>
-        <div class="w3-container">
-          <h5 class="w3-text-black"><b>Become really good at Monster Hunter World: Iceborne</b></h5>
-          <h6 class="w3-text-purple"><i class="fas fa-calendar-alt fa-fw w3-margin-right"></i>2018 - 2021</h6>
-          <p>Using weeb sword to save the world. Submit runs on <a href="https://mhwleaderboards.com/">https://mhwleaderboards.com/</a></p>
-          <hr>
-        </div>
-      </div>
-
-    <!-- End Right Column -->
-    </div>
-
-  <!-- End Grid -->
-  </div>
-
-  <!-- End Page Container -->
-</div>
-
-<footer class="w3-container w3-teal w3-center w3-margin-top">
-  <p>Thank you for reading. Thank you w3schools for the template</p>
-  <p>
-    <a href="https://lonelylok.github.io/">back</a></p>
-
-</footer>
-
-</body>
+    )
+  }
+}
+    
+    ReactDOM.render(<Body />, document.getElementById('resume'))
+    </script>
 </html>
