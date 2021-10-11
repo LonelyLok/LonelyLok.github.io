@@ -1,11 +1,45 @@
-import React from 'react';
+import React from 'react'
+import { useSpring, animated, a } from 'react-spring'
 import './App.css';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+import Flip from './Flip'
 
 function App() {
+  const styles = useSpring({
+    loop:false,
+    from: {opacity: 0, color: '#333'},
+    to: {opacity: 1, color: 'white'}
+  })
+
+  const cardBuilder = (l:Array<any>)=>{
+    return (
+      <Card sx={{ minWidth: 275, minHeight: 275, background: '#424242' }}>
+      <CardContent>
+        {l.map((s:any) => (
+          <Typography sx={{ fontSize: 14, fontFamily:'Raleway' }} color="white" gutterBottom>
+          {s}
+        </Typography>
+        ))}
+      </CardContent>
+    </Card>
+    )
+  }
   return (
-    <div>
-      <p className='centered'>Homepage working in progress</p>
-    </div>
+    <animated.div  style={styles}>
+      <p className='centered'>Hi, my name is Henry and welcome.</p>
+      <div className="container">
+        <Flip 
+        front={cardBuilder(['About Me'])}
+        back={cardBuilder(['Name: Henry Yu', `Age: ${new Date().getFullYear() - 1996}`, 'Hobbies: Sleep, Video'])}
+        ></Flip>
+        <Flip 
+        front={cardBuilder(['Work Related'])}
+        back={cardBuilder(['Working in progress (╥﹏╥)'])}
+        ></Flip>
+      </div>
+    </animated.div>
   );
 }
 
