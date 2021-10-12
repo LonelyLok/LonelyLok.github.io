@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSpring, animated, a } from 'react-spring'
+import { useSpring, animated } from 'react-spring'
 import './App.css';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -32,11 +32,11 @@ function App() {
       <div className="container">
         <Flip 
         front={cardBuilder(['About Me'])}
-        back={cardBuilder(['Name: Henry Yu', `Age: ${new Date().getFullYear() - 1996}`, 'Hobbies: Sleep, Video'])}
+        back={cardBuilder(['Name: Henry Yu', `Age: ${new Date().getFullYear() - 1996}`, 'Hobbies: Sleep, play video games'])}
         ></Flip>
         <Flip 
         front={cardBuilder(['Work Related'])}
-        back={cardBuilder(['Working in progress (╥﹏╥)'])}
+        back={cardBuilder(['Current job: Software Engineer', `Experience: ${new Date().getFullYear()-2019} years`, 'Fields: Web, machine learning'])}
         ></Flip>
       </div>
     </animated.div>
