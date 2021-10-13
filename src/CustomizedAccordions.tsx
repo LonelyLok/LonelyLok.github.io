@@ -1,0 +1,70 @@
+import * as React from 'react';
+import { styled } from '@mui/material/styles';
+import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
+import MuiAccordion, { AccordionProps } from '@mui/material/Accordion';
+import MuiAccordionSummary, {
+  AccordionSummaryProps,
+} from '@mui/material/AccordionSummary';
+import MuiAccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
+import { ListItem, ListItemIcon } from '@mui/material';
+import ArrowDropDownTwoToneIcon from '@mui/icons-material/ArrowDropDownTwoTone';
+
+const Accordion = styled((props: AccordionProps) => (
+  <MuiAccordion disableGutters elevation={0} square {...props} />
+))(({ theme }) => ({
+  border: `1px solid ${theme.palette.divider}`,
+  '&:not(:last-child)': {
+    borderBottom: 0,
+  },
+  '&:before': {
+    display: 'none',
+  },
+  width: 275,
+  backgroundColor: '#424242',
+  color: 'white',
+}));
+
+const AccordionSummary = styled((props: AccordionSummaryProps) => (
+  <MuiAccordionSummary
+    expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.9rem' }} />}
+    {...props}
+  />
+))(({ theme }) => ({
+  backgroundColor:
+    theme.palette.mode === 'dark'
+      ? 'rgba(255, 255, 255, .05)'
+      : 'rgba(0, 0, 0, .03)',
+  flexDirection: 'row-reverse',
+  '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
+    transform: 'rotate(90deg)',
+  },
+  '& .MuiAccordionSummary-content': {
+    marginLeft: theme.spacing(1),
+  },
+}));
+
+const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
+  padding: theme.spacing(2),
+  borderTop: '1px solid rgba(0, 0, 0, .125)',
+}));
+
+export default function CustomizedAccordions(props:any) {
+  const {data} = props || {}
+  return (
+    <div>
+      {(data || []).map((obj:Record<string,any>)=>(
+      <Accordion>
+        <AccordionSummary>
+          <Typography sx={{ fontFamily:'Raleway', fontSize: 12 }}>{obj.title}</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            {obj.summary.map((s:any)=>(<ListItem sx={{fontFamily:'Raleway', fontSize: 12}} disablePadding><ListItemIcon style={{minWidth: '10px'}}><ArrowDropDownTwoToneIcon/></ListItemIcon>{s}</ListItem>))}
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      ))}
+    </div>
+  );
+}

@@ -4,7 +4,7 @@
     left: 50%;
     margin-top: -50px;
     margin-left: -340px;
-    font-family: 'Raleway';
+    font-family: 'Raleway', sans-serif;
     font-size: 40px;
   }
 
@@ -18,7 +18,7 @@
     grid-template-columns: 300px 300px;
     grid-row: auto auto;
     grid-column-gap: 20px;
-    grid-row-gap: 20px;
+    grid-row-gap: 300px;
     font-family: 'Raleway', sans-serif;
   }
   .box{
