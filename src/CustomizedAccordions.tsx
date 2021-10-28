@@ -7,8 +7,6 @@ import MuiAccordionSummary, {
 } from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
-import { ListItem, ListItemIcon } from '@mui/material';
-import ArrowDropDownTwoToneIcon from '@mui/icons-material/ArrowDropDownTwoTone';
 
 const Accordion = styled((props: AccordionProps) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -59,9 +57,7 @@ export default function CustomizedAccordions(props:any) {
           <Typography sx={{ fontFamily:'Raleway', fontSize: 12 }}>{obj.title}</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
-            {obj.summary.map((s:any)=>(<ListItem sx={{fontFamily:'Raleway', fontSize: 12}} disablePadding><ListItemIcon style={{minWidth: '10px'}}><ArrowDropDownTwoToneIcon/></ListItemIcon>{s}</ListItem>))}
-          </Typography>
+          {obj.summary}
         </AccordionDetails>
       </Accordion>
       ))}
