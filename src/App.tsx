@@ -37,7 +37,7 @@ function App() {
     'dot': <FiberManualRecordIcon style={{fontSize: 'small', minWidth: '20px', color:'white'}}/>,
     'video': <OndemandVideoSharpIcon style={{fontSize: 'small', minWidth: '20px', color:'white'}}/>
   }
-  const gameList = ['FINAL FANTASY XIV','MONSTER HUNTER WORLD (2630 hr)','Satisfactoy (241 hr)', 'Slay the Spire (431 hr)', 'Factorio (117 hr)','Dark Souls III (113 hr)','Nioh 2 (106 hr)','Risk of Rain 2 (129 hr)'];
+  const gameList = ['Lost Ark','FINAL FANTASY XIV','MONSTER HUNTER WORLD (2630 hr)','Satisfactoy (241 hr)', 'Slay the Spire (431 hr)', 'Factorio (117 hr)','Dark Souls III (113 hr)','Nioh 2 (106 hr)','Risk of Rain 2 (129 hr)'];
   const pcSpec = ['MB: ASRock X570 Phantom Gaming 4','CPU: AMD Ryzen 5 3600', 'GPU: AMD 5700XT', 'CASE: NZXT H510','PSU: CORSAIR TX-M Series 550W', 'RAM: 32GB', 'SSD: 500GB', 'HDD: 1TB'];
   const typographyListBuilder = (l:Array<any>,iconLabel:any) => (
     <Typography>

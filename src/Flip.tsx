@@ -13,7 +13,6 @@ export default function Flip(props:any){
         className='c'
         style={{ opacity: opacity.to(o => 1 - o), transform }}
       >
-        {/* {cardBuilder(['About Me'])} */}
         {props.front}
       </a.div>
       <a.div
@@ -24,7 +23,6 @@ export default function Flip(props:any){
           rotateX: '180deg',
         }}
       >
-       {/* {cardBuilder(['Name: Henry Yu', `Age: ${new Date().getFullYear() - 1996}`, 'Hobbies: Sleep, Video'])} */}
        {props.back}
       </a.div>
     </div>
