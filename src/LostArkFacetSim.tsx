@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Chance } from 'chance';
 import {AiFillQuestionCircle,AiOutlineCheckCircle,AiFillCloseCircle} from 'react-icons/ai'
+import Button from '@mui/material/Button';
 const LostArkFacetSim = () => {
     const selectOptions = [9,10].map(num=><option value={num}>{num}
         </option>)
@@ -82,17 +83,17 @@ const LostArkFacetSim = () => {
                 <ul>
                 good row 1
                 {l0}
-                <button style={{'display':'inline-block'}} onClick={handleChangeL0}>click</button>
+                <Button style={{'display':'inline-block'}} onClick={handleChangeL0}>click</Button>
                 </ul>
                 <ul>
                 good row 2
                 {l1}
-                <button style={{'display':'inline-block'}} onClick={handleChangeL1}>click</button>
+                <Button style={{'display':'inline-block'}} onClick={handleChangeL1}>click</Button>
                 </ul>
                 <ul>
                 bad row 1 &nbsp;&nbsp;
                 {l2}
-                <button style={{'display':'inline-block'}} onClick={handleChangeL2}>click</button>
+                <Button style={{'display':'inline-block'}} onClick={handleChangeL2}>click</Button>
                 </ul>
             </li>
             <p>{chance} % to crack</p>
