@@ -15,7 +15,7 @@ const LostArkFacetSim = () => {
     const minChance = 25
     const delta = 10
 
-    const question = <AiFillQuestionCircle size={100}/>
+    const question = <AiFillQuestionCircle size={100} id='q'/>
     const good = <AiOutlineCheckCircle size={100}/>
     const bad = <AiFillCloseCircle size={100}/>
 
@@ -33,7 +33,7 @@ const LostArkFacetSim = () => {
                 newArray.push(e);
                 continue
             }
-            if(e.type.name === 'AiFillQuestionCircle'){
+            if(e.props.id === 'q'){
                 const v = c.integer({min:1, max:100});
                 const isBad = v > chance;
                 isBad 
