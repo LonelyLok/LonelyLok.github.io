@@ -44,7 +44,11 @@ const Home = () => {
           {l.map((s: any) => (<ListItem sx={{ fontFamily: 'Raleway', fontSize: 12 }} disablePadding><ListItemIcon style={{ minWidth: '10px' }}>{iconLabel}</ListItemIcon>{s}</ListItem>))}
         </Typography>
       );
-      const videoPlayList = [<CustomizedModal title='Monster Hunter Rise PC Demo' video={(<iframe width="720" height="480" src="https://www.youtube.com/embed/EYW0qSlNZvg" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>)} />]
+      const [videoWidth, videoHeight] = [1280, 720]
+      const videoPlayList = [
+        <CustomizedModal title='Lost Ark 1385ilv SH Velganos' video={(<iframe width={videoWidth} height={videoHeight} src="https://www.youtube.com/embed/Gud1JaBKnkQ" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>)} />,
+        <CustomizedModal title='Monster Hunter Rise PC Demo' video={(<iframe width={videoWidth} height={videoHeight} src="https://www.youtube.com/embed/EYW0qSlNZvg" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>)} />
+      ]
       const accordionList = [{ title: 'Video games that I play/played', summary: typographyListBuilder(gameList, iconLabelMap['dot']) },
       { title: 'Computer spec', summary: typographyListBuilder(pcSpec, iconLabelMap['dot']) },
       { title: 'Game record video', summary: typographyListBuilder(videoPlayList, iconLabelMap['video']) }]
