@@ -74,7 +74,21 @@ const LostArkFacetSim = () => {
 
     return(
         <div>
-            <p>Lost Ark Facet Simulator</p>
+            <h1>Lost Ark Facet Simulator</h1>
+            <p>
+                <li>
+                <ul>
+                Every times you hit click, a question mark could either turn into check mark or cross mark. 
+                </ul>
+                <ul>
+                The goal is try to maximize number of check mark for first two rows and minimize check mark for the last row.
+                </ul>
+                <ul>
+                Crack mean check mark. Every times you crack, the next crack chance decrease. Every times you fail crack, the next crack chance increase. Max 75% Min 25%
+                </ul>
+                </li>
+            </p>
+            number of uncrack slot &nbsp;&nbsp;
             <select value={value} onChange={handleChange}>
                 {selectOptions}
             </select>
@@ -82,20 +96,19 @@ const LostArkFacetSim = () => {
                 <ul>
                 good row 1
                 {l0}
-                <button style={{'display':'inline-block'}} onClick={handleChangeL0}>click</button>
+                <button style={{'display':'inline-block'}} onClick={handleChangeL0}>click {chance} % to crack</button>
                 </ul>
                 <ul>
                 good row 2
                 {l1}
-                <button style={{'display':'inline-block'}} onClick={handleChangeL1}>click</button>
+                <button style={{'display':'inline-block'}} onClick={handleChangeL1}>click {chance} % to crack</button>
                 </ul>
                 <ul>
                 bad row 1 &nbsp;&nbsp;
                 {l2}
-                <button style={{'display':'inline-block'}} onClick={handleChangeL2}>click</button>
+                <button style={{'display':'inline-block'}} onClick={handleChangeL2}>click {chance} % to crack</button>
                 </ul>
             </li>
-            <p>{chance} % to crack</p>
         </div>
     )
 }
