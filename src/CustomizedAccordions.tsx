@@ -54,7 +54,7 @@ export default function CustomizedAccordions(props:any) {
       {(data || []).map((obj:Record<string,any>)=>(
       <Accordion>
         <AccordionSummary>
-          <Typography sx={{ fontFamily:'Raleway', fontSize: 12 }}>{obj.title}</Typography>
+          <Typography sx={{ fontFamily:'Verdana', fontSize: 12 }}>{obj.title}</Typography>
         </AccordionSummary>
         <AccordionDetails>
           {obj.summary}
