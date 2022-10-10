@@ -12,6 +12,16 @@
     font-size: 40px;
   }
 
+  .centered2 {
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    margin-top: -50px;
+    margin-left: -340px;
+    font-family: 'Verdana', sans-serif;
+    font-size: 40px;
+  }
+
   .container{
     position: absolute;
     top: 20%;
