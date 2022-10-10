@@ -14,10 +14,6 @@ const AboutMeTest = () => {
       id: 2,
       title: 'Career related'
     },
-    {
-      id: 3,
-      title: 'Video game related'
-    },
   ]
 
   type Question = {

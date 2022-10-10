@@ -71,7 +71,7 @@ const Home = () => {
       <div className="container">
         <Flip
           front={cardBuilder(['About Me'])}
-          back={cardBuilder(['Name: Henry Yu', `Age: ${new Date().getFullYear() - 1996}`, 'Hobbies: Sleep, play video games', 'Favorite food: Rice', 'Favorite drink: Green tea'])}
+          back={cardBuilder(['Name: Henry Yu', `Age: ${new Date().getFullYear() - 1996}`, 'Hobbies: Sleep, play video games', 'Favorite food: Rice', 'Favorite drink: Green tea', <Link sx={{color: 'white', 'textDecoration': 'underline'}} href='#/aboutmetest'>And More</Link>])}
         ></Flip>
         <Flip
           front={cardBuilder(['Work Related'])}
