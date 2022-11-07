@@ -4,6 +4,7 @@ import { HashRouter, Route, Switch } from 'react-router-dom';
 import LostArkFacetSim from './LostArkFacetSim';
 import Home from './Home';
 import AboutMeTest from './AboutMeTest';
+import Resume from './Resume';
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
         <Route exact path="/lostarkfacetsim" component={LostArkFacetSim}>
         </Route>
         <Route exact path="/aboutmetest" component={AboutMeTest}>
+        </Route>
+        <Route exact path="/resume" component={Resume}>
         </Route>
       </Switch>
     </HashRouter>
