@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Radio, RadioGroup, FormControlLabel, FormControl, Typography, } from '@mui/material';
+import { Radio, RadioGroup, FormControlLabel, FormControl, Typography } from '@mui/material';
 import { Accordion, AccordionSummary, AccordionDetails } from './AccordionHelper';
 import { Container, Button } from '@mui/material';
 import dataSet from './dataSet.json';

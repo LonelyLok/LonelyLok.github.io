@@ -75,7 +75,7 @@ const Home = () => {
         ></Flip>
         <Flip
           front={cardBuilder(['Work Related'])}
-          back={cardBuilder(['Current job: Software Engineer', `Experience: ${new Date().getFullYear() - 2019} years`, 'Fields: Web, machine learning', 'Tech stack: Typescript, NodeJS, MySQL, AWS, Docker, Python',])}
+          back={cardBuilder(['Current job: Software Engineer', `Experience: ${new Date().getFullYear() - 2019} years`, 'Fields: Web, machine learning', 'Tech stack: Typescript, NodeJS, MySQL, AWS, Docker, Python',<Link sx={{color: 'white', 'textDecoration': 'underline'}} href='#/resume'>Resume</Link>])}
         ></Flip>
         <CustomizedAccordions data={accordionList} />
         <Flip
