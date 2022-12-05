@@ -41,6 +41,7 @@ const AboutMeTest = () => {
   const defaultSelected = {}
   const defaultScores = {}
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [expanded, setExpanded] = useState(false)
 
   const [selected, setSelected]:[any,any] = useState(defaultSelected)

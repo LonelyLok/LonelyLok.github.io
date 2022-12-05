@@ -5,6 +5,8 @@ import LostArkFacetSim from './LostArkFacetSim';
 import Home from './Home';
 import AboutMeTest from './AboutMeTest';
 import Resume from './Resume';
+import VideoGameFootageMenu from './VideoGameFootageMenu';
+import WorkInProgress from './WorkInProgress';
 
 function App() {
   return (
@@ -17,6 +19,10 @@ function App() {
         <Route exact path="/aboutmetest" component={AboutMeTest}>
         </Route>
         <Route exact path="/resume" component={Resume}>
+        </Route>
+        <Route exact path="/videogamefootagemenu" component={VideoGameFootageMenu}>
+        </Route>
+        <Route exact path="/wip" component={WorkInProgress}>
         </Route>
       </Switch>
     </HashRouter>
