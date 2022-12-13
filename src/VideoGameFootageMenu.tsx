@@ -9,20 +9,22 @@ const VideoGameFootageMenu = () => {
             id: 1,
             imgLink: 'https://image.api.playstation.com/vulcan/ap/rnd/202212/0205/DrHHLm1wEmIEfzlJj0csXqnm.jpg?w=620&thumb=false',
             releaseYear: 2021,
-            name: 'Monster Hunter Rise'
+            name: 'Monster Hunter Rise',
+            hrefLink: '#/wip'
         },
         {
             id: 2,
             imgLink: 'https://image.api.playstation.com/vulcan/img/cfn/11307RW7B5mvRMeOG-1pM9RnGdpRQVQ2iXinFe9755wHVXH0-mRqwizRWZQK8wMHat3XhtITgBGvRuT7JLJkkZenNxUerkoj.png?w=620&thumb=false',
             releaseYear: 2018,
-            name: 'Monster Hunter World'
+            name: 'Monster Hunter World',
+            hrefLink: '#/monsterhunterworldvideo'
         }
     ]
     return (<div>
         <Typography align='center' variant='h4'>Video game footage archive (Click image)</Typography>
         <div className="container2">
             {games.sort((a, b) => b.releaseYear - a.releaseYear).map(game => (
-                <Link href="#/wip">
+                <Link href={game.hrefLink}>
                     <Card>
                     <CardMedia
                      component="img"

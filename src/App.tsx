@@ -7,6 +7,7 @@ import AboutMeTest from './AboutMeTest';
 import Resume from './Resume';
 import VideoGameFootageMenu from './VideoGameFootageMenu';
 import WorkInProgress from './WorkInProgress';
+import MonsterHunterWorldVideo from './MonsterHunterWorldVideo';
 
 function App() {
   return (
@@ -23,6 +24,8 @@ function App() {
         <Route exact path="/videogamefootagemenu" component={VideoGameFootageMenu}>
         </Route>
         <Route exact path="/wip" component={WorkInProgress}>
+        </Route>
+        <Route exact path="/monsterhunterworldvideo" component={MonsterHunterWorldVideo}>
         </Route>
       </Switch>
     </HashRouter>
