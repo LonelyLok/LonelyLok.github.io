@@ -10,7 +10,7 @@ const VideoGameFootageMenu = () => {
             imgLink: 'https://image.api.playstation.com/vulcan/ap/rnd/202212/0205/DrHHLm1wEmIEfzlJj0csXqnm.jpg?w=620&thumb=false',
             releaseYear: 2021,
             name: 'Monster Hunter Rise',
-            hrefLink: '#/wip'
+            hrefLink: '#/monsterhunterrisevideo'
         },
         {
             id: 2,
