@@ -10,6 +10,7 @@ import WorkInProgress from './WorkInProgress';
 import MonsterHunterWorldVideo from './MonsterHunterWorldVideo';
 import MonsterHunterRiseVideo from './MonsterHunterRiseVideo';
 import { SplitHelper } from './SplitHelper'
+import { DayOfLifeGame } from './DayOfLifeGame';
 
 function App() {
   return (
@@ -32,6 +33,8 @@ function App() {
         <Route exact path="/monsterhunterrisevideo" component={MonsterHunterRiseVideo}>
         </Route>
         <Route exact path="/splithelper" component={SplitHelper}>
+        </Route>
+        <Route exact path="/dayoflifegame" component={DayOfLifeGame}>
         </Route>
       </Switch>
     </HashRouter>
