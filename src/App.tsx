@@ -9,6 +9,7 @@ import VideoGameFootageMenu from './VideoGameFootageMenu';
 import WorkInProgress from './WorkInProgress';
 import MonsterHunterWorldVideo from './MonsterHunterWorldVideo';
 import MonsterHunterRiseVideo from './MonsterHunterRiseVideo';
+import { SplitHelper } from './SplitHelper'
 
 function App() {
   return (
@@ -29,6 +30,8 @@ function App() {
         <Route exact path="/monsterhunterworldvideo" component={MonsterHunterWorldVideo}>
         </Route>
         <Route exact path="/monsterhunterrisevideo" component={MonsterHunterRiseVideo}>
+        </Route>
+        <Route exact path="/splithelper" component={SplitHelper}>
         </Route>
       </Switch>
     </HashRouter>
