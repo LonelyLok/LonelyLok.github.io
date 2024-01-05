@@ -78,6 +78,12 @@ const Home = () => {
           back={cardBuilder(['Current job: Software Engineer', `Experience: ${new Date().getFullYear() - 2019} years`, 'Fields: Web, machine learning', 'Tech stack: Typescript, NodeJS, MySQL, AWS, Docker, Python',<Link sx={{color: 'white', 'textDecoration': 'underline'}} href='#/resume'>Resume</Link>])}
         ></Flip>
         <List>
+        <ListItem>
+            <ListItemIcon style={{ minWidth: '10px' }}>{iconLabelMap['dot']}</ListItemIcon>
+            <Typography>
+              <Link href="#/dayoflifegame">My day of life</Link>
+            </Typography>
+          </ListItem>
           <ListItem>
             <ListItemIcon style={{ minWidth: '10px' }}>{iconLabelMap['dot']}</ListItemIcon>
             <Typography>
