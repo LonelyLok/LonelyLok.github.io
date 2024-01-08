@@ -94,8 +94,8 @@ const Home = () => {
         <Flip
           front={cardBuilder(['Side projects'])}
           back={cardBuilder([
+            codeProjectBuilder({ title: 'job helper', link: 'https://github.com/LonelyLok/job-helper' }),
             codeProjectBuilder({ title: 'Split helper', link: '#/splithelper' }),
-            codeProjectBuilder({ title: 'Check EVGA BStock for RTX GPU', link: 'https://github.com/LonelyLok/check-evga-b-stock' }),
             codeProjectBuilder({ title: 'Twitch chat bot example', link: 'https://github.com/LonelyLok/twitch-chat-bot' }),
             codeProjectBuilder({ title: 'This webpage', link: 'https://github.com/LonelyLok/LonelyLok.github.io' }),
           ])}

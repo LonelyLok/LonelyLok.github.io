@@ -99,8 +99,8 @@ const Resume = () => {
               <ListItemIcon>
                 <HorizontalRuleIcon sx={{ color: 'white' }} />
               </ListItemIcon>
-              Discord reminder bot{' '}
-              <Link href='https://github.com/LonelyLok/discord-bot-reminder'>
+              job helper{' '}
+              <Link href='https://github.com/LonelyLok/job-helper'>
                 (Github Link)
               </Link>
             </ListItem>
