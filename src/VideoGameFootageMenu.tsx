@@ -18,6 +18,13 @@ const VideoGameFootageMenu = () => {
             releaseYear: 2018,
             name: 'Monster Hunter World',
             hrefLink: '#/monsterhunterworldvideo'
+        },
+        {
+            id: 3,
+            imgLink: 'https://cdn.cloudflare.steamstatic.com/steam/apps/1371980/header.jpg?t=1713987346',
+            releaseYear: 2024,
+            name: 'No Rest For The Wicked',
+            hrefLink: '#/norestforthewickedvideo'
         }
     ]
     return (<div>
