@@ -7,8 +7,7 @@ import AboutMeTest from './AboutMeTest';
 import Resume from './Resume';
 import VideoGameFootageMenu from './VideoGameFootageMenu';
 import WorkInProgress from './WorkInProgress';
-import MonsterHunterWorldVideo from './MonsterHunterWorldVideo';
-import MonsterHunterRiseVideo from './MonsterHunterRiseVideo';
+import VideoBase from './VideoBase';
 import { SplitHelper } from './SplitHelper'
 import { DayOfLifeGame } from './DayOfLifeGame';
 
@@ -28,9 +27,11 @@ function App() {
         </Route>
         <Route exact path="/wip" component={WorkInProgress}>
         </Route>
-        <Route exact path="/monsterhunterworldvideo" component={MonsterHunterWorldVideo}>
+        <Route exact path="/monsterhunterworldvideo" component={() => <VideoBase gameTitle={"Monster Hunter World"}/>}>
         </Route>
-        <Route exact path="/monsterhunterrisevideo" component={MonsterHunterRiseVideo}>
+        <Route exact path="/monsterhunterrisevideo" component={() => <VideoBase gameTitle={"Monster Hunter Rise"}/>}>
+        </Route>
+        <Route exact path="/norestforthewickedvideo" component={() => <VideoBase gameTitle={"No Rest For The Wicked"}/>}>
         </Route>
         <Route exact path="/splithelper" component={SplitHelper}>
         </Route>
