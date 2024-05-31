@@ -10,10 +10,13 @@ import WorkInProgress from './WorkInProgress';
 import VideoBase from './VideoBase';
 import { SplitHelper } from './SplitHelper'
 import { DayOfLifeGame } from './DayOfLifeGame';
+import NavBar from './NarBar'
+import AboutMe from './AboutMe';
 
 function App() {
   return (
     <HashRouter>
+      <NavBar />
       <Switch>
         <Route exact path="/" component={Home}>
         </Route>
@@ -36,6 +39,8 @@ function App() {
         <Route exact path="/splithelper" component={SplitHelper}>
         </Route>
         <Route exact path="/dayoflifegame" component={DayOfLifeGame}>
+        </Route>
+        <Route exact path="/aboutme" component={AboutMe}>
         </Route>
       </Switch>
     </HashRouter>
