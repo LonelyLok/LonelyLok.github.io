@@ -15,6 +15,7 @@ import LinkedInLogo from './assets/in-white.png';
 
 function NavBar() {
   const [anchorElMiniGames, setAnchorElMiniGames] = useState(null);
+  const [anchorElRandom, setAnchorElRandom] = useState(null);
 
   const handleMiniGamesMenuClick = (event: any) => {
     setAnchorElMiniGames(event.currentTarget);
@@ -24,24 +25,24 @@ function NavBar() {
     setAnchorElMiniGames(null);
   };
 
+
+  const handleRandomMenuClick = (event: any) => {
+    setAnchorElRandom(event.currentTarget);
+  };
+
+  const handleRandomMenuClose = () => {
+    setAnchorElRandom(null);
+  };
+
   const CustomMenu = ({
     menuCloseFunc,
     anchor,
+    data,
   }: {
     menuCloseFunc: any;
     anchor: any;
+    data: { name: string; link: string }[];
   }) => {
-    const data = [
-      {
-        name: 'Day of Life',
-        link: '/dayoflifegame',
-      },
-      {
-        name: 'About me test',
-        link: '/aboutmetest',
-      },
-    ];
-
     return (
       <Menu
         id='simple-menu'
@@ -84,6 +85,16 @@ function NavBar() {
           <CustomMenu
             menuCloseFunc={handleMiniGamesMenuClose}
             anchor={anchorElMiniGames}
+            data={[
+              {
+                name: 'Day of Life',
+                link: '/dayoflifegame',
+              },
+              {
+                name: 'About me test',
+                link: '/aboutmetest',
+              },
+            ]}
           />
         </Box>
         <Box>
@@ -96,10 +107,28 @@ function NavBar() {
             Video Archive
           </Button>
         </Box>
+        <Box>
+          <Button color='inherit' onClick={handleRandomMenuClick} sx={{ mx: 1 }}>
+            Random things
+          </Button>
+          <CustomMenu
+            menuCloseFunc={handleRandomMenuClose}
+            anchor={anchorElRandom}
+            data={[
+              {
+                name: 'Amazon SDE2 Interview 2024 (No offer)',
+                link: '/amazoninterview2024',
+              },
+            ]}
+          />
+        </Box>
         <Box sx={{ flexGrow: 1 }}></Box>
         <Box>
           <Tooltip title='My LinkedIn'>
-            <Button color='inherit' href='https://www.linkedin.com/in/hei-lok-yu-083440156/'>
+            <Button
+              color='inherit'
+              href='https://www.linkedin.com/in/hei-lok-yu-083440156/'
+            >
               <img
                 style={{ width: 24, height: 24 }}
                 src={LinkedInLogo}
