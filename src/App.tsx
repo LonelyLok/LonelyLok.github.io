@@ -12,6 +12,7 @@ import { SplitHelper } from './SplitHelper'
 import { DayOfLifeGame } from './DayOfLifeGame';
 import NavBar from './NarBar'
 import AboutMe from './AboutMe';
+import AmazonInterview2024 from './random/AmazonInterview2024';
 
 function App() {
   return (
@@ -41,6 +42,8 @@ function App() {
         <Route exact path="/dayoflifegame" component={DayOfLifeGame}>
         </Route>
         <Route exact path="/aboutme" component={AboutMe}>
+        </Route>
+        <Route exact path="/amazoninterview2024" component={AmazonInterview2024}>
         </Route>
       </Switch>
     </HashRouter>
