@@ -148,7 +148,7 @@ const AmazonInterview2024 = () => {
                 </ListItem>
                 <ListItem>
                  <Typography variant='body1' gutterBottom>
-                 2. webapp that show amazon sde 1 job. I was told that only less than 1 year experience is consider sde 1. The reason I built this is because sometimes the filter is not working on this <Link href="https://www.amazon.jobs/en/search?offset=0&result_limit=10&sort=relevant&category%5B%5D=software-development&country%5B%5D=USA&distanceType=Mi&radius=24km&industry_experience=less_than_1_year&latitude=&longitude=&loc_group_id=&loc_query=&base_query=&city=&country=&region=&county=&query_options=&"> site</Link>.    <Link href="https://github.com/LonelyLok/project-pain">Github Link</Link>
+                 2. webapp that show amazon sde 1 job. I was told that only less than 1 year experience is consider sde 1. The reason I built this is because sometimes the filter is not working on this <Link href="https://www.amazon.jobs/en/search?offset=0&result_limit=10&sort=relevant&category%5B%5D=software-development&country%5B%5D=USA&distanceType=Mi&radius=24km&industry_experience=less_than_1_year&latitude=&longitude=&loc_group_id=&loc_query=&base_query=&city=&country=&region=&county=&query_options=&"> site</Link>.    <Link href="https://github.com/LonelyLok/amazon-sde-1-job-search">Github Link</Link>
                  </Typography>
                 </ListItem>
               </List>
