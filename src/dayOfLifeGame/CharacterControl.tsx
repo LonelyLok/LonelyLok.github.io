@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import BedroomImage from './assets/bedroom.png';
-import BedroomSleepImage from './assets/bedroomsleep.png';
-import HallwayImage from './assets/hallway.png';
-import FigImage from './assets/fig.png';
-import LivingRoomImage from './assets/livingroom.png';
-import BreadImage from './assets/bread.png';
+import BedroomImage from '../assets/bedroom.png';
+import BedroomSleepImage from '../assets/bedroomsleep.png';
+import HallwayImage from '../assets/hallway.png';
+import FigImage from '../assets/fig.png';
+import LivingRoomImage from '../assets/livingroom.png';
+import BreadImage from '../assets/bread.png';
 
 const roomMap: Record<string, any> = {
   '0': {

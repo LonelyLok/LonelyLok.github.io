@@ -9,7 +9,7 @@ import VideoGameFootageMenu from './VideoGameFootageMenu';
 import WorkInProgress from './WorkInProgress';
 import VideoBase from './VideoBase';
 import { SplitHelper } from './SplitHelper'
-import { DayOfLifeGame } from './DayOfLifeGame';
+import { DayOfLifeGame } from './dayOfLifeGame/DayOfLifeGame';
 import NavBar from './NarBar'
 import AboutMe from './AboutMe';
 import AmazonInterview2024 from './random/AmazonInterview2024';

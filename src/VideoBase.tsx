@@ -23,6 +23,7 @@ const videoMap = {
     { id: 1, title: 'cerim crucible run 1', youtubeVideoId: 'L2hc9Vmi2-8' },
     { id: 2, title: '(Early Access Patch 1) - Cerim Crucible - Mage', youtubeVideoId: '8TmsKCmq_f4' },
     { id: 3, title: '(Early Access Patch 1) - Cerim Crucible - Archer', youtubeVideoId: 'mDR6bVF2Dpw' },
+    { id: 4, title: 'No Rest for the Wicked Early Access Crucible Update ooga booga Crucible run', youtubeVideoId: '-5A3sfdUa0M' },
   ],
 };
 

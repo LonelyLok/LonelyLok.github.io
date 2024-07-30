@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import CharacterControl from './CharacterControl'
-// Add additional imports if needed
+import { Box } from '@mui/material';
 
 const DayOfLifeGame = () => {
     const [inGame, setInGame] = useState(false);
@@ -10,30 +10,28 @@ const DayOfLifeGame = () => {
     };
 
     return (
-        //@ts-ignore
-        <div>
-            <div style={styles.title}>
-            <h1>Day of Life</h1>
-            </div>
-            <div style={styles.container}>
-            {inGame ? (
-                // Render the CharacterControl component when inGame is true
-                <CharacterControl />
-            ) : (
-                // Render the initial play screen when inGame is false
-                <div style={styles.gameArea}>
-                    <button onClick={handlePlayClick} style={styles.playButton}>Play</button>
+        <Box sx={{ display: 'flex' }}>
+            <Box sx={{ width: '200px', padding: '20px', borderRight: '1px solid #ccc' }}>
+                <p>Control:</p>
+                <p>- A move left</p>
+                <p>- D move right</p>
+                <p>- E to interact</p>
+            </Box>
+            <Box sx={{ flexGrow: 1 }}>
+                <div style={styles.title}>
+                    <h1>Day of Life</h1>
                 </div>
-            )}
-        </div>
-        <div style={styles.sideBox}>
-        <p>Control:</p>
-        <p>- A move left</p>
-        <p>- D move right</p>
-        <p>- E to interact</p>
-        </div>
-        </div>
-        
+                <div style={styles.container}>
+                    {inGame ? (
+                        <CharacterControl />
+                    ) : (
+                        <div style={styles.gameArea}>
+                            <button onClick={handlePlayClick} style={styles.playButton}>Play</button>
+                        </div>
+                    )}
+                </div>
+            </Box>
+        </Box>
     );
 };
 
@@ -44,11 +42,6 @@ const styles: any = {
         justifyContent: 'center', // Center horizontally
         alignItems: 'center', // Center vertically
         textAlign: 'center',
-    },
-    sideBox: {
-        position: 'relative',
-        top: '-600px',
-        left: '1400px'
     },
     gameArea: {
         display: 'inline-block',
