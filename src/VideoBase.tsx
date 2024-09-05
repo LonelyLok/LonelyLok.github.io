@@ -25,6 +25,10 @@ const videoMap = {
     { id: 3, title: '(Early Access Patch 1) - Cerim Crucible - Archer', youtubeVideoId: 'mDR6bVF2Dpw' },
     { id: 4, title: 'No Rest for the Wicked Early Access Crucible Update ooga booga Crucible run', youtubeVideoId: '-5A3sfdUa0M' },
   ],
+  'Black Myth: Wukong': [
+    { id: 1, title: 'wandering wight ooga booga', youtubeVideoId: 'QZMEQdwNleI' },
+    { id: 2, title: 'guangzhi ooga booga', youtubeVideoId: 'hGQ-gOvEXOg' },
+  ]
 };
 
 const VideoBase = ({
@@ -33,7 +37,8 @@ const VideoBase = ({
   gameTitle:
     | 'Monster Hunter Rise'
     | 'Monster Hunter World'
-    | 'No Rest For The Wicked';
+    | 'No Rest For The Wicked'
+    | 'Black Myth: Wukong';
 }) => {
   const data = videoMap[gameTitle];
   return (

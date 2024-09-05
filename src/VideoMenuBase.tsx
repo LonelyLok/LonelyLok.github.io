@@ -39,7 +39,7 @@ const VideoMenuBase = ({
         setVId(youtubeVideoId)
     } 
     return (<div>
-        <Typography align='center' variant='h4'>{mainTitle}</Typography>
+        <Typography align='center' variant='h4' sx={{ mt: 1 }}>{mainTitle}</Typography>
         <Container >
             <div className="customContainer">
                 {data.map(({ youtubeVideoId, title }) => {
