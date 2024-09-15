@@ -13,7 +13,6 @@ import {
   FormControlLabel,
   Checkbox,
 } from '@mui/material';
-import './VideoMenuBase.css';
 
 const style = {
   position: 'absolute' as 'absolute',
