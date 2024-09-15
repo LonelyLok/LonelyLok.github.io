@@ -35,6 +35,14 @@ const VideoGameFootageMenu = () => {
         name: 'Black Myth: Wukong',
         hrefLink: '#/blackmythwukongvideo',
       },
+      {
+        id: 5,
+        imgLink:
+          'https://cdn2.steamgriddb.com/thumb/704f72562168940fbfa7e9f01e0f84aa.jpg',
+        releaseYear: 2024,
+        name: 'Balatro',
+        hrefLink: '#/balatrovideo',
+      },
   ];
   return (
     <div>

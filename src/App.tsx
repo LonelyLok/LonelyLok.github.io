@@ -39,6 +39,8 @@ function App() {
         </Route>
         <Route exact path="/blackmythwukongvideo" component={() => <VideoBase gameTitle={"Black Myth: Wukong"}/>}>
         </Route>
+        <Route exact path="/balatrovideo" component={() => <VideoBase gameTitle={"Balatro"}/>}>
+        </Route>
         <Route exact path="/splithelper" component={SplitHelper}>
         </Route>
         <Route exact path="/dayoflifegame" component={DayOfLifeGame}>
