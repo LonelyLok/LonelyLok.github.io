@@ -43,6 +43,14 @@ const VideoGameFootageMenu = () => {
         name: 'Balatro',
         hrefLink: '#/balatrovideo',
       },
+      {
+        id: 6,
+        imgLink:
+          'https://cdn2.steamgriddb.com/thumb/3b0827743ff1143f14f13c83ce07f9b9.jpg',
+        releaseYear: 2025,
+        name: 'Monster Hunter Wild',
+        hrefLink: '#/monsterhunterwildvideo',
+      },
   ];
   return (
     <div>
