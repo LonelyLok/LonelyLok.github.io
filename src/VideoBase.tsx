@@ -140,6 +140,18 @@ const videoMap = {
       youtubeVideoId: 'X0aYBbGkM4o',
       tags: ['Duel Blades'],
     },
+    {
+      id: 5,
+      title: 'Beta Test - Rey Dau - Long Sword',
+      youtubeVideoId: 'Tve3btxfObI',
+      tags: ['Long Sword'],
+    },
+    {
+      id: 6,
+      title: 'Beta Test - Balahara - Lance',
+      youtubeVideoId: 'KVqbKcGJuFo',
+      tags: ['Lance'],
+    },
   ]
 };
 
