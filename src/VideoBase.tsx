@@ -115,6 +115,44 @@ const videoMap = {
   Balatro: [
     { id: 1, title: 'red deck gold stake', youtubeVideoId: 'NJK0HFxrH0A' },
   ],
+  'Monster Hunter Wild': [
+    {
+      id: 1,
+      title: 'Beta Test - Chatacabra - Long Sword',
+      youtubeVideoId: 'nA6AKJ8kLWM',
+      tags: ['Long Sword'],
+    },
+    {
+      id: 2,
+      title: 'Beta Test - Chatacabra - Bow',
+      youtubeVideoId: 'dwfaG4XQa-s',
+      tags: ['Bow'],
+    },
+    {
+      id: 3,
+      title: 'Beta Test - Alpha Doshaguma - Long Sword',
+      youtubeVideoId: 'X9l249xKi24',
+      tags: ['Long Sword'],
+    },
+    {
+      id: 4,
+      title: 'Beta Test - Chatacabra - Duel Blades',
+      youtubeVideoId: 'X0aYBbGkM4o',
+      tags: ['Duel Blades'],
+    },
+    {
+      id: 5,
+      title: 'Beta Test - Rey Dau - Long Sword',
+      youtubeVideoId: 'Tve3btxfObI',
+      tags: ['Long Sword'],
+    },
+    {
+      id: 6,
+      title: 'Beta Test - Balahara - Lance',
+      youtubeVideoId: 'KVqbKcGJuFo',
+      tags: ['Lance'],
+    },
+  ]
 };
 
 type GameTitles = keyof typeof videoMap;
