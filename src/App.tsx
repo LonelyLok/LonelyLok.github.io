@@ -13,6 +13,7 @@ import { DayOfLifeGame } from './dayOfLifeGame/DayOfLifeGame';
 import NavBar from './NarBar'
 import AboutMe from './AboutMe';
 import AmazonInterview2024 from './random/AmazonInterview2024';
+import MyPCSpec from './random/MyPCSpec';
 
 function App() {
   return (
@@ -50,6 +51,8 @@ function App() {
         <Route exact path="/aboutme" component={AboutMe}>
         </Route>
         <Route exact path="/amazoninterview2024" component={AmazonInterview2024}>
+        </Route>
+        <Route exact path="/mypcspec" component={MyPCSpec}>
         </Route>
       </Switch>
     </HashRouter>

@@ -32,7 +32,7 @@ const videoHeight = 720;
 const thumbnailLinkBuilder = (youtubeVideoId: string) =>
   `https://img.youtube.com/vi/${youtubeVideoId}/0.jpg`;
 const videoLinkBuilder = (youtubeVideoId: string) =>
-  `https://www.youtube.com/embed/${youtubeVideoId}`;
+  `https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1`;
 
 const VideoMenuBase = ({
   mainTitle,
@@ -146,7 +146,7 @@ const VideoMenuBase = ({
                 height={videoHeight}
                 src={videoLinkBuilder(vId)}
                 title='YouTube video player'
-                allow='autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
                 allowFullScreen
               ></iframe>
             </Box>

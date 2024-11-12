@@ -119,6 +119,10 @@ function NavBar() {
                 name: 'Amazon SDE2 Interview 2024 (No offer)',
                 link: '/amazoninterview2024',
               },
+              {
+                name: 'My PC Spec',
+                link: '/mypcspec',
+              }
             ]}
           />
         </Box>
