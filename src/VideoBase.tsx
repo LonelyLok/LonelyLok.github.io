@@ -10,14 +10,27 @@ const videoMap = {
     { id: 2, title: 'Long Sword, Demo', youtubeVideoId: 'EYW0qSlNZvg' },
   ],
   'Monster Hunter World': [
-    { id: 1, title: 'Long Sword, Alatreon', youtubeVideoId: 'c9rNif89naI' },
-    { id: 2, title: 'Long Sword, Kirin', youtubeVideoId: 'TMTJ1AbnAAI' },
-    { id: 3, title: 'Long Sword, Teostra', youtubeVideoId: 'qi0ZTAlbyis' },
+    { id: 1, title: 'Long Sword, Alatreon', youtubeVideoId: 'c9rNif89naI', tags: ['Long Sword'] },
+    { id: 2, title: 'Long Sword, Kirin', youtubeVideoId: 'TMTJ1AbnAAI', tags: ['Long Sword'] },
+    { id: 3, title: 'Long Sword, Teostra', youtubeVideoId: 'qi0ZTAlbyis', tags: ['Long Sword'] },
     {
       id: 4,
       title: 'Long Sword, Ruiner Nergigante',
       youtubeVideoId: 'OBNxqgdpxvk',
+      tags: ['Long Sword']
     },
+    {
+      id: 5,
+      title: 'Charge blade, Teostra, 09:42',
+      youtubeVideoId: 'oKeZOmTl1P8',
+      tags: ['Charge Blade']
+    },
+    {
+      id: 6,
+      title: 'Charge blade, Teostra, 08:42',
+      youtubeVideoId: 'tCLUNmsKmRs',
+      tags: ['Charge Blade']
+    }
   ],
   'No Rest For The Wicked': [
     { id: 1, title: 'cerim crucible run 1', youtubeVideoId: 'L2hc9Vmi2-8' },
@@ -152,7 +165,7 @@ const videoMap = {
       youtubeVideoId: 'KVqbKcGJuFo',
       tags: ['Lance'],
     },
-  ]
+  ],
 };
 
 type GameTitles = keyof typeof videoMap;

@@ -1,0 +1,55 @@
+import {
+  Container,
+  Box,
+  Typography,
+  List,
+  ListItem,
+  IconButton
+} from '@mui/material';
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+
+const MyPCSpec = () => {
+  const data = {
+    CPU: 'AMD Ryzen 5 3600',
+    GPU: 'NVIDIA RTX 3060',
+    MOBO: 'ASROCK X570 Phantom Gaming 4',
+    RAM: '32GB DDR4',
+    Storage: '500GB SATA SSD, 1TB NVME SSD, 1TB SSHD',
+    PSU: 'CORSAIR TX-M Series TX550M 550W',
+    CASE: 'NZXT H510'
+  };
+  const copyToClipboard = () => {
+    const text = Object.entries(data).map(([key, value]) => `${key}: ${value}`).join('\n');
+    navigator.clipboard.writeText(text);
+  }
+  return (
+    <Container>
+      <Box
+        display='flex'
+        flexDirection='column'
+        alignItems='center'
+        minHeight='100vh'
+      >
+        <Typography variant='h3' component='h3' gutterBottom>
+          My PC Spec
+        </Typography>
+        <IconButton color='inherit' onClick={copyToClipboard}>
+          <ContentCopyIcon />
+        </IconButton>
+        <List>
+          {Object.entries(data).map(([key, value]) => {
+            return (
+              <ListItem>
+                <Typography variant='body1' gutterBottom>
+                  {key}: {value}
+                </Typography>
+              </ListItem>
+            );
+          })}
+        </List>
+      </Box>
+    </Container>
+  );
+};
+
+export default MyPCSpec;
