@@ -30,6 +30,12 @@ const videoMap = {
       title: 'Charge blade, Teostra, 08:42',
       youtubeVideoId: 'tCLUNmsKmRs',
       tags: ['Charge Blade']
+    },
+    {
+      id: 7,
+      title: 'Hammer, Teostra, 06:25',
+      youtubeVideoId: 'b3EcxnrF90I',
+      tags: ['Hammer']
     }
   ],
   'No Rest For The Wicked': [
@@ -127,6 +133,7 @@ const videoMap = {
   ],
   Balatro: [
     { id: 1, title: 'red deck gold stake', youtubeVideoId: 'NJK0HFxrH0A' },
+    { id: 2, title: 'blue deck gold stake', youtubeVideoId: 'q_HOS0jhaLE' },
   ],
   'Monster Hunter Wild': [
     {

@@ -4,9 +4,11 @@ import {
   Typography,
   List,
   ListItem,
-  IconButton
+  IconButton,
+  Tooltip,
 } from '@mui/material';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import { useState } from 'react';
 
 const MyPCSpec = () => {
   const data = {
@@ -16,12 +18,19 @@ const MyPCSpec = () => {
     RAM: '32GB DDR4',
     Storage: '500GB SATA SSD, 1TB NVME SSD, 1TB SSHD',
     PSU: 'CORSAIR TX-M Series TX550M 550W',
-    CASE: 'NZXT H510'
+    CASE: 'NZXT H510',
   };
+
+  const [isCopy, setIsCopy] = useState(false);
+
   const copyToClipboard = () => {
-    const text = Object.entries(data).map(([key, value]) => `${key}: ${value}`).join('\n');
+    const text = Object.entries(data)
+      .map(([key, value]) => `${key}: ${value}`)
+      .join('\n');
     navigator.clipboard.writeText(text);
-  }
+    setIsCopy(true);
+    setTimeout(() => setIsCopy(false), 2000);
+  };
   return (
     <Container>
       <Box
@@ -33,9 +42,11 @@ const MyPCSpec = () => {
         <Typography variant='h3' component='h3' gutterBottom>
           My PC Spec
         </Typography>
-        <IconButton color='inherit' onClick={copyToClipboard}>
-          <ContentCopyIcon />
-        </IconButton>
+        <Tooltip title={isCopy? 'Copied!' : 'Copy to clipboard'} arrow>
+          <IconButton color='inherit' onClick={copyToClipboard}>
+            <ContentCopyIcon />
+          </IconButton>
+        </Tooltip>
         <List>
           {Object.entries(data).map(([key, value]) => {
             return (
