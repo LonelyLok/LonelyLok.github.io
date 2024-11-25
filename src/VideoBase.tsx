@@ -134,6 +134,11 @@ const videoMap = {
   Balatro: [
     { id: 1, title: 'red deck gold stake', youtubeVideoId: 'NJK0HFxrH0A' },
     { id: 2, title: 'blue deck gold stake', youtubeVideoId: 'q_HOS0jhaLE' },
+    { id: 3, title: 'yellow deck gold stake', youtubeVideoId: 'hib6XjY1Zlw' },
+    { id: 4, title: 'green deck gold stake', youtubeVideoId: 's-rLV3AMJV4' },
+    { id: 5, title: 'checkered deck gold stake', youtubeVideoId: 'PGUisX3czvE' },
+    { id: 6, title: 'abandoned deck gold stake', youtubeVideoId: 'zqSxUpTscrw' },
+    { id: 7, title: 'black deck gold stake', youtubeVideoId: 'p1QMdK79n18' },
   ],
   'Monster Hunter Wild': [
     {
