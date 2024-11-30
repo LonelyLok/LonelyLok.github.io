@@ -6,8 +6,11 @@ import {
   ListItem,
   IconButton,
   Tooltip,
+  Button,
+  Link
 } from '@mui/material';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { useState } from 'react';
 
 const MyPCSpec = () => {
@@ -58,6 +61,11 @@ const MyPCSpec = () => {
             );
           })}
         </List>
+        <Typography variant='body2' gutterBottom>
+          <Button variant="contained" href='https://pcpartpicker.com/list/QRw9Jn' rel="noopener noreferrer" target="_blank" endIcon={<OpenInNewIcon/>}>
+          PC part picker link 
+          </Button>
+          </Typography>
       </Box>
     </Container>
   );
