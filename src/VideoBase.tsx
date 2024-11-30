@@ -10,12 +10,12 @@ const videoMap = {
     { id: 2, title: 'Long Sword, Demo', youtubeVideoId: 'EYW0qSlNZvg' },
   ],
   'Monster Hunter World': [
-    { id: 1, title: 'Long Sword, Alatreon', youtubeVideoId: 'c9rNif89naI', tags: ['Long Sword'] },
-    { id: 2, title: 'Long Sword, Kirin', youtubeVideoId: 'TMTJ1AbnAAI', tags: ['Long Sword'] },
-    { id: 3, title: 'Long Sword, Teostra', youtubeVideoId: 'qi0ZTAlbyis', tags: ['Long Sword'] },
+    { id: 1, title: 'Long Sword, Alatreon, 08:52', youtubeVideoId: 'c9rNif89naI', tags: ['Long Sword'] },
+    { id: 2, title: 'Long Sword, Kirin, 04:18', youtubeVideoId: 'TMTJ1AbnAAI', tags: ['Long Sword'] },
+    { id: 3, title: 'Long Sword, Teostra, 04:55', youtubeVideoId: 'qi0ZTAlbyis', tags: ['Long Sword'] },
     {
       id: 4,
-      title: 'Long Sword, Ruiner Nergigante',
+      title: 'Long Sword, Ruiner Nergigante, 04:22',
       youtubeVideoId: 'OBNxqgdpxvk',
       tags: ['Long Sword']
     },
@@ -36,6 +36,12 @@ const videoMap = {
       title: 'Hammer, Teostra, 06:25',
       youtubeVideoId: 'b3EcxnrF90I',
       tags: ['Hammer']
+    },
+    {
+      id: 8,
+      title: 'Great sword, Teostra, 06:26',
+      youtubeVideoId: 'o16nkiJj2X4',
+      tags: ['Great sword']
     }
   ],
   'No Rest For The Wicked': [
@@ -139,6 +145,10 @@ const videoMap = {
     { id: 5, title: 'checkered deck gold stake', youtubeVideoId: 'PGUisX3czvE' },
     { id: 6, title: 'abandoned deck gold stake', youtubeVideoId: 'zqSxUpTscrw' },
     { id: 7, title: 'black deck gold stake', youtubeVideoId: 'p1QMdK79n18' },
+    { id: 8, title: 'ghost deck gold stake', youtubeVideoId: '-ptPcw9cq0A' },
+    { id: 9, title: 'magic deck gold stake', youtubeVideoId: '5eAsRZJoLWE' },
+    { id: 10, title: 'nebula deck gold stake', youtubeVideoId: 'DW4VetVst5g' },
+    { id: 11, title: 'plasma deck gold stake', youtubeVideoId: 'oXyuSlGwKNw' },
   ],
   'Monster Hunter Wild': [
     {
