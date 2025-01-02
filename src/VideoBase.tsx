@@ -10,39 +10,54 @@ const videoMap = {
     { id: 2, title: 'Long Sword, Demo', youtubeVideoId: 'EYW0qSlNZvg' },
   ],
   'Monster Hunter World': [
-    { id: 1, title: 'Long Sword, Alatreon, 08:52', youtubeVideoId: 'c9rNif89naI', tags: ['Long Sword'] },
-    { id: 2, title: 'Long Sword, Kirin, 04:18', youtubeVideoId: 'TMTJ1AbnAAI', tags: ['Long Sword'] },
-    { id: 3, title: 'Long Sword, Teostra, 04:55', youtubeVideoId: 'qi0ZTAlbyis', tags: ['Long Sword'] },
+    {
+      id: 1,
+      title: 'Long Sword, Alatreon, 08:52',
+      youtubeVideoId: 'c9rNif89naI',
+      tags: ['Long Sword'],
+    },
+    {
+      id: 2,
+      title: 'Long Sword, Kirin, 04:18',
+      youtubeVideoId: 'TMTJ1AbnAAI',
+      tags: ['Long Sword'],
+    },
+    {
+      id: 3,
+      title: 'Long Sword, Teostra, 04:55',
+      youtubeVideoId: 'qi0ZTAlbyis',
+      tags: ['Long Sword'],
+    },
     {
       id: 4,
       title: 'Long Sword, Ruiner Nergigante, 04:22',
       youtubeVideoId: 'OBNxqgdpxvk',
-      tags: ['Long Sword']
+      tags: ['Long Sword'],
     },
     {
       id: 5,
       title: 'Charge blade, Teostra, 09:42',
       youtubeVideoId: 'oKeZOmTl1P8',
-      tags: ['Charge Blade']
+      tags: ['Charge Blade'],
     },
     {
       id: 6,
       title: 'Charge blade, Teostra, 08:42',
       youtubeVideoId: 'tCLUNmsKmRs',
-      tags: ['Charge Blade']
+      tags: ['Charge Blade'],
     },
     {
       id: 7,
       title: 'Hammer, Teostra, 06:25',
       youtubeVideoId: 'b3EcxnrF90I',
-      tags: ['Hammer']
+      tags: ['Hammer'],
     },
     {
       id: 8,
       title: 'Great sword, Teostra, 06:26',
       youtubeVideoId: 'o16nkiJj2X4',
-      tags: ['Great sword']
-    }
+      tags: ['Great sword'],
+    },
   ],
   'No Rest For The Wicked': [
     { id: 1, title: 'cerim crucible run 1', youtubeVideoId: 'L2hc9Vmi2-8' },
@@ -142,8 +157,16 @@ const videoMap = {
     { id: 2, title: 'blue deck gold stake', youtubeVideoId: 'q_HOS0jhaLE' },
     { id: 3, title: 'yellow deck gold stake', youtubeVideoId: 'hib6XjY1Zlw' },
     { id: 4, title: 'green deck gold stake', youtubeVideoId: 's-rLV3AMJV4' },
-    { id: 5, title: 'checkered deck gold stake', youtubeVideoId: 'PGUisX3czvE' },
-    { id: 6, title: 'abandoned deck gold stake', youtubeVideoId: 'zqSxUpTscrw' },
+    {
+      id: 5,
+      title: 'checkered deck gold stake',
+      youtubeVideoId: 'PGUisX3czvE',
+    },
+    {
+      id: 6,
+      title: 'abandoned deck gold stake',
+      youtubeVideoId: 'zqSxUpTscrw',
+    },
     { id: 7, title: 'black deck gold stake', youtubeVideoId: 'p1QMdK79n18' },
     { id: 8, title: 'ghost deck gold stake', youtubeVideoId: '-ptPcw9cq0A' },
     { id: 9, title: 'magic deck gold stake', youtubeVideoId: '5eAsRZJoLWE' },
@@ -186,6 +209,18 @@ const videoMap = {
       title: 'Beta Test - Balahara - Lance',
       youtubeVideoId: 'KVqbKcGJuFo',
       tags: ['Lance'],
+    },
+  ],
+  'Path Of Exile 2': [
+    {
+      id: 1,
+      title: 'early access casual seepage t15 pathfinder lv 86',
+      youtubeVideoId: '4CtEdx5vB-0',
+    },
+    {
+      id: 2,
+      title: 'early access casual steaming springs t15 invoker lv 90',
+      youtubeVideoId: 'YSth03LlPlA',
     },
   ],
 };

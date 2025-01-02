@@ -44,6 +44,8 @@ function App() {
         </Route>
         <Route exact path="/monsterhunterwildvideo" component={() => <VideoBase gameTitle={"Monster Hunter Wild"}/>}>
         </Route>
+        <Route exact path="/pathofexile2video" component={() => <VideoBase gameTitle={"Path Of Exile 2"}/>}>
+        </Route>
         <Route exact path="/splithelper" component={SplitHelper}>
         </Route>
         <Route exact path="/dayoflifegame" component={DayOfLifeGame}>
