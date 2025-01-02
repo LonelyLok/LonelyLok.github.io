@@ -51,6 +51,14 @@ const VideoGameFootageMenu = () => {
         name: 'Monster Hunter Wild',
         hrefLink: '#/monsterhunterwildvideo',
       },
+      {
+        id: 7,
+        imgLink:
+          'https://cdn2.steamgriddb.com/thumb/b38fe12e61d2088a4d10fd51c6e3985d.jpg',
+        releaseYear: 2024,
+        name: 'Path of Exile 2',
+        hrefLink: '#/pathofexile2video',
+      }
   ];
   return (
     <div>
