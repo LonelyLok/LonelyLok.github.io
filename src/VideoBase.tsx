@@ -210,6 +210,12 @@ const videoMap = {
       youtubeVideoId: 'KVqbKcGJuFo',
       tags: ['Lance'],
     },
+    {
+      id: 7,
+      title: 'Beta Test 2 - Chained Arkveld - Long Sword',
+      youtubeVideoId: 'Uor0sX5q6IU',
+      tags: ['Long Sword'],
+    },
   ],
   'Path Of Exile 2': [
     {
@@ -221,6 +227,16 @@ const videoMap = {
       id: 2,
       title: 'early access casual steaming springs t15 invoker lv 90',
       youtubeVideoId: 'YSth03LlPlA',
+    },
+    {
+      id: 3,
+      title: 'early access casual the copper citadel t15 invoker lv 93',
+      youtubeVideoId: 'ZcyaM-tEmiU',
+    },
+    {
+      id: 4,
+      title: 'early access casual the iron citadel t15 invoker lv 94',
+      youtubeVideoId: 'iT9H4Jt5WW0',
     },
   ],
 };
