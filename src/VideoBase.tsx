@@ -216,6 +216,36 @@ const videoMap = {
       youtubeVideoId: 'Uor0sX5q6IU',
       tags: ['Long Sword'],
     },
+    {
+      id: 8,
+      title: 'polygon arkveld',
+      youtubeVideoId: 'UcSofbkEZ_c',
+      tags: ['Long Sword'],
+    },
+    {
+      id: 9,
+      title: `Arkveld - difficulty 4 - great sword - 07'38''06`,
+      youtubeVideoId: 'Cuw8Y-I_lrw',
+      tags: ['Great Sword'],
+    },
+    {
+      id: 10,
+      title: `Arkveld - difficulty 3 - long sword - 03'35''77`,
+      youtubeVideoId: 'yVNVOk3tHEQ',
+      tags: ['Long Sword'],
+    },
+    {
+      id: 11,
+      title: `Arkveld - difficulty 4 - long sword - 04'05''43`,
+      youtubeVideoId: 'V50iifhXMcg',
+      tags: ['Long Sword'],
+    },
+    {
+      id: 12,
+      title: `Tempered Arkveld - difficulty 5 - great sword - 06'30''77`,
+      youtubeVideoId: 'dE61S3wmW9k',
+      tags: ['Great Sword'],
+    },
   ],
   'Path Of Exile 2': [
     {

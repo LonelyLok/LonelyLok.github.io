@@ -107,7 +107,7 @@ const VideoMenuBase = ({
                   return true;
                 }
                 return d.tags.some((tag) => filters[tag]);
-              })
+              }).sort((a, b) => b.id - a.id)
               .map(({ youtubeVideoId, title }) => (
                 <Grid item xs={12} sm={6} md={4} lg={3} key={youtubeVideoId}>
                   <Card
