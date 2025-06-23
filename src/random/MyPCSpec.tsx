@@ -11,15 +11,16 @@ import {
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { useState } from 'react';
+import pcPic from '../assets/pc.jpg';
 
 const MyPCSpec = () => {
   const data = {
     CPU: 'AMD Ryzen 5 3600',
-    GPU: 'NVIDIA RTX 3060',
+    GPU: 'Intel Arc B580',
     MOBO: 'ASROCK X570 Phantom Gaming 4',
     RAM: '32GB DDR4',
     Storage: '500GB SATA SSD, 1TB NVME SSD, 1TB SSHD',
-    PSU: 'CORSAIR TX-M Series TX550M 550W',
+    PSU: 'Super Flower Leadex III 650W 80+ Gold',
     CASE: 'NZXT H510',
   };
 
@@ -44,7 +45,7 @@ const MyPCSpec = () => {
         <Typography variant='h3' component='h3' gutterBottom>
           My PC Spec
         </Typography>
-        <Tooltip title={isCopy? 'Copied!' : 'Copy to clipboard'} arrow>
+        <Tooltip title={isCopy ? 'Copied!' : 'Copy to clipboard'} arrow>
           <IconButton color='inherit' onClick={copyToClipboard}>
             <ContentCopyIcon />
           </IconButton>
@@ -59,12 +60,26 @@ const MyPCSpec = () => {
               </ListItem>
             );
           })}
+          <ListItem sx={{ justifyContent: 'center' }}>
+              <Box
+                component='img'
+                src={pcPic}
+                alt='My PC'
+                sx={{ maxWidth: '20%' }}
+              />
+          </ListItem>
         </List>
         <Typography variant='body2' gutterBottom>
-          <Button variant="contained" href='https://pcpartpicker.com/list/QRw9Jn' rel="noopener noreferrer" target="_blank" endIcon={<OpenInNewIcon/>}>
-          PC part picker link 
+          <Button
+            variant='contained'
+            href='https://pcpartpicker.com/list/sv3Qv4'
+            rel='noopener noreferrer'
+            target='_blank'
+            endIcon={<OpenInNewIcon />}
+          >
+            PC part picker link
           </Button>
-          </Typography>
+        </Typography>
       </Box>
     </Container>
   );
