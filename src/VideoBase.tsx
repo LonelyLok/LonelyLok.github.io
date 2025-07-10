@@ -246,6 +246,30 @@ const videoMap = {
       youtubeVideoId: 'dE61S3wmW9k',
       tags: ['Great Sword'],
     },
+    {
+      id: 13,
+      title: `Arkveld - difficulty 5 - insect glaive - 06'10''84`,
+      youtubeVideoId: 'OHbmJPbddp4',
+      tags: ['Insect Glaive'],
+    },
+    {
+      id: 14,
+      title: `Arkveld - difficulty 4 - charge blade - 04'37''30`,
+      youtubeVideoId: 'f4CnfKYIGeE',
+      tags: ['Charge Blade'],
+    },
+    {
+      id: 15,
+      title: `Arkveld - difficulty 5 - hammer - 07'07''89`,
+      youtubeVideoId: 'qTvP6zMJBUM',
+      tags: ['Hammer'],
+    },
+    {
+      id: 16,
+      title: `Arkveld - difficulty 3 - switch axe - 04'05''35`,
+      youtubeVideoId: 'VnrXdO4PaLg',
+      tags: ['Switch Axe'],
+    },
   ],
   'Path Of Exile 2': [
     {
@@ -267,6 +291,13 @@ const videoMap = {
       id: 4,
       title: 'early access casual the iron citadel t15 invoker lv 94',
       youtubeVideoId: 'iT9H4Jt5WW0',
+    },
+  ],
+  'Clair Obscur: Expedition 33': [
+    {
+      id: 1,
+      title: 'Clair Obscur: Expedition 33 - Boss fight - Simon - Normal',
+      youtubeVideoId: 'kijWBltLLPg',
     },
   ],
 };

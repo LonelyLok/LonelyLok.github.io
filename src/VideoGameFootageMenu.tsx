@@ -58,6 +58,14 @@ const VideoGameFootageMenu = () => {
         releaseYear: 2024,
         name: 'Path of Exile 2',
         hrefLink: '#/pathofexile2video',
+      },
+      {
+        id: 8,
+        imgLink:
+          'https://cdn2.steamgriddb.com/thumb/e7fff0c2739cf86c8aa5559eefe74220.jpg',
+        releaseYear: 2025,
+        name: 'Clair Obscur: Expedition 33',
+        hrefLink: '#/clairobscurvideo',
       }
   ];
   return (
