@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import {
   Typography,
   Card,
@@ -12,6 +12,7 @@ import {
   FormGroup,
   FormControlLabel,
   Checkbox,
+  Pagination,
 } from '@mui/material';
 
 const style = {
@@ -48,6 +49,7 @@ const VideoMenuBase = ({
 }) => {
   const uniqueTags = [...new Set(data.flatMap(({ tags }) => tags || []))];
   const [filters, setFilters] = useState<Record<string, boolean>>({});
+  const [page, setPage] = useState(1);
   useEffect(() => {
     setFilters(uniqueTags.reduce((acc, tag) => ({ ...acc, [tag]: true }), {}));
   }, []);
@@ -63,12 +65,36 @@ const VideoMenuBase = ({
     setVId(youtubeVideoId);
   };
 
+  const handlePageChange = (_evt: any, value: number) => {
+    setPage(value);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const handleTagCheckboxChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
     const { name, checked } = event.target;
     setFilters((prev) => ({ ...prev, [name]: checked }));
   };
+
+  const filtered = useMemo(
+    () =>
+      data.filter((d) => {
+        if (!d?.tags?.length) return true;
+        return d.tags.some((tag) => filters[tag]);
+      }).sort((a, b) => b.id - a.id),
+    [data, filters]
+  );
+
+  const itemsPerPage = 12;
+
+  const pageCount = Math.ceil(filtered.length / itemsPerPage);
+
+  // 3) slice out just the items for the current page
+  const paginated = filtered.slice(
+    (page - 1) * itemsPerPage,
+    page * itemsPerPage
+  );
   return (
     <Box display='flex' width='100%'>
       <Box width='10%' p={2}>
@@ -101,13 +127,7 @@ const VideoMenuBase = ({
             {mainTitle}
           </Typography>
           <Grid container spacing={2.5}>
-            {data
-              .filter((d) => {
-                if (!d?.tags?.length) {
-                  return true;
-                }
-                return d.tags.some((tag) => filters[tag]);
-              }).sort((a, b) => b.id - a.id)
+            {paginated
               .map(({ youtubeVideoId, title }) => (
                 <Grid item xs={12} sm={6} md={4} lg={3} key={youtubeVideoId}>
                   <Card
@@ -152,6 +172,28 @@ const VideoMenuBase = ({
             </Box>
           </Modal>
         </Container>
+        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
+          <Pagination
+            count={pageCount}
+            page={page}
+            onChange={handlePageChange}
+            color='primary'
+            sx={{
+              '& .MuiPaginationItem-root': {
+                color: 'white',
+              },
+              '& .MuiPaginationItem-root:hover': {
+                backgroundColor: 'rgba(255,255,255,0.1)',
+              },
+              // ↑↑ change this ↓↓
+              '& .MuiPaginationItem-root.Mui-selected': {
+                backgroundColor: (theme) => theme.palette.secondary.main,
+                color: (theme) =>
+                  theme.palette.getContrastText(theme.palette.secondary.main),
+              },
+            }}
+          />
+        </Box>
       </Box>
     </Box>
   );

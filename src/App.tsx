@@ -10,7 +10,7 @@ import WorkInProgress from './WorkInProgress';
 import VideoBase from './VideoBase';
 import { SplitHelper } from './SplitHelper'
 import { DayOfLifeGame } from './dayOfLifeGame/DayOfLifeGame';
-import NavBar from './NarBar'
+import NavBar from './NavBar'
 import AboutMe from './AboutMe';
 import AmazonInterview2024 from './random/AmazonInterview2024';
 import MyPCSpec from './random/MyPCSpec';
@@ -45,6 +45,8 @@ function App() {
         <Route exact path="/monsterhunterwildvideo" component={() => <VideoBase gameTitle={"Monster Hunter Wild"}/>}>
         </Route>
         <Route exact path="/pathofexile2video" component={() => <VideoBase gameTitle={"Path Of Exile 2"}/>}>
+        </Route>
+        <Route exact path="/clairobscurvideo" component={() => <VideoBase gameTitle={"Clair Obscur: Expedition 33"}/>}>
         </Route>
         <Route exact path="/splithelper" component={SplitHelper}>
         </Route>

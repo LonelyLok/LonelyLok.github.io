@@ -1,20 +1,49 @@
 import React from 'react';
-import './App.css';
-import { Typography, Link, Box, Container } from '@mui/material';
+import {
+  createTheme,
+  ThemeProvider,
+  CssBaseline,
+  GlobalStyles,
+  Typography,
+  Box,
+  Container,
+} from '@mui/material';
 
-const globalFontType = 'Arial';
+// 1. Create your MUI theme
+const theme = createTheme({
+  palette: {
+    mode: 'light',
+    primary: { main: '#5568fe' },
+    secondary: { main: '#ff8a65' },
+    background: { default: '#fafbfc', paper: '#fff' },
+    text: { primary: '#222', secondary: '#555' },
+  },
+  typography: {
+    fontFamily: '"Inter", sans-serif',
+    h2: { fontWeight: 700, letterSpacing: '-0.02em' },
+    h4: { fontWeight: 400, color: '#444' },
+    body1: { lineHeight: 1.6 },
+  },
+  spacing: 4,
+});
 
-const Home = () => {
+export default function Home() {
   return (
-    <Container>
-      <Typography variant='h2' component='h2' gutterBottom>
-        Welcome
-      </Typography>
-      <Typography variant='h4' component='h4' gutterBottom>
-        This is a personal website of Henry
-      </Typography>
-    </Container>
+      <Box
+        sx={{
+          height: '100vh',
+          display: 'flex',
+          alignItems: 'center',
+        }}
+      >
+        <Container maxWidth="md" sx={{ textAlign: 'center', px: 3 }}>
+          <Typography variant="h2" gutterBottom>
+            Hey there, I’m Henry
+          </Typography>
+          <Typography variant="h4" gutterBottom sx={{ color: '#fcfcfc' }}>
+            A ChatGPT enjoyer, PC gamer.
+          </Typography>
+        </Container>
+      </Box>
   );
-};
-
-export default Home;
+}
