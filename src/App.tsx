@@ -14,6 +14,7 @@ import NavBar from './NavBar'
 import AboutMe from './AboutMe';
 import AmazonInterview2024 from './random/AmazonInterview2024';
 import MyPCSpec from './random/MyPCSpec';
+import { games } from './fakeDB'
 
 function App() {
   return (
@@ -32,22 +33,10 @@ function App() {
         </Route>
         <Route exact path="/wip" component={WorkInProgress}>
         </Route>
-        <Route exact path="/monsterhunterworldvideo" component={() => <VideoBase gameTitle={"Monster Hunter World"}/>}>
-        </Route>
-        <Route exact path="/monsterhunterrisevideo" component={() => <VideoBase gameTitle={"Monster Hunter Rise"}/>}>
-        </Route>
-        <Route exact path="/norestforthewickedvideo" component={() => <VideoBase gameTitle={"No Rest For The Wicked"}/>}>
-        </Route>
-        <Route exact path="/blackmythwukongvideo" component={() => <VideoBase gameTitle={"Black Myth: Wukong"}/>}>
-        </Route>
-        <Route exact path="/balatrovideo" component={() => <VideoBase gameTitle={"Balatro"}/>}>
-        </Route>
-        <Route exact path="/monsterhunterwildvideo" component={() => <VideoBase gameTitle={"Monster Hunter Wild"}/>}>
-        </Route>
-        <Route exact path="/pathofexile2video" component={() => <VideoBase gameTitle={"Path Of Exile 2"}/>}>
-        </Route>
-        <Route exact path="/clairobscurvideo" component={() => <VideoBase gameTitle={"Clair Obscur: Expedition 33"}/>}>
-        </Route>
+         {games.map((game) => (
+          <Route key={game.id} exact path={game.hrefLink} component={() => <VideoBase gameTitle={game.name} />}>
+          </Route>
+        ))}
         <Route exact path="/splithelper" component={SplitHelper}>
         </Route>
         <Route exact path="/dayoflifegame" component={DayOfLifeGame}>
