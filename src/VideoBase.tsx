@@ -1,6 +1,6 @@
 import VideoMenuBase from './VideoMenuBase';
 
-const videoMap = {
+const videoMap: Record<string, any> = {
   'Monster Hunter Rise': [
     {
       id: 1,
@@ -300,11 +300,19 @@ const videoMap = {
       youtubeVideoId: 'kijWBltLLPg',
     },
   ],
+  'Shape of Dreams': [{
+    id: 1,
+    title: 'Shape of Dreams - Nightmare - Mist - Primus boss fight',
+    youtubeVideoId: 'a5IJLsFAtfs'
+  },
+  {
+    id: 2,
+    title: 'Shape of Dreams - Nightmare - Vesper - Primus boss fight',
+    youtubeVideoId: '3G4mGh-NJF8'
+  }]
 };
 
-type GameTitles = keyof typeof videoMap;
-
-const VideoBase = ({ gameTitle }: { gameTitle: GameTitles }) => {
+const VideoBase = ({ gameTitle }: { gameTitle: string }) => {
   const data = videoMap[gameTitle];
   return (
     <div>
