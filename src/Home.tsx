@@ -28,7 +28,7 @@ export default function Home() {
           flexWrap="wrap"
           sx={{ mt: 3, gap: 1 }}
         >
-          <Chip label="Software enginner" variant="outlined" />
+          <Chip label="Software engineer" variant="outlined" />
           <Chip label="ChatGPT enjoyer" variant="outlined" />
           <Chip label="Vibe code legend" variant="outlined" />
           <Chip label="Monster hunter" variant="outlined" />
