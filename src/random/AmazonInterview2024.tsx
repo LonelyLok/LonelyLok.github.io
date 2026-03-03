@@ -15,39 +15,39 @@ const data = [
   {
     time: '2024/05/28',
     content:
-      'An amazon recruiter reached out to me on LinkedIn and provide a link to schedule a phone call.',
+      'An Amazon recruiter reached out to me on LinkedIn and shared a link to schedule a phone call.',
   },
   {
     time: '2024/05/30',
     content:
-      'Talk to the recruiter on the phone. Basic questions about my background and experience. After the call, the recruiter sent me a coding challenge from hackerrank.',
+      'I spoke with the recruiter on the phone. They asked basic questions about my background and experience. After the call, I received a HackerRank coding challenge.',
   },
   {
     time: '2024/06/03',
     content:
-      'I completed the coding challenge and also let recuriter know I completed it. There was two questions and it was like leetcode medium level. There also scenario questions like given a project, which items should be prioritized and why.',
+      'I completed the coding challenge and let the recruiter know. There were two LeetCode-medium level questions, plus scenario questions about project prioritization and reasoning.',
   },
   {
     time: '2024/06/05',
     content:
-      'Recruiter reached out to me and said want to schedule a phone call to talk about next steps on the next day.',
+      'The recruiter reached out and asked to schedule a phone call the next day to discuss next steps.',
   },
   {
     time: '2024/06/06',
     content:
-      'Talk to the recuriter on the phone and the recruiter said I passed the coding challenge and want to schedule a virtual onsite interview. Due to the location I was looking for, the next interview around is in late July. The recuiter mention that if I have other final round interview, then they can move me to a earlier spot. We also scheduled two more interview in between to go over other things.',
+      'I spoke with the recruiter and learned I passed the coding challenge. They wanted to schedule a virtual onsite interview. Because of the location I was targeting, the next available slot was in late July. The recruiter said they could move me earlier if I had other final-round interviews. We also scheduled two additional calls to go over prep details.',
   },
   {
     time: '2024/06/10',
-    content: 'I informed the recruiter that I have another final round interview scheduled on the next day (The company is called FloQast and spoiler alert, I did not get the offer from them either).',
+    content: 'I informed the recruiter that I had another final-round interview the next day (FloQast, and I did not get that offer either).',
   },
   {
     time: '2024/06/11',
-    content: 'Recruiter reached out to me and said they can move me to an earlier spot for the virtual onsite interview. We scheduled the virtual onsite interview on 2024/06/20 and 2024/06/21.',
+    content: 'The recruiter reached out and said they could move me to an earlier virtual onsite slot. We scheduled it for 2024/06/20 and 2024/06/21.',
   },
   {
     time: '2024/06/12',
-    content: 'Another phone call with the recruiter to go over the virtual onsite interview process and what to expect. I was told there going to be 4 rounds with an hour each and each of them is half behavioral and half technical.',
+    content: 'Another phone call with the recruiter to go over the virtual onsite process and expectations. I was told there would be four one-hour rounds, each split between behavioral and technical questions.',
   },
   {
     time: '2024/06/14',
@@ -55,23 +55,23 @@ const data = [
   },
   {
     time: '2024/06/20',
-    content: 'First round of the virtual onsite interview. Two LP questions and a leetcode medium level question.',
+    content: 'First round of the virtual onsite interview: two LP questions and one LeetCode-medium question.',
   },
   {
     time: '2024/06/21',
-    content: 'Second, third and fourth round of the virtual onsite interview. Two LP questions and a system design. Two LP questions and a leetcode medium level question. Two LP questions and a low level design question.',
+    content: 'Second, third, and fourth rounds of the virtual onsite interview: two LP questions + system design, two LP questions + one LeetCode-medium question, and two LP questions + one low-level design question.',
   },
   {
     time: '2024/06/28',
-    content: 'Recruiter reached out to me and said the team has decided not to move forward with an offer for L5 (SDE2) at this time. But they are willing consider me as SDE1 and the interview result is valid for 12 months. I scheduled another phone call with the recruiter to talk about the next steps.',
+    content: 'The recruiter told me the team decided not to move forward with an L5 (SDE2) offer at that time. They were willing to consider me for SDE1, and the interview result would remain valid for 12 months. I scheduled another call to discuss next steps.',
   },
   {
     time: '2024/07/03',
-    content: 'Phone call with recruiter. The recuriter told me that their team do not have a openning for SDE1 and in general Amazon do not have a lot of SDE1 position. We did a quick look together and only found 1 at the location I want. The recruiter said they will reach out to that team and see if they can consider me for that position. The recruiter also said keep eyes on any sde1 job post and let them know if I see any. In my mind, I already give up. It is jover.',
+    content: 'Phone call with the recruiter. They told me their team did not have an SDE1 opening, and in general Amazon had very few SDE1 positions. We quickly checked and found only one in my target location. The recruiter said they would reach out to that team, and asked me to keep an eye on SDE1 postings and share anything I found. At that point, I felt like it was over.',
   },
   {
     time: '2024/07/04-Now',
-    content: 'I have been checking the job post everyday and send recruiter new sde 1 jobs and it is just depend on if the recuituer saw my email and decide if they have time to help me connect to a different team. However, I would say the responsiveness has decrease a lot.'
+    content: 'I have been checking job posts every day and sending SDE1 openings to the recruiter. At this point it mostly depends on whether the recruiter sees my email and has time to help me connect with a different team. Response times have dropped a lot.'
   }
 ];
 
@@ -87,7 +87,6 @@ const AmazonInterview2024 = () => {
         <Typography variant='h3' component='h3' gutterBottom>
           Amazon SDE 2 Interview 2024 Experience (No offer)
         </Typography>
-        <Typography variant='h5' component='h5' gutterBottom>!! Warning broken english coming up !!</Typography>
         <Box
           display='flex'
           flexDirection='column'
@@ -121,34 +120,32 @@ const AmazonInterview2024 = () => {
             Final Thoughts: 
             </Typography>
             <Typography variant='body1' gutterBottom>
-            For perparing technical, I started around 2024/06/11. 
+            I started technical prep around 2024/06/11. 
             <List >
-              <ListItem >For coding, I bought leetcode premium and did like 100 medium questions and some random easy questions when I need a break. Most of them have amazon tag on it but I don't think that help too much. 
-              I think if you do like blind 75 or like neetcode you probably will be fine. </ListItem>
-              <ListItem >For system design, I watched youtube videos. The two channels I used the most are&nbsp;{<Link href="https://www.youtube.com/@jordanhasnolife5163/videos">Jordan has no life</Link>}&nbsp;and&nbsp;{<Link href="https://www.youtube.com/@hello_interview/videos"> Hello Interview - Tech Interview Preparation</Link>}.</ListItem>
-              <ListItem >For low level design, I only spent 1 day on this because I didn't know low level design is a thing until the last day. I didn't read the document from the recuiter until the last day so it was a oversight by me. I looked up what other people suggest and people suggest Grokking the Low Level Design Interview Using OOD Principles. 
-                I don't want to pay because I only have 1 day left so I just copy and paste the question on their website and ask chatgpt to give me the answer so I can study.</ListItem>
+              <ListItem >For coding, I bought LeetCode Premium and did about 100 medium questions, plus some easy ones when I needed a break. Most were Amazon-tagged, but I do not think that mattered much. If you do Blind 75 or NeetCode, you will probably be fine.</ListItem>
+              <ListItem >For system design, I watched YouTube videos. The two channels I used most were&nbsp;{<Link href="https://www.youtube.com/@jordanhasnolife5163/videos">Jordan has no life</Link>}&nbsp;and&nbsp;{<Link href="https://www.youtube.com/@hello_interview/videos"> Hello Interview - Tech Interview Preparation</Link>}.</ListItem>
+              <ListItem >For low-level design, I only spent one day because I did not realize it would be tested until the last day. I also read the recruiter document too late, which was my mistake. I looked up recommendations and saw people suggest Grokking the Low Level Design Interview Using OOD Principles. Since I only had one day left, I did not buy it; I used ChatGPT to work through sample questions instead.</ListItem>
             </List>
-            For perparing behavioral, I started 1 day before the interview.
+            For behavioral prep, I started one day before the interview.
             <List>
               <ListItem>
-                I perpare total like 20 stories because I was told I should not reuse any story even though if it fit mutiple Leadership Principles questions.
+                I prepared about 20 stories because I was told not to reuse stories, even if one story matched multiple Leadership Principles.
               </ListItem>
             </List>
             </Typography>
             <Typography variant='body1' gutterBottom>
-              I was sad and disappointed when I got the news. This is probably the closest opportunity I encounter in my life to work at FAANG company and I failed. It felt extra bad when I tried my best.
+              I was sad and disappointed when I got the news. This was probably the closest I have ever been to working at a FAANG company, and I fell short. It felt worse because I really tried my best.
             </Typography>
-            <Typography variant='body1' gutterBottom>I also built 2 thing through out this entire experince
+            <Typography variant='body1' gutterBottom>I also built two things throughout this entire experience:
               <List>
                 <ListItem>
                   <Typography variant='body1' gutterBottom>
-                  1. chrome extension that can show dislike number on a leetcode question. I want to see like vs dislike when I doing a problem. Leetcode hide them on display but it is available on the api.    <Link href="https://github.com/LonelyLok/project-pain">Github Link</Link>
+                  1. A Chrome extension that shows the dislike count on LeetCode questions. I wanted to see likes vs. dislikes while solving problems. LeetCode hides it in the UI, but the value is available via the API. <Link href="https://github.com/LonelyLok/project-pain">Github Link</Link>
                   </Typography>
                 </ListItem>
                 <ListItem>
                  <Typography variant='body1' gutterBottom>
-                 2. webapp that show amazon sde 1 job. I was told that only less than 1 year experience is consider sde 1. The reason I built this is because sometimes the filter is not working on this <Link href="https://www.amazon.jobs/en/search?offset=0&result_limit=10&sort=relevant&category%5B%5D=software-development&country%5B%5D=USA&distanceType=Mi&radius=24km&industry_experience=less_than_1_year&latitude=&longitude=&loc_group_id=&loc_query=&base_query=&city=&country=&region=&county=&query_options=&"> site</Link>.    <Link href="https://github.com/LonelyLok/amazon-sde-1-job-search">Github Link</Link>
+                 2. A web app that tracks Amazon SDE1 jobs. I was told SDE1 is generally for candidates with less than one year of experience. I built it because the filters on this <Link href="https://www.amazon.jobs/en/search?offset=0&result_limit=10&sort=relevant&category%5B%5D=software-development&country%5B%5D=USA&distanceType=Mi&radius=24km&industry_experience=less_than_1_year&latitude=&longitude=&loc_group_id=&loc_query=&base_query=&city=&country=&region=&county=&query_options=&">site</Link> were sometimes inconsistent. <Link href="https://github.com/LonelyLok/amazon-sde-1-job-search">Github Link</Link>
                  </Typography>
                 </ListItem>
               </List>

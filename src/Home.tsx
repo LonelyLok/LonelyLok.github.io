@@ -1,49 +1,39 @@
 import React from 'react';
-import {
-  createTheme,
-  ThemeProvider,
-  CssBaseline,
-  GlobalStyles,
-  Typography,
-  Box,
-  Container,
-} from '@mui/material';
-
-// 1. Create your MUI theme
-const theme = createTheme({
-  palette: {
-    mode: 'light',
-    primary: { main: '#5568fe' },
-    secondary: { main: '#ff8a65' },
-    background: { default: '#fafbfc', paper: '#fff' },
-    text: { primary: '#222', secondary: '#555' },
-  },
-  typography: {
-    fontFamily: '"Inter", sans-serif',
-    h2: { fontWeight: 700, letterSpacing: '-0.02em' },
-    h4: { fontWeight: 400, color: '#444' },
-    body1: { lineHeight: 1.6 },
-  },
-  spacing: 4,
-});
+import { Typography, Box, Container, Stack, Chip } from '@mui/material';
 
 export default function Home() {
   return (
-      <Box
-        sx={{
-          height: '100vh',
-          display: 'flex',
-          alignItems: 'center',
-        }}
-      >
-        <Container maxWidth="md" sx={{ textAlign: 'center', px: 3 }}>
-          <Typography variant="h2" gutterBottom>
-            Hey there, I’m Henry
-          </Typography>
-          <Typography variant="h4" gutterBottom sx={{ color: '#fcfcfc' }}>
-            A ChatGPT enjoyer, PC gamer.
-          </Typography>
-        </Container>
-      </Box>
+    <Box
+      sx={{
+        minHeight: 'calc(100vh - 72px)',
+        display: 'flex',
+        alignItems: 'center',
+        py: { xs: 8, md: 12 },
+      }}
+    >
+      <Container maxWidth="md" sx={{ textAlign: 'center', px: 3 }}>
+        <Typography variant="h2" gutterBottom>
+          Henry Yu
+        </Typography>
+        <Typography
+          variant="h5"
+          sx={{ color: 'text.secondary', fontWeight: 500, maxWidth: 640, mx: 'auto' }}
+        >
+          Software engineer. Gamer. Building small things on the internet.
+        </Typography>
+        <Stack
+          direction="row"
+          spacing={1}
+          justifyContent="center"
+          flexWrap="wrap"
+          sx={{ mt: 3, gap: 1 }}
+        >
+          <Chip label="Software enginner" variant="outlined" />
+          <Chip label="ChatGPT enjoyer" variant="outlined" />
+          <Chip label="Vibe code legend" variant="outlined" />
+          <Chip label="Monster hunter" variant="outlined" />
+        </Stack>
+      </Container>
+    </Box>
   );
 }
