@@ -1,3 +1,46 @@
+import defectStats20260320 from './assets/defect_stats_2026-03-20 123023.png';
+import defectA10Run20260320 from './assets/defect_a10_2026-03-20 122936.png';
+import defectButton from './assets/defect_button.png';
+import ironcladStats20260320 from './assets/ironclad_stats_2026-03-20 122958.png';
+import ironcladA10Run20260308 from './assets/ironclad_a10_2026-03-08 225239.png';
+import ironcladButton from './assets/ironclad_button.png';
+import necrobinderStats20260320 from './assets/necrobinder_stats_2026-03-20 123017.png';
+import necrobinderA10Run20260318 from './assets/necrobinder_a10_2026-03-18 225326.png';
+import necrobinderButton from './assets/necrobinder_button.png';
+import regentStats20260320 from './assets/regent_stats_2026-03-20 123011.png';
+import regentA10Run20260315 from './assets/regent_a10_2026-03-15 173216.png';
+import regentButton from './assets/regent_button.png';
+import silentStats20260320 from './assets/silent_stats_2026-03-20 123004.png';
+import silentA10Run20260313 from './assets/silent_a10_2026-03-13 194340.png';
+import silentButton from './assets/silent_button.png';
+import sts2Cover from './assets/sts2_cover.jpg';
+
+export type SlayTheSpireCharacter =
+    | 'Ironclad'
+    | 'Silent'
+    | 'Regent'
+    | 'Necrobinder'
+    | 'Defect';
+
+export type SlayTheSpireImageItem = {
+    title: string;
+    character: SlayTheSpireCharacter;
+    image: string;
+};
+
+export type SlayTheSpireRunHistoryItem = {
+    runId: string;
+    character: SlayTheSpireCharacter;
+    image: string;
+    playedAt: string;
+    ascension: number;
+};
+
+export type SlayTheSpireCharacterButton = {
+    character: SlayTheSpireCharacter;
+    image: string;
+};
+
 export const games = [
     {
         id: 1,
@@ -412,4 +455,71 @@ export const videoMap: Record<string, any> = {
         title: 'Shape of Dreams - Nightmare - Nachia - Primus boss fight',
         youtubeVideoId: 'bibuSWJmUSw'
     }]
+};
+
+export const slayTheSpire2EARecords = {
+    title: 'Slay the Spire 2 EA Records',
+    description: 'Character stats and run history from my Early Access playthroughs.',
+    lastUpdated: '2026-03-20',
+    coverImage: sts2Cover,
+    characters: [
+        'Ironclad',
+        'Silent',
+        'Regent',
+        'Necrobinder',
+        'Defect',
+    ] as SlayTheSpireCharacter[],
+    characterButtons: [
+        { character: 'Ironclad', image: ironcladButton },
+        { character: 'Silent', image: silentButton },
+        { character: 'Regent', image: regentButton },
+        { character: 'Necrobinder', image: necrobinderButton },
+        { character: 'Defect', image: defectButton },
+    ] as SlayTheSpireCharacterButton[],
+    statsDescription: 'Character-by-character stat snapshots from Early Access runs.',
+    runHistoryDescription: 'Click a character portrait to filter the runs below.',
+    statsItems: [
+        { title: 'Ironclad Stats', character: 'Ironclad', image: ironcladStats20260320 },
+        { title: 'Silent Stats', character: 'Silent', image: silentStats20260320 },
+        { title: 'Regent Stats', character: 'Regent', image: regentStats20260320 },
+        { title: 'Necrobinder Stats', character: 'Necrobinder', image: necrobinderStats20260320 },
+        { title: 'Defect Stats', character: 'Defect', image: defectStats20260320 },
+    ] as SlayTheSpireImageItem[],
+    runHistoryItems: [
+        {
+            runId: '2026-03-08-ironclad-a10-01',
+            character: 'Ironclad',
+            image: ironcladA10Run20260308,
+            playedAt: '2026-03-08',
+            ascension: 10,
+        },
+        {
+            runId: '2026-03-13-silent-a10-01',
+            character: 'Silent',
+            image: silentA10Run20260313,
+            playedAt: '2026-03-13',
+            ascension: 10,
+        },
+        {
+            runId: '2026-03-15-regent-a10-01',
+            character: 'Regent',
+            image: regentA10Run20260315,
+            playedAt: '2026-03-15',
+            ascension: 10,
+        },
+        {
+            runId: '2026-03-18-necrobinder-a10-01',
+            character: 'Necrobinder',
+            image: necrobinderA10Run20260318,
+            playedAt: '2026-03-18',
+            ascension: 10,
+        },
+        {
+            runId: '2026-03-20-defect-a10-01',
+            character: 'Defect',
+            image: defectA10Run20260320,
+            playedAt: '2026-03-20',
+            ascension: 10,
+        },
+    ] as SlayTheSpireRunHistoryItem[],
 };
