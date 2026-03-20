@@ -15,6 +15,7 @@ import NavBar from './NavBar';
 import AboutMe from './AboutMe';
 import AmazonInterview2024 from './random/AmazonInterview2024';
 import MyPCSpec from './random/MyPCSpec';
+import SlayTheSpire2EARecords from './random/SlayTheSpire2EARecords';
 import { games } from './fakeDB';
 
 const theme = createTheme({
@@ -126,6 +127,11 @@ function App() {
               component={AmazonInterview2024}
             ></Route>
             <Route exact path="/mypcspec" component={MyPCSpec}></Route>
+            <Route
+              exact
+              path="/slaythespire2earecords"
+              component={SlayTheSpire2EARecords}
+            ></Route>
           </Switch>
         </Box>
       </HashRouter>

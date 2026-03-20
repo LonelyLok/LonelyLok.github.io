@@ -5,69 +5,65 @@ import {
   Toolbar,
   Box,
   Tooltip,
-  Menu,
+  MenuList,
   MenuItem,
   Container,
+  Paper,
+  Popper,
 } from '@mui/material';
 import { Link } from 'react-router-dom';
 import githubLogo from './assets/github-mark-white.png';
 import LinkedInLogo from './assets/in-white.png';
 
 function NavBar() {
-  const [anchorElMiniGames, setAnchorElMiniGames] = useState<null | HTMLElement>(null);
-  const [anchorElRandom, setAnchorElRandom] = useState<null | HTMLElement>(null);
+  const [anchorElVideoGameRelatedPopper, setAnchorElVideoGameRelatedPopper] =
+    useState<null | HTMLElement>(null);
+  const [anchorElRandomPopper, setAnchorElRandomPopper] = useState<null | HTMLElement>(null);
 
-  const handleMiniGamesMenuClick = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElMiniGames(event.currentTarget);
+  const videoGameRelatedItems = [
+    {
+      name: 'Video Archive',
+      link: '/videogamefootagemenu',
+    },
+    {
+      name: 'Slay the Spire 2 Record',
+      link: '/slaythespire2earecords',
+    },
+  ];
+
+  const randomThingsItems = [
+    {
+      name: 'Day of Life',
+      link: '/dayoflifegame',
+    },
+    {
+      name: 'About me test',
+      link: '/aboutmetest',
+    },
+    {
+      name: 'Amazon SDE2 Interview 2024 (No offer)',
+      link: '/amazoninterview2024',
+    },
+    {
+      name: 'My PC Spec',
+      link: '/mypcspec',
+    },
+  ];
+
+  const handleVideoGameRelatedPopperOpen = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElVideoGameRelatedPopper(event.currentTarget);
   };
 
-  const handleMiniGamesMenuClose = () => {
-    setAnchorElMiniGames(null);
+  const handleVideoGameRelatedPopperClose = () => {
+    setAnchorElVideoGameRelatedPopper(null);
   };
 
-  const handleRandomMenuClick = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElRandom(event.currentTarget);
+  const handleRandomPopperOpen = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElRandomPopper(event.currentTarget);
   };
 
-  const handleRandomMenuClose = () => {
-    setAnchorElRandom(null);
-  };
-
-  const CustomMenu = ({
-    menuCloseFunc,
-    anchor,
-    data,
-  }: {
-    menuCloseFunc: () => void;
-    anchor: HTMLElement | null;
-    data: { name: string; link: string }[];
-  }) => {
-    return (
-      <Menu
-        id="site-menu"
-        anchorEl={anchor}
-        open={Boolean(anchor)}
-        onClose={menuCloseFunc}
-        keepMounted
-        PaperProps={{
-          sx: {
-            mt: 1,
-            bgcolor: 'background.paper',
-            border: '1px solid',
-            borderColor: 'divider',
-            minWidth: 220,
-          },
-        }}
-      >
-        {data.map((item) => {
-          return (
-            <MenuItem key={item.link} onClick={menuCloseFunc} component={Link} to={item.link}>
-              {item.name}
-            </MenuItem>
-          );
-        })}
-      </Menu>
-    );
+  const handleRandomPopperClose = () => {
+    setAnchorElRandomPopper(null);
   };
 
   return (
@@ -89,43 +85,91 @@ function NavBar() {
           <Button color="inherit" component={Link} to="/aboutme" sx={{ px: 1.25 }}>
             About Me
           </Button>
-          <Button color="inherit" onClick={handleMiniGamesMenuClick} sx={{ px: 1.25 }}>
-            Mini games
-          </Button>
-          <CustomMenu
-            menuCloseFunc={handleMiniGamesMenuClose}
-            anchor={anchorElMiniGames}
-            data={[
-              {
-                name: 'Day of Life',
-                link: '/dayoflifegame',
-              },
-              {
-                name: 'About me test',
-                link: '/aboutmetest',
-              },
-            ]}
-          />
-          <Button color="inherit" component={Link} to="/videogamefootagemenu" sx={{ px: 1.25 }}>
-            Video Archive
-          </Button>
-          <Button color="inherit" onClick={handleRandomMenuClick} sx={{ px: 1.25 }}>
-            Random things
-          </Button>
-          <CustomMenu
-            menuCloseFunc={handleRandomMenuClose}
-            anchor={anchorElRandom}
-            data={[
-              {
-                name: 'Amazon SDE2 Interview 2024 (No offer)',
-                link: '/amazoninterview2024',
-              },
-              {
-                name: 'My PC Spec',
-                link: '/mypcspec',
-              },
-            ]}
-          />
+          <Box
+            onMouseLeave={handleVideoGameRelatedPopperClose}
+            sx={{ display: 'flex', alignItems: 'center' }}
+          >
+            <Button
+              color="inherit"
+              onClick={handleVideoGameRelatedPopperOpen}
+              onMouseEnter={handleVideoGameRelatedPopperOpen}
+              sx={{ px: 1.25 }}
+            >
+              Video game related
+            </Button>
+            <Popper
+              open={Boolean(anchorElVideoGameRelatedPopper)}
+              anchorEl={anchorElVideoGameRelatedPopper}
+              placement="bottom-start"
+              sx={{ zIndex: 1300 }}
+            >
+              <Paper
+                onMouseLeave={handleVideoGameRelatedPopperClose}
+                sx={{
+                  mt: 1,
+                  minWidth: 220,
+                  bgcolor: 'background.paper',
+                  border: '1px solid',
+                  borderColor: 'divider',
+                  overflow: 'hidden',
+                }}
+              >
+                <MenuList autoFocusItem={false}>
+                  {videoGameRelatedItems.map((item) => (
+                    <MenuItem
+                      key={item.link}
+                      onClick={handleVideoGameRelatedPopperClose}
+                      component={Link}
+                      to={item.link}
+                    >
+                      {item.name}
+                    </MenuItem>
+                  ))}
+                </MenuList>
+              </Paper>
+            </Popper>
+          </Box>
+          <Box onMouseLeave={handleRandomPopperClose} sx={{ display: 'flex', alignItems: 'center' }}>
+            <Button
+              color="inherit"
+              onClick={handleRandomPopperOpen}
+              onMouseEnter={handleRandomPopperOpen}
+              sx={{ px: 1.25 }}
+            >
+              Random things
+            </Button>
+            <Popper
+              open={Boolean(anchorElRandomPopper)}
+              anchorEl={anchorElRandomPopper}
+              placement="bottom-start"
+              sx={{ zIndex: 1300 }}
+            >
+              <Paper
+                onMouseLeave={handleRandomPopperClose}
+                sx={{
+                  mt: 1,
+                  minWidth: 220,
+                  bgcolor: 'background.paper',
+                  border: '1px solid',
+                  borderColor: 'divider',
+                  overflow: 'hidden',
+                }}
+              >
+                <MenuList autoFocusItem={false}>
+                  {randomThingsItems.map((item) => (
+                    <MenuItem
+                      key={item.link}
+                      onClick={handleRandomPopperClose}
+                      component={Link}
+                      to={item.link}
+                    >
+                      {item.name}
+                    </MenuItem>
+                  ))}
+                </MenuList>
+              </Paper>
+            </Popper>
+          </Box>
           <Box sx={{ flexGrow: 1 }}></Box>
           <Tooltip title="My LinkedIn">
             <Button
